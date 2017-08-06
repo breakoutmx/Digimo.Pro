@@ -1,5 +1,5 @@
 var _WM_APP_PROPERTIES = {
-  "activeTheme" : "material",
+  "activeTheme" : "default",
   "dateFormat" : "",
   "defaultLanguage" : "en",
   "displayName" : "DigiMo.Pro",

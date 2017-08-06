@@ -1,11 +1,178 @@
-<wm-page data-ng-controller="MainPageController" name="mainpage" pagetitle="Main">
-    <wm-header content="header" name="header" height="auto"></wm-header>
-    <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
-    <wm-content name="content">
-        <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
-        <wm-page-content columnwidth="8" paddingleft="15" paddingright="15" name="mainContent">
+<wm-page data-ng-controller="MainPageController" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-icon name="icon1" iconclass="wi wi-message"></wm-icon>
+            <wm-panel subheading="New features and training!" iconclass="wi wi-announcement" autoclose="outsideClick" title="Latest TDM Updates" name="latest_updates_panel" badgetype="primary" iconwidth="30px" iconheight="30px" collapsible="true"
+            enablefullscreen="true" closable="true" animation="lightSpeedIn">
+                <wm-panel-footer name="panel_footer6">
+                    <wm-label padding="unset 0.5em" class="text-muted" caption="Addition Info" name="label45_1"></wm-label>
+                </wm-panel-footer>
+            </wm-panel>
+            <wm-layoutgrid name="layoutgrid2">
+                <wm-gridrow name="gridrow9_1">
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn21" padding="unset .5em">
+                        <wm-panel collapsible="true" showheader="true" name="dashboardPanel" title="Dashboard Information and Statistics">
+                            <wm-panel-footer name="panel_footer1">
+                                <wm-layoutgrid name="layoutgrid7">
+                                    <wm-gridrow name="gridrow10">
+                                        <wm-gridcolumn columnwidth="8" name="gridcolumn21_1">
+                                            <wm-label name="label2" caption="Last update: 12.10.2014"></wm-label>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="4" name="gridcolumn23" horizontalalign="right">
+                                            <wm-label caption="You have two new messages from" name="label4" margin="unset .2em unset unset"></wm-label>
+                                            <wm-label name="label3" caption="John Doe" fontweight="bold"></wm-label>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-panel-footer>
+                            <wm-layoutgrid name="layoutgrid1">
+                                <wm-gridrow name="gridrow1">
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn1" horizontalalign="center" padding=".5em">
+                                        <wm-label name="label5" caption="Page views" width="100%" class="h5"></wm-label>
+                                        <wm-label name="label6" caption="11,279" width="100%" class="h2" marginunit="em"></wm-label>
+                                        <wm-label name="label7" caption="Page views in last month" width="100%"></wm-label>
+                                        <wm-label name="label8" caption="Data from April" width="100%"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn2" horizontalalign="center" padding=".5em">
+                                        <wm-label caption="Active users in current month (April)" width="100%" name="label9" class="h5"></wm-label>
+                                        <wm-chart type="Line" name="chart1" height="140" offsettop="5" offsetright="25" offsetbottom="25" showxaxis="true" theme="Retro"></wm-chart>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn3" horizontalalign="center" padding=".5em">
+                                        <wm-label caption="Active duration" width="100%" name="label10" class="h5"></wm-label>
+                                        <wm-label caption="8 Months" width="100%" class="h2" name="label11"></wm-label>
+                                        <wm-label caption="And three weeks" width="100%" name="label12"></wm-label>
+                                        <wm-label caption="Last active in 10.10.2014" width="100%" name="label13"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow4">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn10" height="100%" padding="unset .5em">
+                        <wm-panel collapsible="false" showheader="true" name="incomePanel" show="true" closable="false" expanded="true" title="All Income" height="16em">
+                            <wm-panel-footer name="panel_footer2">
+                                <wm-label name="label46" caption="Income Summary"></wm-label>
+                            </wm-panel-footer>
+                            <wm-label caption="$25,987" width="100%" name="label15" textalign="center" fontsize="1.5" fontunit="em"></wm-label>
+                            <wm-label caption="Information about the income group" name="label43_2" class="p" textalign="center"></wm-label>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn11" padding="unset .5em">
+                        <wm-panel collapsible="false" showheader="true" show="true" closable="false" expanded="true" title="Users Activity" name="activityPanel" iconclass="wi wi-user" height="16em">
+                            <wm-panel-footer name="panel_footer3">
+                                <wm-label caption="Activity Summary" name="label47"></wm-label>
+                            </wm-panel-footer>
+                            <wm-label caption="110" width="100%" textalign="center" name="label18" fontunit="em" fontsize="1.5"></wm-label>
+                            <wm-label caption="Social Users" width="100%" textalign="center" name="label19" class="h5"></wm-label>
+                            <wm-progress name="progress1" type="success" datavalue="23.55" height="5" captionplacement="hidden"></wm-progress>
+                            <wm-layoutgrid name="layoutgrid6_1">
+                                <wm-gridrow name="gridrow8">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn19_1" horizontalalign="center">
+                                        <wm-label name="label20" caption="Pages / Visit" width="100%"></wm-label>
+                                        <wm-label name="label21" caption="9.0" width="100%" fontweight="bold"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn20" horizontalalign="center">
+                                        <wm-label caption="% New Visits" width="100%" name="label22"></wm-label>
+                                        <wm-label caption="23.55%" width="100%" fontweight="bold" name="label23"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn12" height="100%" padding="unset .5em">
+                        <wm-panel collapsible="false" showheader="true" show="true" closable="false" expanded="true" title="Page Views" iconclass="wi wi-eye" name="viewPanel" height="16em">
+                            <wm-panel-footer name="panel_footer4">
+                                <wm-label caption="Page Views Summary" name="label48"></wm-label>
+                            </wm-panel-footer>
+                            <wm-label caption="435+" width="100%" textalign="center" name="label24" color="#62CB31" fontsize="1.5" fontunit="em"></wm-label>
+                            <wm-label caption="Users" width="100%" textalign="center" name="label25" class="h5"></wm-label>
+                            <wm-label caption="These are the page views" name="label42_1" class="p" textalign="center"></wm-label>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn13" padding="unset .5em">
+                        <wm-panel collapsible="false" showheader="true" show="true" closable="false" expanded="true" title="Today's Income" iconclass="wi wi-attach-money" name="todayIncome" height="16em">
+                            <wm-panel-footer name="panel_footer5">
+                                <wm-label caption="Today's Income Summary" name="label49"></wm-label>
+                            </wm-panel-footer>
+                            <wm-chart type="Area" name="chart3" height="80" showxaxis="false" showyaxis="false" showlegend="false" offsettop="5" offsetleft="5" offsetright="5" offsetbottom="5" theme="Retro"></wm-chart>
+                            <wm-layoutgrid name="layoutgrid6" margin="1em unset unset unset">
+                                <wm-gridrow name="gridrow9">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn24">
+                                        <wm-label name="label50" width="100%" caption="Today"></wm-label>
+                                        <wm-label width="100%" caption="$150,00" name="label52"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn25">
+                                        <wm-label width="100%" name="label51_1" caption="Last Week"></wm-label>
+                                        <wm-label width="100%" caption="$1,234" name="label53"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow name="gridrow3">
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn8" padding="unset .5em">
+                        <wm-panel collapsible="true" showheader="true" name="lastActivePanel" title="Last Active Users" closable="true" height="16em">
+                            <wm-label name="label41_2" caption="These are the last active users"></wm-label>
+                            <wm-layoutgrid name="layoutgrid5_1">
+                                <wm-gridrow name="gridrow6_1">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn15" class="col-xs-6">
+                                        <wm-label caption="200,205" width="100%" name="label40" color="#62CB31" class="h5"></wm-label>
+                                        <wm-label caption="98%" width="100%" name="label41"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn16_1" class="col-xs-6">
+                                        <wm-label caption="123,421" width="100%" name="label42" color="#62CB31" class="h5"></wm-label>
+                                        <wm-label caption="98%" width="100%" name="label43"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow name="gridrow7">
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn18" class="col-xs-6">
+                                        <wm-label caption="783,372" width="100%" name="label43_1" class="h5"></wm-label>
+                                        <wm-label caption="28%" width="100%" name="label51"></wm-label>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn19" class="col-xs-6">
+                                        <wm-label caption="234,653" width="100%" name="label44" class="h5"></wm-label>
+                                        <wm-label caption="28%" width="100%" name="label45"></wm-label>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn9" padding="unset .5em">
+                        <wm-panel collapsible="true" showheader="true" name="recentActive" title="Recently Active Projects" closable="true" height="16em">
+                            <wm-grid readonlygrid="true" name="grid1" shownavigation="false">
+                                <wm-grid-column binding="project" caption="Project" type="string" readonly="false" search-placeholder="Search" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                                <wm-grid-column binding="completed" caption="Completed" type="string" readonly="false" search-placeholder="Search" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                                <wm-grid-column binding="task" caption="Task" type="string" readonly="false" search-placeholder="Search" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                                <wm-grid-column binding="date" caption="Date" type="string" readonly="false" search-placeholder="Search" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                                <wm-grid-column binding="action" caption="Action" type="string" readonly="false" search-placeholder="Search" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            </wm-grid>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="3" name="gridcolumn10_1" padding="unset .5em">
+                        <wm-panel collapsible="true" showheader="true" name="activityStatPanel" title="Activity" closable="true" height="16em">
+                            <wm-switch datavalue="today" name="switch1" dataset="today, lastday"></wm-switch>
+                            <wm-livelist listclass="list-group" name="livelist1" dataset="1,2" template="true">
+                                <wm-listtemplate layout="gridlayout" name="listtemplate1">
+                                    <wm-layoutgrid class="gridlayout" name="layoutgrid5">
+                                        <wm-gridrow name="gridrow6" borderstyle="solid" bordercolor="#e3e1e1" borderwidth="0px 0px 1px 0px">
+                                            <wm-gridcolumn columnwidth="12" data-template-ctr="true" name="gridcolumn16">
+                                                <wm-label name="label54" caption="2,773" width="100%" color="#62CB31" class="h5" margin="unset unset 0px unset"></wm-label>
+                                                <wm-label name="label55" caption="Messages Received" width="80%"></wm-label>
+                                                <wm-label caption="98%" width="20%" name="label41_1"></wm-label>
+                                            </wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-listtemplate>
+                            </wm-livelist>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
         </wm-page-content>
-        <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
     </wm-content>
-    <wm-footer name="footer" content="footer"></wm-footer>
+    <wm-footer content="footer" name="footer1"></wm-footer>
 </wm-page>
