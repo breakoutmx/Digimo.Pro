@@ -1,5 +1,6 @@
 <wm-page data-ng-controller="LoginPageController" name="page1" pagetitle="Login">
-    <wm-content name="content1" padding="0px">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-content name="content1" padding="0px" backgroundcolor="#000000">
         <wm-page-content columnwidth="12" name="page_content1" backgroundcolor="#000000" padding="0px">
             <wm-container width="100%" height="100%" backgroundcolor="#000000" backgroundimage="resources/images/imagelists/login-bg-bodark2.png" backgroundrepeat="no-repeat" backgroundposition="0 0" backgroundsize="100%" backgroundattachment="fixed" name="loginPageContainer">
                 <wm-layoutgrid name="loginGrid" height="100%">
@@ -9,7 +10,7 @@
                     <wm-gridrow name="loginGridRow">
                         <wm-gridcolumn columnwidth="1" name="gridcolumn8" class="col-xs-1 col-md-1"></wm-gridcolumn>
                         <wm-gridcolumn name="loginContentColumn" columnwidth="8" class="col-xs-10 col-md-8" horizontalalign="left">
-                            <wm-container name="loginbox" style="max-width:700px;" backgroundcolor="rgba(50,50,50,0.7)" bordercolor="rgba(255,255,255,.2)" borderwidth="10px" borderstyle="solid" animation="rollIn">
+                            <wm-container name="loginbox" style="max-width:700px;" backgroundcolor="rgba(50,50,50,0.7)" bordercolor="rgba(255,255,255,.2)" borderwidth="10px" borderstyle="solid" animation="fadeInUpBig">
                                 <wm-layoutgrid name="layoutgrid3">
                                     <wm-gridrow name="gridrow8">
                                         <wm-gridcolumn columnwidth="5" name="gridcolumn11" horizontalalign="center" class="bg-primary">
@@ -29,7 +30,7 @@
                                         </wm-gridcolumn>
                                         <wm-gridcolumn columnwidth="7" name="gridcolumn13">
                                             <wm-container color="#ffffff" name="container3">
-                                                <wm-label name="loginhead" caption="DMP Account Access" class="h2 text-uppercase login-heading" margin="0px unset" padding="1.5em unset 0.5em 1.75em" color="#ccc" animation="rollIn" fontfamily="Helvetica Neue, Helvetica, Arial, Sans Serif"></wm-label>
+                                                <wm-label name="loginhead" caption="DMP Account Access" class="h2 text-uppercase login-heading" margin="0px unset" padding="1.5em unset 0.5em 1.75em" color="#ccc" fontfamily="Helvetica Neue, Helvetica, Arial, Sans Serif"></wm-label>
                                                 <wm-login name="loginForm" data-ng-controller="loginFormController" on-submit="Variables.loginVariable.invoke()" title="" autocomplete="nofill">
                                                     <wm-layoutgrid name="layoutgrid2">
                                                         <wm-gridrow name="gridrow2">
@@ -69,19 +70,9 @@
                         <wm-gridcolumn columnwidth="3" name="gridcolumn9" class="col-xs-1  col-md-3"></wm-gridcolumn>
                     </wm-gridrow>
                 </wm-layoutgrid>
-                <wm-container name="footer" style="position: absolute;bottom: 0;right: 0;left: 0; width: 100%;">
-                    <wm-container class="bg-primary" height="100%" name="container4">
-                        <wm-layoutgrid name="footergrid" height="100%" backgroundcolor="rgba(0,0,0,0.6)">
-                            <wm-gridrow name="gridrow6_1">
-                                <wm-gridcolumn columnwidth="1" name="gridcolumn8" class="col-xs-1 col-md-1"></wm-gridcolumn>
-                                <wm-gridcolumn columnwidth="6" name="gridcolumn10_1">
-                                    <wm-label caption="Copyright 2016 [company name]" textalign="right" name="copyright" padding="1.5em unset"></wm-label>
-                                </wm-gridcolumn>
-                            </wm-gridrow>
-                        </wm-layoutgrid>
-                    </wm-container>
-                </wm-container>
+                <wm-container name="footer" style="position: absolute;bottom: 0;right: 0;left: 0; width: 100%;"></wm-container>
             </wm-container>
         </wm-page-content>
     </wm-content>
+    <wm-footer content="footer" name="footer1" backgroundcolor="#202020" borderwidth="5px unset unset unset" bordercolor="#747474"></wm-footer>
 </wm-page>
