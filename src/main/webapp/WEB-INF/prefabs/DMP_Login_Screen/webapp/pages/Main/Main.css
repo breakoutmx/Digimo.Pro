@@ -1,0 +1,46 @@
+.app-page {
+    background-color: #333 !important;
+}
+
+.login-start-screen-cta {
+    width 90%;
+    display:block;
+    margin: 0 auto;
+}
+
+.login-start-logo {
+    margin: 20% auto 10px auto;
+    width: 60%;
+    display: block;
+}
+
+.login-option-icon {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-start-screen-box {
+    background-color: #272727;
+    background-color: rgba(55,55,55,0.8);
+    padding: 0 15px 25px 15px;
+}
+
+.login-start-screen-help {
+    margin-top: 25px;
+}
+
+.login-start-screen-help-panel {
+    color: #333;
+}
+
+.login-options-menu {
+    display: block;
+    margin: 10px auto;
+    width: 150px;
+}
+
+.usercred-dialog-view {
+    background-color: #272727;
+    background-color: rgba(55,55,55,.85);
+}

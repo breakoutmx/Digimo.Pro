@@ -37,6 +37,17 @@
     "isDefault" : true,
     "controller" : "File"
   },
+  "goToPage_Access" : {
+    "_id" : "wm-goToPage_Access-wm.NavigationVariable-1502152796569",
+    "name" : "goToPage_Access",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Access",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",

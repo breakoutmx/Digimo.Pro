@@ -1,4 +1,8 @@
 [ {
+  "name" : "Access",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "Common",
   "type" : "PARTIAL",
   "params" : [ ]

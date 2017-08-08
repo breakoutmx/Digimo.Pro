@@ -1,0 +1,179 @@
+<wm-page data-ng-controller="DMP_Login_ScreenController" name="page1">
+    <wm-content name="content1" backgroundimage="resources/images/imagelists/Wolf-BG-Dark--2.jpg" backgroundsize="100%, 100%" backgroundposition="top center" backgroundrepeat="no-repeat" backgroundcolor="#5f5f5f">
+        <wm-layoutgrid name="layoutgrid1" columns="3">
+            <wm-gridrow name="gridrow3">
+                <wm-gridcolumn columnwidth="4" name="gridcolumn5"></wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn6"></wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn7"></wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow4">
+                <wm-gridcolumn columnwidth="4" name="gridcolumn8"></wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn9" class="login-start-screen-box">
+                    <wm-picture name="picture1" picturesource="resources/images/imagelists/TDM_Start_Screen_Logo.png" class="login-start-logo"></wm-picture>
+                    <wm-picture picturesource="resources/images/imagelists/TDM_Start_Screen_CTAButton.png" width="90%" padding="20px unset unset unset" name="picture2" pictureplaceholder="resources/images/imagelists/TDM_Start_Screen_CTAButton.png"
+                    animation="tada" class="login-start-screen-cta"></wm-picture>
+                    <wm-layoutgrid name="layoutgrid5">
+                        <wm-gridrow name="gridrow12">
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn25">
+                                <wm-html name="login_existing_head_html" horizontalalign="center" color="#eaeaea">
+                                    <h2>Already a Member?</h2>
+                                </wm-html>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="6" name="gridcolumn26">
+                                <wm-container name="container3_1" class="login-options-menu">
+                                    <wm-menu caption="Login Options" autoclose="always" name="login_options_menu" menulayout="vertical" menuposition="inline" dataset="bind:Variables.loginOptionsMenuLabels.dataSet.dataValue" textalign="center" bordercolor="#343434"
+                                    borderwidth="2px" margin="5px unset unset unset" iconclass="fa fa-sign-in" horizontalalign="center" animateitems="fade" scopedataset="loginOptionsVar" on-select="login_options_menuSelect($event, $scope, $item)"></wm-menu>
+                                </wm-container>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-layoutgrid name="layoutgrid5_1" columns="3" show="false">
+                        <wm-gridrow name="gridrow14">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn29">
+                                <wm-label padding="unset 0.5em" name="label1" caption="User Credentials" textalign="center" color="#ededed" width="100%"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn30">
+                                <wm-label padding="unset 0.5em" caption="Secure Access Key" textalign="center" color="#ededed" width="100%" name="label2"></wm-label>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn31">
+                                <wm-label padding="unset 0.5em" caption="Secure Access File" textalign="center" color="#ededed" width="100%" name="label3"></wm-label>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow15">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn32">
+                                <wm-icon name="icon1" iconclass="wi wi-account-circle fa-5x fa-border" color="#ebebeb" iconposition="right" class="login-option-icon" caption="" animation="bounceInUp"></wm-icon>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn33">
+                                <wm-icon iconclass="wi wi-power-input fa-5x fa-border" color="#ebebeb" iconposition="right" class="login-option-icon" name="icon2"></wm-icon>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn34">
+                                <wm-icon iconclass="wi wi-file-upload fa-5x fa-border" color="#ebebeb" iconposition="right" class="login-option-icon" name="icon3"></wm-icon>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-layoutgrid name="layoutgrid2" columns="3" show="true">
+                        <wm-gridrow name="gridrow5_1">
+                            <wm-gridcolumn columnwidth="12" name="gridcol_start_screen_help" class="login-start-screen-help">
+                                <wm-accordion name="accordion1" closeothers="true" show="true" defaultpaneindex="1" tabindex="1">
+                                    <wm-accordionpane name="accordionpane1" iconclass="wi wi-help-outline" title="Need Help Logging In?" subheading="Read about your options below..." backgroundcolor="#3c3c3c" color="#e8e8e8" badgetype="info" show="true" tabindex="1">
+                                        <wm-layoutgrid name="layoutgrid3">
+                                            <wm-gridrow name="gridrow8">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn18" horizontalalign="center">
+                                                    <wm-buttongroup name="start_screen_help_buttons" horizontalalign="center" vertical="false" show="true">
+                                                        <wm-button class="btn-default" type="button" caption="User" name="start_helpbutton_user" iconclass="wi wi-account-circle" iconposition="left" on-click="start_helpbutton_userClick($event, $scope)"></wm-button>
+                                                        <wm-button class="btn-default" type="button" caption="Secure Key" name="start_helpbutton_accesskey" iconclass="wi wi-power-input" on-click="start_helpbutton_accesskeyClick($event, $scope)"></wm-button>
+                                                        <wm-button class="btn-default" type="button" caption="Secure File" name="start_helpbutton_accessfile" iconclass="wi wi-file-upload" on-click="start_helpbutton_accessfileClick($event, $scope)"></wm-button>
+                                                    </wm-buttongroup>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow_login_start_help_panel">
+                                                <wm-gridcolumn columnwidth="12" name="gridcol_start_screen_help_panel">
+                                                    <wm-panel subheading="bind:Variables.loginHelpSubTitle.dataSet.dataValue" iconclass="wi wi-account-circle" autoclose="outsideClick" title="bind:Variables.loginHelpTitle.dataSet.dataValue" name="panel1" badgetype="default"
+                                                    enablefullscreen="true" collapsible="false" closable="false" class="login-start-screen-help-panel">
+                                                        <wm-panel-footer name="panel_footer1">
+                                                            <wm-label padding="unset 0.5em" class="text-muted" caption="For additional help, contact support with any questions." name="label9"></wm-label>
+                                                        </wm-panel-footer>
+                                                        <wm-html name="login_start_screen_help_text_htm" content="bind:Variables.loginHelpText.dataSet.dataValue">bind:Variables.loginHelpText.dataSet.dataValue</wm-html>
+                                                    </wm-panel>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow7">
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn16_1"></wm-gridcolumn>
+                                                <wm-gridcolumn columnwidth="6" name="gridcolumn17"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-accordionpane>
+                                    <wm-accordionpane name="accordionpane3" show="false"></wm-accordionpane>
+                                </wm-accordion>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn10"></wm-gridcolumn>
+            </wm-gridrow>
+            <wm-gridrow name="gridrow_loginoption_dialogs">
+                <wm-gridcolumn columnwidth="4" name="gridcolumn22"></wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn23"></wm-gridcolumn>
+                <wm-gridcolumn columnwidth="4" name="gridcolumn24"></wm-gridcolumn>
+            </wm-gridrow>
+        </wm-layoutgrid>
+    </wm-content>
+    <wm-view class="dialog-view usercred-dialog-view" name="logopt_usercreds_dialog" show="bind:Variables.showUserCredDialog.dataSet.dataValue" deferload="false" viewgroup="default">
+        <wm-logindialog modal="true" caption="Login" iconclass="wi wi-sign-in" name="usercred_login_dialog" title="Login with User Credentials">
+            <wm-form errormessage="" captionposition="top" name="usercred_login_form">
+                <wm-message scopedataset="loginMessage" class="app-login-dialog-message" name="message2"></wm-message>
+                <wm-composite name="composite3">
+                    <wm-label caption="Username" class="col-md-3 control-label" name="label11"></wm-label>
+                    <wm-container class="col-md-9" name="container3">
+                        <wm-text placeholder="Enter username" class="app-login-dialog-username" name="usernametext" updateon="default"></wm-text>
+                    </wm-container>
+                </wm-composite>
+                <wm-composite name="composite4">
+                    <wm-label caption="Password" class="col-md-3 control-label" name="label12"></wm-label>
+                    <wm-container class="col-md-9" name="container4">
+                        <wm-text type="password" placeholder="Enter password" class="app-login-dialog-password" name="passwordtext" updateon="default"></wm-text>
+                    </wm-container>
+                </wm-composite>
+            </wm-form>
+            <wm-dialogactions name="dialogactions3">
+                <wm-button class="btn-primary" caption="Sign in" data-role="loginbutton" name="button6"></wm-button>
+            </wm-dialogactions>
+        </wm-logindialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="logopt_accesskey_dialog" show="false">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.DIALOG_TITLE_ACESSKEY_LOGIN_OPTION" iconclass="fa fa-asterisk fa-lg" name="accesskey_login_dialog">
+            <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.userAccessKey.dataSet" captionalign="left" name="login_accesskey_form" iconclass="" on-submit="login_accesskey_formSubmit($event, $scope, $formData)">
+                <wm-layoutgrid columns="1" name="layoutgrid8">
+                    <wm-gridrow name="gridrow14_1">
+                        <wm-gridcolumn name="gridcolumn28">
+                            <wm-composite name="composite1">
+                                <wm-label class="col-md-3 control-label" caption="bind:appLocale.FORM_LOGIN_ACCESSKEY_LABEL" name="label12_1"></wm-label>
+                                <wm-container class="col-md-9" name="container5">
+                                    <wm-text tabindex="1" placeholder="bind:appLocale.FORM_LOGIN_ACCESSKEY_FIELD" name="userAccessKey" datavalue="bind:Variables.userAccessKey.dataSet.dataValue" required="true" autofocus="false" autocomplete="false" scopedatavalue="loginFormAccessKeyData"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-buttongroup horizontalalign="right" class="form-action col-md-12" name="buttongroup3">
+                    <wm-button caption="Reset" type="reset" class="btn-secondary" name="button9"></wm-button>
+                    <wm-button caption="Cancel" type="button" class="btn-warning" name="button10"></wm-button>
+                    <wm-button caption="Save" type="submit" class="btn-primary" name="button11"></wm-button>
+                </wm-buttongroup>
+            </wm-form>
+            <wm-dialogactions name="dialogactions2">
+                <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button5"></wm-button>
+            </wm-dialogactions>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="logopt_accessfile_dialog" show="false">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:appLocale.DIALOG_TITLE_ACCESSFILE_LOGIN_OPTION" iconclass="wi wi-file-upload fa-lg" name="accessfile_login_dialog">
+            <wm-form errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded" method="post" dataset="bind:Variables.userAccessFile.dataSet" captionalign="left" name="form3">
+                <wm-layoutgrid columns="1" name="layoutgrid8_1">
+                    <wm-gridrow name="gridrow14_2">
+                        <wm-gridcolumn name="gridcolumn28_1">
+                            <wm-composite name="composite1">
+                                <wm-label class="col-md-3 control-label" caption="Access File" name="label12_2"></wm-label>
+                                <wm-container class="col-md-9" name="container5_1" horizontalalign="right">
+                                    <wm-fileupload name="fileupload1" service="FileService" operation="uploadFile" disabled="true" on-select="fileupload1Select($event, $scope)"></wm-fileupload>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-buttongroup horizontalalign="right" class="form-action col-md-12" name="buttongroup3_1">
+                    <wm-button caption="Reset" type="reset" class="btn-secondary" name="button10_1"></wm-button>
+                    <wm-button caption="Cancel" type="button" class="btn-warning" name="button11_1"></wm-button>
+                    <wm-button caption="Save" type="submit" class="btn-primary" name="button12"></wm-button>
+                </wm-buttongroup>
+            </wm-form>
+            <wm-layoutgrid name="layoutgrid7"></wm-layoutgrid>
+            <wm-dialogactions name="dialogactions3_1">
+                <wm-button class="btn-primary" caption="Close" on-click="closeDialog()" name="button9_1"></wm-button>
+            </wm-dialogactions>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="module_alert_dialog" show="false">
+        <wm-alertdialog name="module_alert_dialog_content" title="bind:Variables.moduleAlertDialogTitle.dataSet.dataValue" message="bind:Variables.moduleAlertDialogText.dataSet.dataValue" modal="true" oktext="Close Window" alerttype="information" on-ok="module_alert_dialog_contentOk($event, $scope)"></wm-alertdialog>
+    </wm-view>
+</wm-page>

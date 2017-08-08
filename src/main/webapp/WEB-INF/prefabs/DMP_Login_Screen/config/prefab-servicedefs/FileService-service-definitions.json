@@ -1,0 +1,90 @@
+{
+  "FileController_uploadFile" : {
+    "id" : "FileController_uploadFile",
+    "service" : "FileService",
+    "controller" : "FileController",
+    "operationType" : "array",
+    "type" : "array",
+    "wmServiceOperationInfo" : {
+      "name" : "uploadFile",
+      "methodType" : "post",
+      "relativePath" : "/file/uploadFile",
+      "directPath" : "/file/uploadFile",
+      "httpMethod" : "post",
+      "parameters" : [ {
+        "name" : "files",
+        "parameterType" : "formData",
+        "required" : true,
+        "type" : "file",
+        "readOnly" : false,
+        "contentType" : null
+      }, {
+        "name" : "relativePath",
+        "parameterType" : "formData",
+        "required" : false,
+        "type" : "java.lang.String",
+        "readOnly" : false,
+        "contentType" : null
+      } ],
+      "definitions" : {
+        "org.springframework.web.multipart.MultipartFile" : [ {
+          "name" : "contentType",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "bytes",
+          "parameterType" : null,
+          "required" : false,
+          "type" : null,
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "name",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "inputStream",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.io.InputStream",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "empty",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Boolean",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "size",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.Long",
+          "readOnly" : false,
+          "contentType" : null
+        }, {
+          "name" : "originalFilename",
+          "parameterType" : null,
+          "required" : false,
+          "type" : "java.lang.String",
+          "readOnly" : false,
+          "contentType" : null
+        } ]
+      },
+      "produces" : null,
+      "consumes" : [ "multipart/form-data" ],
+      "authorization" : null,
+      "proxySettings" : {
+        "web" : true,
+        "mobile" : true
+      }
+    }
+  }
+}
