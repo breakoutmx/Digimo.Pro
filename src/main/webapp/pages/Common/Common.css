@@ -1,3 +1,4 @@
 .app-page {
-    background: #000 !important;
+    background-color: #000;
+    background-color: rgba(0,0,0,.85) !important;
 }

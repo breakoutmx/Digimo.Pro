@@ -1,1 +1,18 @@
-{ }
+{
+  "loginCheckProgressVariable" : {
+    "_id" : "wm-loginCheckProgressVariable-wm.Variable-1502064883318",
+    "name" : "loginCheckProgressVariable",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "0"
+    } ],
+    "dataSet" : {
+      "dataValue" : 0
+    },
+    "type" : "number",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

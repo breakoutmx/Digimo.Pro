@@ -1,5 +1,4 @@
 <wm-page data-ng-controller="LoginPageController" name="page1" pagetitle="Login">
-    <wm-header content="header" name="header1"></wm-header>
     <wm-content name="content1" padding="0px" backgroundcolor="#000000">
         <wm-page-content columnwidth="12" name="page_content1" backgroundcolor="#000000" padding="0px">
             <wm-container width="100%" height="100%" backgroundcolor="#000000" backgroundimage="resources/images/imagelists/login-bg-bodark2.png" backgroundrepeat="no-repeat" backgroundposition="0 0" backgroundsize="100%" backgroundattachment="fixed" name="loginPageContainer">
@@ -35,13 +34,24 @@
                                                     <wm-layoutgrid name="layoutgrid2">
                                                         <wm-gridrow name="gridrow2">
                                                             <wm-gridcolumn columnwidth="12" name="gridcolumn4" padding="unset unset 2em unset">
-                                                                <wm-text color="#ffffff" placeholder="Username" name="usernametext" class="app-login-username" width="100%" autocomplete="false" autocorrect="off" autocapitalize="off" updateon="default" required="true"></wm-text>
+                                                                <wm-text color="#212121" placeholder="Username" name="usernametext" class="app-login-username" width="100%" autocomplete="false" autocorrect="off" autocapitalize="off" updateon="default" required="true"
+                                                                autofocus="true"></wm-text>
                                                             </wm-gridcolumn>
                                                         </wm-gridrow>
                                                         <wm-gridrow name="gridrow3">
                                                             <wm-gridcolumn columnwidth="12" name="gridcolumn7">
-                                                                <wm-text color="#ffffff" type="password" name="passwordtext" placeholder="Password" class="app-login-password" width="100%" autocomplete="true" autocorrect="off" autocapitalize="off" updateon="default"
+                                                                <wm-text color="#212121" type="password" name="passwordtext" placeholder="Password" class="app-login-password" width="100%" autocomplete="true" autocorrect="off" autocapitalize="off" updateon="default"
                                                                 required="true"></wm-text>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                        <wm-gridrow name="gridrow14">
+                                                            <wm-gridcolumn columnwidth="12" name="gridcolumn19">
+                                                                <wm-composite name="composite1">
+                                                                    <wm-label class="col-md-3 control-label" name="rememberMeLabel" caption="Remember Me" width="100%"></wm-label>
+                                                                    <wm-container class="col-md-9" name="container5">
+                                                                        <wm-switch datavalue="Yes" name="rememberMeSwitch" dataset="Yes, No"></wm-switch>
+                                                                    </wm-container>
+                                                                </wm-composite>
                                                             </wm-gridcolumn>
                                                         </wm-gridrow>
                                                         <wm-gridrow name="gridrow6">
@@ -51,7 +61,10 @@
                                                         </wm-gridrow>
                                                         <wm-gridrow name="gridrow4">
                                                             <wm-gridcolumn columnwidth="12" name="gridcolumn10">
-                                                                <wm-button type="submit" caption="Secure Login" width="100%" class="app-login-button btn-primary" name="loginButton" fontsize="1.2" fontunit="em" iconclass="wi wi-security fa-lg" iconposition="left"></wm-button>
+                                                                <wm-button type="submit" caption="Secure Login" width="100%" class="app-login-button btn-primary" name="loginButton" fontsize="1.2" fontunit="em" iconclass="wi wi-security fa-lg" iconposition="left"
+                                                                on-click="Variables.loginProgressVariable.invoke()"></wm-button>
+                                                                <wm-progress datavalue="bind:Variables.loginCheckProgressVariable.dataSet.dataValue" name="progress1" margin="10px unset unset unset" type="success-striped" pollinterval="1000"
+                                                                show="false"></wm-progress>
                                                             </wm-gridcolumn>
                                                         </wm-gridrow>
                                                         <wm-gridrow name="gridrow8_1">
@@ -74,5 +87,4 @@
             </wm-container>
         </wm-page-content>
     </wm-content>
-    <wm-footer content="footer" name="footer1" backgroundcolor="#202020" borderwidth="5px unset unset unset" bordercolor="#747474"></wm-footer>
 </wm-page>
