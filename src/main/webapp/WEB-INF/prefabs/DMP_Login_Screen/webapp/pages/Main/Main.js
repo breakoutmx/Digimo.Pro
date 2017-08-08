@@ -41,7 +41,7 @@ Application.$controller("DMP_Login_ScreenController", ["$scope", function($scope
         var result = {};
         result.title = $scope.Variables.loginHelpTitle.setValue('dataValue', "User Credentials");
         result.subtitle = $scope.Variables.loginHelpSubTitle.setValue('dataValue', "Login with your username and password");
-        result.text = $scope.Variables.loginHelpText.setValue('dataValue', "When you create your account, you set a username and password.  Click on the 'User Credentials' option and enter it there to login.");
+        result.text = $scope.Variables.loginHelpText.setValue('dataValue', "When you create your account, you set a username and password.  To login using the Username and Password (credentials) option, simply enter your username and password in the login dialog box.");
         console.log('Set help items: ', result);
     };
 

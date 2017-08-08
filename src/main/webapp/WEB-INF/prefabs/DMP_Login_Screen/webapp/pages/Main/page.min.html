@@ -90,7 +90,7 @@ Application.$controller("DMP_Login_ScreenController", ["$scope", function($scope
         var result = {};
         result.title = $scope.Variables.loginHelpTitle.setValue('dataValue', "User Credentials");
         result.subtitle = $scope.Variables.loginHelpSubTitle.setValue('dataValue', "Login with your username and password");
-        result.text = $scope.Variables.loginHelpText.setValue('dataValue', "When you create your account, you set a username and password.  Click on the 'User Credentials' option and enter it there to login.");
+        result.text = $scope.Variables.loginHelpText.setValue('dataValue', "When you create your account, you set a username and password.  To login using the Username and Password (credentials) option, simply enter your username and password in the login dialog box.");
         console.log('Set help items: ', result);
     };
 
@@ -193,159 +193,7 @@ Application.$controller("module_alert_dialog_contentController", ["$scope",
 ]);
 </script>
 <script id="Main.variables.json">
-var _MainPage_Variables_ ={
-  "FileServiceUploadFile" : {
-    "_id" : "wm-FileServiceUploadFile-wm.ServiceVariable-1502148877701",
-    "name" : "FileServiceUploadFile",
-    "owner" : "Page",
-    "category" : "wm.ServiceVariable",
-    "dataBinding" : [ ],
-    "type" : "com.dmp_login_screen.fileservice.FileService.FileUploadResponse",
-    "service" : "FileService",
-    "operation" : "uploadFile",
-    "operationId" : "FileController_uploadFile",
-    "serviceType" : "JavaService",
-    "dataSet" : [ ],
-    "isList" : false,
-    "maxResults" : 20,
-    "startUpdate" : false,
-    "autoUpdate" : true,
-    "inFlightBehavior" : "executeLast",
-    "transformationRequired" : false,
-    "saveInPhonegap" : false,
-    "isDefault" : true,
-    "controller" : "File"
-  },
-  "loginHelpSubTitle" : {
-    "_id" : "wm-loginHelpSubTitle-wm.Variable-1502111765557",
-    "name" : "loginHelpSubTitle",
-    "owner" : "Page",
-    "category" : "wm.Variable",
-    "dataBinding" : [ ],
-    "dataSet" : {
-      "dataValue" : "Logging in with username and password"
-    },
-    "type" : "string",
-    "isList" : false,
-    "saveInPhonegap" : false
-  },
-  "loginHelpText" : {
-    "_id" : "wm-loginHelpText-wm.Variable-1502111846993",
-    "name" : "loginHelpText",
-    "owner" : "Page",
-    "category" : "wm.Variable",
-    "dataBinding" : [ ],
-    "dataSet" : {
-      "dataValue" : "To login using the User Credential option, simply enter your username and email in the login dialog box."
-    },
-    "type" : "string",
-    "isList" : false,
-    "saveInPhonegap" : false
-  },
-  "loginHelpTitle" : {
-    "_id" : "wm-loginHelpTitle-wm.Variable-1502111711323",
-    "name" : "loginHelpTitle",
-    "owner" : "Page",
-    "category" : "wm.Variable",
-    "dataBinding" : [ ],
-    "dataSet" : {
-      "dataValue" : "User Credentials"
-    },
-    "type" : "string",
-    "isList" : false,
-    "saveInPhonegap" : false
-  },
-  "loginOptionsMenuLabels" : {
-    "_id" : "wm-loginOptionsMenuLabels-wm.Variable-1502143652167",
-    "name" : "loginOptionsMenuLabels",
-    "owner" : "Page",
-    "category" : "wm.Variable",
-    "dataBinding" : [ ],
-    "dataSet" : {
-      "dataValue" : "User Credentials, Secure Access Key, Secure Access File"
-    },
-    "type" : "string",
-    "isList" : false,
-    "saveInPhonegap" : false
-  },
-  "moduleAlertDialogText" : {
-    "_id" : "wm-moduleAlertDialogText-wm.Variable-1502149857640",
-    "name" : "moduleAlertDialogText",
-    "owner" : "Page",
-    "category" : "wm.Variable",
-    "dataBinding" : [ ],
-    "dataSet" : {
-      "dataValue" : "There was some unknown issue.  Please try your operation again and if this persists, contact support."
-    },
-    "type" : "string",
-    "isList" : false,
-    "saveInPhonegap" : false
-  },
-  "moduleAlertDialogTitle" : {
-    "_id" : "wm-moduleAlertDialogTitle-wm.Variable-1502149734272",
-    "name" : "moduleAlertDialogTitle",
-    "owner" : "Page",
-    "category" : "wm.Variable",
-    "dataBinding" : [ ],
-    "dataSet" : {
-      "dataValue" : "Important Notice!"
-    },
-    "type" : "string",
-    "isList" : false,
-    "saveInPhonegap" : false
-  },
-  "showUserCredDialog" : {
-    "_id" : "wm-showUserCredDialog-wm.Variable-1502139647183",
-    "name" : "showUserCredDialog",
-    "owner" : "Page",
-    "category" : "wm.Variable",
-    "dataBinding" : [ ],
-    "dataSet" : {
-      "dataValue" : true
-    },
-    "type" : "boolean",
-    "isList" : false,
-    "saveInPhonegap" : false
-  },
-  "supportedLocale" : {
-    "_id" : "wm-wm.Variable1402640443182",
-    "name" : "supportedLocale",
-    "owner" : "Page",
-    "category" : "wm.Variable",
-    "dataSet" : {
-      "en" : "English"
-    },
-    "type" : "string",
-    "isList" : false,
-    "saveInPhonegap" : false
-  },
-  "userAccessFile" : {
-    "_id" : "wm-userAccessFile-wm.Variable-1502148537587",
-    "name" : "userAccessFile",
-    "owner" : "Page",
-    "category" : "wm.Variable",
-    "dataBinding" : [ ],
-    "dataSet" : {
-      "dataValue" : ""
-    },
-    "type" : "string",
-    "isList" : false,
-    "saveInPhonegap" : false
-  },
-  "userAccessKey" : {
-    "_id" : "wm-userAccessKey-wm.Variable-1502146590037",
-    "name" : "userAccessKey",
-    "owner" : "Page",
-    "category" : "wm.Variable",
-    "dataBinding" : [ ],
-    "dataSet" : {
-      "dataValue" : ""
-    },
-    "type" : "string",
-    "isList" : false,
-    "saveInPhonegap" : false
-  }
-}
+var _MainPage_Variables_ ={"FileServiceUploadFile":{"_id":"wm-FileServiceUploadFile-wm.ServiceVariable-1502148877701","name":"FileServiceUploadFile","owner":"Page","category":"wm.ServiceVariable","dataBinding":[],"type":"com.dmp_login_screen.fileservice.FileService.FileUploadResponse","service":"FileService","operation":"uploadFile","operationId":"FileController_uploadFile","serviceType":"JavaService","dataSet":[],"isList":false,"maxResults":20,"startUpdate":false,"autoUpdate":true,"inFlightBehavior":"executeLast","transformationRequired":false,"saveInPhonegap":false,"isDefault":true,"controller":"File"},"loginHelpSubTitle":{"_id":"wm-loginHelpSubTitle-wm.Variable-1502111765557","name":"loginHelpSubTitle","owner":"Page","category":"wm.Variable","dataBinding":[],"dataSet":{"dataValue":"Logging in with username and password"},"type":"string","isList":false,"saveInPhonegap":false},"loginHelpText":{"_id":"wm-loginHelpText-wm.Variable-1502111846993","name":"loginHelpText","owner":"Page","category":"wm.Variable","dataBinding":[],"dataSet":{"dataValue":"<p>When you create your account, you set a username and password. To login using the Username and Password (credentials) option, simply enter your username and password in the login dialog box.</p><p></p>"},"type":"string","isList":false,"saveInPhonegap":false},"loginHelpTitle":{"_id":"wm-loginHelpTitle-wm.Variable-1502111711323","name":"loginHelpTitle","owner":"Page","category":"wm.Variable","dataBinding":[],"dataSet":{"dataValue":"User Credentials"},"type":"string","isList":false,"saveInPhonegap":false},"loginOptionsMenuLabels":{"_id":"wm-loginOptionsMenuLabels-wm.Variable-1502143652167","name":"loginOptionsMenuLabels","owner":"Page","category":"wm.Variable","dataBinding":[],"dataSet":{"dataValue":"User Credentials, Secure Access Key, Secure Access File"},"type":"string","isList":false,"saveInPhonegap":false},"moduleAlertDialogText":{"_id":"wm-moduleAlertDialogText-wm.Variable-1502149857640","name":"moduleAlertDialogText","owner":"Page","category":"wm.Variable","dataBinding":[],"dataSet":{"dataValue":"There was some unknown issue.  Please try your operation again and if this persists, contact support."},"type":"string","isList":false,"saveInPhonegap":false},"moduleAlertDialogTitle":{"_id":"wm-moduleAlertDialogTitle-wm.Variable-1502149734272","name":"moduleAlertDialogTitle","owner":"Page","category":"wm.Variable","dataBinding":[],"dataSet":{"dataValue":"Important Notice!"},"type":"string","isList":false,"saveInPhonegap":false},"showUserCredDialog":{"_id":"wm-showUserCredDialog-wm.Variable-1502139647183","name":"showUserCredDialog","owner":"Page","category":"wm.Variable","dataBinding":[],"dataSet":{"dataValue":true},"type":"boolean","isList":false,"saveInPhonegap":false},"supportedLocale":{"_id":"wm-wm.Variable1402640443182","name":"supportedLocale","owner":"Page","category":"wm.Variable","dataSet":{"en":"English"},"type":"string","isList":false,"saveInPhonegap":false},"userAccessFile":{"_id":"wm-userAccessFile-wm.Variable-1502148537587","name":"userAccessFile","owner":"Page","category":"wm.Variable","dataBinding":[],"dataSet":{"dataValue":""},"type":"string","isList":false,"saveInPhonegap":false},"userAccessKey":{"_id":"wm-userAccessKey-wm.Variable-1502146590037","name":"userAccessKey","owner":"Page","category":"wm.Variable","dataBinding":[],"dataSet":{"dataValue":""},"type":"string","isList":false,"saveInPhonegap":false}}
 </script>
 <script id="Main.html" type="text/ng-template">
 <wm-page data-ng-controller="DMP_Login_ScreenController" name="page1">
@@ -448,7 +296,7 @@ var _MainPage_Variables_ ={
             </wm-gridrow>
         </wm-layoutgrid>
     </wm-content>
-    <wm-view class="dialog-view usercred-dialog-view" name="logopt_usercreds_dialog" show="bind:Variables.showUserCredDialog.dataSet.dataValue" deferload="false" viewgroup="default">
+    <wm-view class="dialog-view usercred-dialog-view" name="logopt_usercreds_dialog" show="false" deferload="false" viewgroup="default">
         <wm-logindialog modal="true" caption="Login" iconclass="wi wi-sign-in" name="usercred_login_dialog" title="Login with User Credentials">
             <wm-form errormessage="" captionposition="top" name="usercred_login_form">
                 <wm-message scopedataset="loginMessage" class="app-login-dialog-message" name="message2"></wm-message>
