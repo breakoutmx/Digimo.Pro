@@ -27,6 +27,13 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/HerokuMysqlDMP1/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/securityService/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -110,6 +117,7 @@
                             <sources>
                                 <source>services/AccessKeyGenerateService/src</source>
                                 <source>services/FileService/src</source>
+                                <source>services/HerokuMysqlDMP1/src</source>
                                 <source>services/securityService/src</source>
                             </sources>
                         </configuration>
@@ -289,6 +297,11 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.4.1208.jre7</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
         </dependency>
     </dependencies>
     <dependencyManagement>

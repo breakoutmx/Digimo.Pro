@@ -1,0 +1,7 @@
+{
+  "description" : null,
+  "draft" : false,
+  "name" : "HerokuMysqlDMP1",
+  "packageName" : "com.digimo_pro.herokumysqldmp1",
+  "tables" : [ ]
+}

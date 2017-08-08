@@ -7,7 +7,29 @@
   "iconUrl" : "/resources/images/imagelists/prefab-icon.png",
   "resources" : {
     "styles" : [ "/pages/Main/Main.css" ],
-    "scripts" : [ ]
+    "scripts" : [ ],
+    "modules" : [ ]
   },
-  "properties" : { }
+  "properties" : {
+    "startlogoimage" : {
+      "type" : "string",
+      "displayName" : "Start Logo Image",
+      "helpText" : "The logo image to use.",
+      "bindable" : "in-bound",
+      "value" : "resources/images/imagelists/TDM_Start_Screen_Logo.png",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    },
+    "startctaimage" : {
+      "type" : "string",
+      "displayName" : "Start CTA Image",
+      "helpText" : "CTA Button Image",
+      "bindable" : "in-bound",
+      "value" : "resources/images/imagelists/TDM_Start_Screen_CTAButton.png",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
+    }
+  }
 }

@@ -1,0 +1,33 @@
+{
+  "username" : "b25abc9eabe008",
+  "password" : "7b6a43524a237f193334622c4b5c783a172653",
+  "url" : "jdbc:mysql://us-cdbr-iron-east-05.cleardb.net:3306/heroku_af4c262eb577dc6?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull",
+  "driverClass" : "com.mysql.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "HerokuMysqlDMP1",
+  "packageName" : "com.digimo_pro.herokumysqldmp1",
+  "dbType" : "MySQL",
+  "host" : "us-cdbr-iron-east-05.cleardb.net",
+  "dbName" : "heroku_af4c262eb577dc6",
+  "port" : "3306",
+  "schemaName" : "public",
+  "tableFilter" : [ {
+    "table" : "Users",
+    "schema" : "public"
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null
+  },
+  "readOnly" : false
+}
