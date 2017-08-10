@@ -1,0 +1,64 @@
+<wm-page data-ng-controller="RegisterPageController" name="page1">
+    <wm-content name="content1" padding="0px">
+        <wm-page-content columnwidth="12" name="page_content1" padding="0px">
+            <wm-container name="container4" height="100%" backgroundimage="http://dev.wavemaker.com/templates/web/signup_simple.jpg" backgroundrepeat="no-repeat" backgroundsize="100% 100%" opacity="1">
+                <wm-layoutgrid name="layoutgrid2" width="100%" height="100%">
+                    <wm-gridrow name="gridrow6" height="15%" class="hidden-xs">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn8_1" class="hidden-xs"></wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow4" height="100%">
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn6_1"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn11" padding="1em">
+                            <wm-form title="Create a new Account" style="max-width: 420px; margin: 0 auto;" class="panel-default" name="signupForm" captionposition="top">
+                                <wm-layoutgrid name="layoutgrid3_1">
+                                    <wm-gridrow name="gridrow5">
+                                        <wm-gridcolumn name="gridcolumn6" padding="0em .5em 1em .5em" columnwidth="6" class="col-md-push-6">
+                                            <wm-composite name="composite5_1">
+                                                <wm-label caption="Name" required="false" name="label5"></wm-label>
+                                                <wm-container class="col-md-9" width="100%" opacity="1" name="container6_1">
+                                                    <wm-text tabindex="1" placeholder="User Name" name="text5"></wm-text>
+                                                </wm-container>
+                                            </wm-composite>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn5" class="col-md-pull-6" padding="0em .5em 1em .5em">
+                                            <wm-composite name="composite4">
+                                                <wm-label caption="Email" name="wmSignupEmaillbl" required="true"></wm-label>
+                                                <wm-container class="col-md-9" name="container4_1" width="100%" opacity="1">
+                                                    <wm-text tabindex="1" placeholder="example@wavemaker.com" name="wmSignupEmail"></wm-text>
+                                                </wm-container>
+                                            </wm-composite>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow6">
+                                        <wm-gridcolumn name="gridcolumn7" columnwidth="6" padding="0em .5em 1em .5em">
+                                            <wm-composite name="composite5">
+                                                <wm-label caption="Password" name="wmSignupPwdlbl" required="true"></wm-label>
+                                                <wm-container class="col-md-9" name="container5" width="100%">
+                                                    <wm-text name="wmSignupPwd" placeholder="Type Password" type="password"></wm-text>
+                                                </wm-container>
+                                            </wm-composite>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn columnwidth="6" name="gridcolumn9" padding="0em .5em 1em .5em">
+                                            <wm-composite horizontalalign="left" name="composite6">
+                                                <wm-label caption="Confirm Password" name="wmSignupConPwdlbl" required="true"></wm-label>
+                                                <wm-container class="col-md-9" name="container6" width="100%">
+                                                    <wm-text name="wmSignupConPwd" placeholder="Retype Password" type="password"></wm-text>
+                                                </wm-container>
+                                            </wm-composite>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow name="gridrow4_1">
+                                        <wm-gridcolumn columnwidth="12" name="gridcolumn8" padding="unset .5em">
+                                            <wm-button caption="Create Account" type="submit" class="btn-primary" name="button4" width="100%" margin=".5em unset"></wm-button>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-form>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn7_1"></wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

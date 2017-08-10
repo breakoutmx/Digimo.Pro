@@ -56,6 +56,17 @@
     "operation" : "gotoPage",
     "pageName" : "Main"
   },
+  "goToPage_Register" : {
+    "_id" : "wm-goToPage_Register-wm.NavigationVariable-1502232926311",
+    "name" : "goToPage_Register",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "Register",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Start" : {
     "_id" : "wm-goToPage_Start-wm.NavigationVariable-1502219634673",
     "name" : "goToPage_Start",
@@ -66,6 +77,92 @@
     "pageName" : "Start",
     "dataSet" : [ ],
     "pageTransitions" : "none"
+  },
+  "loggedInUser" : {
+    "_id" : "wm-loggedInUser-wm.Variable-1502227598840",
+    "name" : "loggedInUser",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "name" : "",
+      "id" : "",
+      "tenantId" : "",
+      "isAuthenticated" : false,
+      "isSecurityEnabled" : true,
+      "roles" : [ ]
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "loginVariable" : {
+    "_id" : "wm-loginVariable-wm.LoginVariable-1502227598839",
+    "name" : "loginVariable",
+    "owner" : "App",
+    "category" : "wm.LoginVariable",
+    "dataBinding" : [ {
+      "target" : "username",
+      "value" : "bind:Widgets.usernametext.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "password",
+      "value" : "bind:Widgets.passwordtext.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "rememberme",
+      "value" : "bind:Widgets.remembermecheck.datavalue",
+      "type" : "boolean"
+    } ],
+    "dataSet" : {
+      "username" : "",
+      "password" : "",
+      "rememberme" : false
+    },
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "onError" : "loginVariableonError($event, $s)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "useDefaultSuccessHandler" : true
+  },
+  "logoutVariable" : {
+    "_id" : "wm-logoutVariable-wm.LogoutVariable-1502227598840",
+    "name" : "logoutVariable",
+    "owner" : "App",
+    "category" : "wm.LogoutVariable",
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "redirectTo" : "Access",
+    "useDefaultSuccessHandler" : true
+  },
+  "securityCreateUserService" : {
+    "_id" : "wm-securityCreateUserService-wm.ServiceVariable-1502233851001",
+    "name" : "securityCreateUserService",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.digimo_pro.herokumysqldmp1.Users",
+    "service" : "HerokuMysqlDMP1",
+    "operation" : "createUsers",
+    "operationId" : "UsersController_createUsers",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Users",
+    "spinnerContext" : "signupForm",
+    "spinnerMessage" : "Creating your account!"
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",

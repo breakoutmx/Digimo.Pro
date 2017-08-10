@@ -57,9 +57,6 @@
                 <prop key="hibernate.dialect">
                 ${HerokuMysqlDMP1.dialect}
                 </prop>
-                <prop key="hibernate.default_schema">
-                ${HerokuMysqlDMP1.schemaName}
-                </prop>
                 <prop key="hibernate.show_sql">
                     false
                 </prop>

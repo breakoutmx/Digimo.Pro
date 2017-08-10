@@ -10,10 +10,10 @@
   "host" : "us-cdbr-iron-east-05.cleardb.net",
   "dbName" : "heroku_af4c262eb577dc6",
   "port" : "3306",
-  "schemaName" : "public",
+  "schemaName" : null,
   "tableFilter" : [ {
-    "table" : "Users",
-    "schema" : "public"
+    "table" : "users",
+    "schema" : null
   } ],
   "schemaFilter" : [ ],
   "impersonateUser" : false,

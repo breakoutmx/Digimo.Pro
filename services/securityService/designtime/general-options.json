@@ -1,8 +1,8 @@
 {
-  "enforceSecurity" : false,
+  "enforceSecurity" : true,
   "loginConfig" : {
     "type" : "PAGE",
-    "pageName" : "Login",
+    "pageName" : "Access",
     "sessionTimeout" : {
       "type" : "DIALOG",
       "pageName" : null,
@@ -19,7 +19,7 @@
     "enforceXssSecurity" : false,
     "policyFile" : null,
     "xssFilterStrategy" : "NONE",
-    "policyType" : null
+    "policyType" : "IMPORT"
   },
   "csrfConfig" : {
     "enforceCsrfSecurity" : true,
@@ -30,7 +30,7 @@
     "parameter" : "WM_AUTH_TOKEN",
     "tokenValiditySeconds" : 1800
   },
-  "authProviders" : [ "DEMO" ],
+  "authProviders" : [ "DATABASE" ],
   "xFrameOptions" : {
     "mode" : "SAMEORIGIN",
     "allowFromUrl" : null

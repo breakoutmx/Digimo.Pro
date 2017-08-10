@@ -2,12 +2,24 @@
   "name" : "admin",
   "description" : null,
   "roleConfig" : {
-    "landingPage" : null
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "manager",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "support",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
   }
 }, {
   "name" : "user",
   "description" : null,
   "roleConfig" : {
-    "landingPage" : null
+    "landingPage" : "Main"
   }
 } ]

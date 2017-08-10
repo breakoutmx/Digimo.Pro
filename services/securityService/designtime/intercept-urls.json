@@ -1,6 +1,36 @@
 [ {
+  "urlPattern" : "/pages/Access/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Register/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/prefabs/DMP_Login_Screen/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
   "urlPattern" : "/**",
   "permission" : "Authenticated",
   "roles" : null,
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/AccessKeyGenerateService/invoke/gen-access-key/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/AccessKeyGenerateService/invoke/gen-access-key",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/file/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
   "httpMethod" : null
 } ]
