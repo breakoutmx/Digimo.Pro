@@ -1,1 +1,48 @@
+body {
+    background: #000;
+}
 
+.signupform-label{
+    color: #fff;
+}
+
+.panel-signup-form, .new-user-onboard-wizard {
+    color: #fff;
+    background-color: #333;
+    background-color: rgba(0,0,0,.85);
+    border: 8px solid #333;
+    padding: 20px 10px;
+    border-radius: 8px;
+}
+
+.app-wizard-actions.panel-footer {
+    background-color: #000;
+    background-color: rgba(0,0,0,.75);
+    border:2px solid black;
+}
+/*Onboard Wizard Step Labels*/
+.app-wizard .app-wizard-steps .app-wizard-step.current a {
+    background-color: #000;
+    background-color: rgba(0,0,0,.75);
+}
+.app-wizard .app-wizard-steps .app-wizard-step.disabled a {
+    background-color: #333;
+    background-color: rgba(55,55,55,.75);
+    background-color: #333;
+}
+.wm-app .nav-pills > li.active > a {
+    background-color: #000;
+    color: #666;
+}
+.app-wizard .app-wizard-steps .app-wizard-step.current a {
+    background-color: #58b957;
+    color: white;
+}
+.wm-app .app-wizard-actions-right .btn {
+    background-color: #212121;
+}
+.wm-app .app-wizard-actions-right .btn-primary {
+    color: #fff;
+    background-color: #5b89db;
+    border-color: #467ad6;
+}

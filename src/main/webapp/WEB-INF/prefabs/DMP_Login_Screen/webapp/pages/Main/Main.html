@@ -1,5 +1,5 @@
 <wm-page data-ng-controller="DMP_Login_ScreenController" name="page1">
-    <wm-content name="content1" backgroundimage="resources/images/imagelists/Wolf-BG-Dark--2.jpg" backgroundsize="100%, 100%" backgroundposition="top center" backgroundrepeat="no-repeat" backgroundcolor="#5f5f5f">
+    <wm-content name="content1" backgroundrepeat="no-repeat" class="app-page-content" backgroundcolor="#000000" backgroundposition="left" backgroundimage="bind:startscreenbgimage">
         <wm-layoutgrid name="layoutgrid1" columns="3">
             <wm-gridrow name="gridrow3">
                 <wm-gridcolumn columnwidth="4" name="gridcolumn5"></wm-gridcolumn>
@@ -100,7 +100,7 @@
     <wm-view class="dialog-view usercred-dialog-view" name="logopt_usercreds_dialog" show="false" deferload="false" viewgroup="default">
         <wm-logindialog modal="true" caption="Login" iconclass="wi wi-sign-in" name="usercred_login_dialog" title="Login with User Credentials">
             <wm-form errormessage="" captionposition="top" name="usercred_login_form">
-                <wm-message scopedataset="loginMessage" class="app-login-dialog-message" name="message2"></wm-message>
+                <wm-message scopedataset="loginMessage" class="app-login-dialog-message" name="message2" type="error"></wm-message>
                 <wm-composite name="composite3">
                     <wm-label caption="Username" class="col-md-3 control-label" name="label11"></wm-label>
                     <wm-container class="col-md-9" name="container3">

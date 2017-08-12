@@ -33,4 +33,9 @@
   "permission" : "PermitAll",
   "roles" : [ ],
   "httpMethod" : null
+}, {
+  "urlPattern" : "/services/HerokuMysqlDMP1/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
 } ]

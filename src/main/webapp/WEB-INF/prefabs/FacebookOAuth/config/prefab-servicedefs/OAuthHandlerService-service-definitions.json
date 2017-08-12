@@ -1,0 +1,70 @@
+{
+  "FacebookOAuth_OAuthHandlerService_getAccessToken" : {
+    "id" : "FacebookOAuth_OAuthHandlerService_getAccessToken",
+    "service" : "OAuthHandlerService",
+    "controller" : null,
+    "operationType" : "getAccessToken",
+    "type" : "java.lang.String",
+    "wmServiceOperationInfo" : {
+      "name" : "getAccessToken",
+      "methodType" : null,
+      "relativePath" : "/oAuthHandler/accessToken",
+      "httpMethod" : "POST",
+      "parameters" : [ ],
+      "produces" : null,
+      "consumes" : null,
+      "authorization" : null
+    }
+  },
+  "FacebookOAuth_OAuthHandlerService_callback" : {
+    "id" : "FacebookOAuth_OAuthHandlerService_callback",
+    "service" : "OAuthHandlerService",
+    "controller" : null,
+    "operationType" : "callback",
+    "type" : ".void",
+    "wmServiceOperationInfo" : {
+      "name" : "callback",
+      "methodType" : null,
+      "relativePath" : "/oAuthHandler/callback",
+      "httpMethod" : "GET",
+      "parameters" : [ ],
+      "produces" : null,
+      "consumes" : null,
+      "authorization" : null
+    }
+  },
+  "FacebookOAuth_OAuthHandlerService_getCallbackURL" : {
+    "id" : "FacebookOAuth_OAuthHandlerService_getCallbackURL",
+    "service" : "OAuthHandlerService",
+    "controller" : null,
+    "operationType" : "getCallbackURL",
+    "type" : "java.lang.String",
+    "wmServiceOperationInfo" : {
+      "name" : "getCallbackURL",
+      "methodType" : null,
+      "relativePath" : "/oAuthHandler/callbackURL",
+      "httpMethod" : "POST",
+      "parameters" : [ ],
+      "produces" : null,
+      "consumes" : null,
+      "authorization" : null
+    }
+  },
+  "FacebookOAuth_OAuthHandlerService_getLoginURL" : {
+    "id" : "FacebookOAuth_OAuthHandlerService_getLoginURL",
+    "service" : "OAuthHandlerService",
+    "controller" : null,
+    "operationType" : "getLoginURL",
+    "type" : "java.lang.String",
+    "wmServiceOperationInfo" : {
+      "name" : "getLoginURL",
+      "methodType" : null,
+      "relativePath" : "/oAuthHandler/loginURl",
+      "httpMethod" : "POST",
+      "parameters" : [ ],
+      "produces" : null,
+      "consumes" : null,
+      "authorization" : null
+    }
+  }
+}

@@ -30,6 +30,16 @@
       "widget" : "string",
       "show" : true,
       "disabled" : false
+    },
+    "startscreenbgimage" : {
+      "type" : "string",
+      "displayName" : "Start BG Image",
+      "helpText" : "Full BG Cover image which is aligned to the left.",
+      "bindable" : "in-bound",
+      "value" : "resources/images/imagelists/bg_astrobizman.jpg",
+      "widget" : "string",
+      "show" : true,
+      "disabled" : false
     }
   }
 }

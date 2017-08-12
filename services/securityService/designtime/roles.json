@@ -22,4 +22,10 @@
   "roleConfig" : {
     "landingPage" : "Main"
   }
+}, {
+  "name" : "premiumuser",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
 } ]

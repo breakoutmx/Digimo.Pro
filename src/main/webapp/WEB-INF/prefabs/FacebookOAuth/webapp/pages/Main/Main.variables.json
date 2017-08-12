@@ -1,0 +1,144 @@
+{
+  "loginSuccess": {
+    "_id": "wm-loginSuccess-wm.NotificationVariable-1487222332822",
+    "name": "loginSuccess",
+    "owner": "Page",
+    "category": "wm.NotificationVariable",
+    "dataBinding": [{
+      "target": "content",
+      "value": "inline",
+      "type": "string"
+    }, {
+      "target": "text",
+      "value": "bind:loginsuccessmessage",
+      "type": "string"
+    }, {
+      "target": "duration",
+      "value": "3000",
+      "type": "number"
+    }, {
+      "target": "class",
+      "value": "Success",
+      "type": "string"
+    }, {
+      "target": "toasterPosition",
+      "value": "bottom right",
+      "type": "string"
+    }],
+    "operation": "toast"
+  },
+  "OAuthHandlerServiceGetLoginURL" : {
+    "isList" : false,
+    "inFlightBehavior" : "executeLast",
+    "onSuccess" : "OAuthHandlerServiceGetLoginURLonSuccess($event, $scope)",
+    "serviceType" : "JavaService",
+    "startUpdate" : false,
+    "type" : "java.lang.String",
+    "transformationRequired" : false,
+    "maxResults" : 20,
+    "operationId" : "FacebookOAuth_OAuthHandlerService_getLoginURL",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "getLoginURL",
+    "category" : "wm.ServiceVariable",
+    "autoUpdate" : false,
+    "_id" : "wm-wm.ServiceVariable1431009822685",
+    "dataBinding" : [ ],
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "operationType" : null,
+    "name" : "OAuthHandlerServiceGetLoginURL",
+    "designMaxResults" : 10,
+    "owner" : "Page",
+    "service" : "OAuthHandlerService"
+  },
+  "OAuthHandlerServiceGetCallbackURL" : {
+    "isList" : false,
+    "inFlightBehavior" : "executeLast",
+    "serviceType" : "JavaService",
+    "startUpdate" : true,
+    "type" : "java.lang.String",
+    "transformationRequired" : false,
+    "maxResults" : 20,
+    "operationId" : "FacebookOAuth_OAuthHandlerService_getCallbackURL",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "getCallbackURL",
+    "category" : "wm.ServiceVariable",
+    "autoUpdate" : false,
+    "_id" : "wm-wm.ServiceVariable1431009822680",
+    "dataBinding" : [ ],
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "operationType" : null,
+    "name" : "OAuthHandlerServiceGetCallbackURL",
+    "designMaxResults" : 10,
+    "owner" : "Page",
+    "service" : "OAuthHandlerService"
+  },
+  "OAuthHandlerServiceCallback" : {
+    "isList" : false,
+    "inFlightBehavior" : "executeLast",
+    "serviceType" : "JavaService",
+    "startUpdate" : false,
+    "type" : ".void",
+    "transformationRequired" : false,
+    "maxResults" : 20,
+    "operationId" : "FacebookOAuth_OAuthHandlerService_callback",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "callback",
+    "category" : "wm.ServiceVariable",
+    "autoUpdate" : false,
+    "_id" : "wm-wm.ServiceVariable1431009822685",
+    "dataBinding" : [ ],
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "name" : "OAuthHandlerServiceCallback",
+    "designMaxResults" : 10,
+    "owner" : "Page",
+    "service" : "OAuthHandlerService"
+  },
+  "supportedLocale" : {
+    "category" : "wm.Variable",
+    "isList" : false,
+    "_id" : "wm-wm.Variable1402640443182",
+    "saveInPhonegap" : false,
+    "dataBinding" : [ ],
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "type" : "string",
+    "dataSet" : {
+      "en" : "English"
+    }
+  },
+  "OAuthHandlerServiceGetAccessToken" : {
+    "isList" : false,
+    "inFlightBehavior" : "executeLast",
+    "onSuccess" : "OAuthHandlerServiceGetAccessTokenonSuccess($event, $scope)",
+    "serviceType" : "JavaService",
+    "startUpdate" : true,
+    "type" : "java.lang.String",
+    "transformationRequired" : false,
+    "maxResults" : 20,
+    "operationId" : "FacebookOAuth_OAuthHandlerService_getAccessToken",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "getAccessToken",
+    "category" : "wm.ServiceVariable",
+    "autoUpdate" : false,
+    "_id" : "wm-wm.ServiceVariable1431009822682",
+    "dataBinding" : [ ],
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "operationType" : null,
+    "name" : "OAuthHandlerServiceGetAccessToken",
+    "designMaxResults" : 10,
+    "owner" : "Page",
+    "service" : "OAuthHandlerService"
+  }
+}

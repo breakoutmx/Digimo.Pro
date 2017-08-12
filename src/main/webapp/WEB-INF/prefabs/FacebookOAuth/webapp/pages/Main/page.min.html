@@ -1,0 +1,218 @@
+<style id="Main.css">
+.facebook-login-btn {
+    background-color: #3b5998;
+    color: #fff!important;
+}
+.facebook-login-btn .btn-caption:not(:empty) {
+    border-left: 0.5px solid rgba(255, 255, 255, 0.34);
+    padding-left: 5px;
+}
+</style>
+<script id="Main.js">
+Application.$controller("FacebookOAuthController", ["$scope", function ($scope) {
+    "use strict";
+    var LOGIN_MODE = {
+        'AUTOMATIC': "auto"
+    };
+
+    /* 
+     * This function will be invoked when any of this prefab's property is changed
+     * @key: property name
+     * @newVal: new value of the property
+     * @oldVal: old value of the property
+     */
+    function propertyChangeHandler(key, newVal, oldVal) {
+        /*
+         switch (key) {
+         case "prop1":
+         // do something with newVal for property 'prop1'
+         break;
+         case "prop2":
+         // do something with newVal for property 'prop2'
+         break;
+         }
+         */
+    }
+        /* register the property change handler */
+    $scope.propertyManager.add($scope.propertyManager.ACTIONS.CHANGE, propertyChangeHandler);
+
+
+    $scope.OAuthHandlerServiceGetLoginURLonSuccess = function (variable, data) {
+        window.top.location = data;
+    };
+
+    $scope.onInitPrefab = function () {
+        $scope.login = $scope.Variables.OAuthHandlerServiceGetLoginURL.invoke;
+    };
+
+    $scope.OAuthHandlerServiceGetAccessTokenonSuccess = function(variable, data) {
+        if (data) {
+            $scope.accesstoken = data;
+            $scope.Widgets.signInButton.disabled = true;
+            if ($scope.loginsuccessmessage) {
+                $scope.Variables.loginSuccess.invoke();
+            }
+            Utils.triggerFn($scope.onLoginsuccess);
+        } else if ($scope.loginmode === LOGIN_MODE.AUTOMATIC) {
+            $scope.Variables.OAuthHandlerServiceGetLoginURL.update();
+        }
+    };
+
+}]);
+</script>
+<script id="Main.variables.json">
+var _MainPage_Variables_ ={
+  "loginSuccess": {
+    "_id": "wm-loginSuccess-wm.NotificationVariable-1487222332822",
+    "name": "loginSuccess",
+    "owner": "Page",
+    "category": "wm.NotificationVariable",
+    "dataBinding": [{
+      "target": "content",
+      "value": "inline",
+      "type": "string"
+    }, {
+      "target": "text",
+      "value": "bind:loginsuccessmessage",
+      "type": "string"
+    }, {
+      "target": "duration",
+      "value": "3000",
+      "type": "number"
+    }, {
+      "target": "class",
+      "value": "Success",
+      "type": "string"
+    }, {
+      "target": "toasterPosition",
+      "value": "bottom right",
+      "type": "string"
+    }],
+    "operation": "toast"
+  },
+  "OAuthHandlerServiceGetLoginURL" : {
+    "isList" : false,
+    "inFlightBehavior" : "executeLast",
+    "onSuccess" : "OAuthHandlerServiceGetLoginURLonSuccess($event, $scope)",
+    "serviceType" : "JavaService",
+    "startUpdate" : false,
+    "type" : "java.lang.String",
+    "transformationRequired" : false,
+    "maxResults" : 20,
+    "operationId" : "FacebookOAuth_OAuthHandlerService_getLoginURL",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "getLoginURL",
+    "category" : "wm.ServiceVariable",
+    "autoUpdate" : false,
+    "_id" : "wm-wm.ServiceVariable1431009822685",
+    "dataBinding" : [ ],
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "operationType" : null,
+    "name" : "OAuthHandlerServiceGetLoginURL",
+    "designMaxResults" : 10,
+    "owner" : "Page",
+    "service" : "OAuthHandlerService"
+  },
+  "OAuthHandlerServiceGetCallbackURL" : {
+    "isList" : false,
+    "inFlightBehavior" : "executeLast",
+    "serviceType" : "JavaService",
+    "startUpdate" : true,
+    "type" : "java.lang.String",
+    "transformationRequired" : false,
+    "maxResults" : 20,
+    "operationId" : "FacebookOAuth_OAuthHandlerService_getCallbackURL",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "getCallbackURL",
+    "category" : "wm.ServiceVariable",
+    "autoUpdate" : false,
+    "_id" : "wm-wm.ServiceVariable1431009822680",
+    "dataBinding" : [ ],
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "operationType" : null,
+    "name" : "OAuthHandlerServiceGetCallbackURL",
+    "designMaxResults" : 10,
+    "owner" : "Page",
+    "service" : "OAuthHandlerService"
+  },
+  "OAuthHandlerServiceCallback" : {
+    "isList" : false,
+    "inFlightBehavior" : "executeLast",
+    "serviceType" : "JavaService",
+    "startUpdate" : false,
+    "type" : ".void",
+    "transformationRequired" : false,
+    "maxResults" : 20,
+    "operationId" : "FacebookOAuth_OAuthHandlerService_callback",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "callback",
+    "category" : "wm.ServiceVariable",
+    "autoUpdate" : false,
+    "_id" : "wm-wm.ServiceVariable1431009822685",
+    "dataBinding" : [ ],
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "name" : "OAuthHandlerServiceCallback",
+    "designMaxResults" : 10,
+    "owner" : "Page",
+    "service" : "OAuthHandlerService"
+  },
+  "supportedLocale" : {
+    "category" : "wm.Variable",
+    "isList" : false,
+    "_id" : "wm-wm.Variable1402640443182",
+    "saveInPhonegap" : false,
+    "dataBinding" : [ ],
+    "name" : "supportedLocale",
+    "owner" : "Page",
+    "type" : "string",
+    "dataSet" : {
+      "en" : "English"
+    }
+  },
+  "OAuthHandlerServiceGetAccessToken" : {
+    "isList" : false,
+    "inFlightBehavior" : "executeLast",
+    "onSuccess" : "OAuthHandlerServiceGetAccessTokenonSuccess($event, $scope)",
+    "serviceType" : "JavaService",
+    "startUpdate" : true,
+    "type" : "java.lang.String",
+    "transformationRequired" : false,
+    "maxResults" : 20,
+    "operationId" : "FacebookOAuth_OAuthHandlerService_getAccessToken",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "operation" : "getAccessToken",
+    "category" : "wm.ServiceVariable",
+    "autoUpdate" : false,
+    "_id" : "wm-wm.ServiceVariable1431009822682",
+    "dataBinding" : [ ],
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "operationType" : null,
+    "name" : "OAuthHandlerServiceGetAccessToken",
+    "designMaxResults" : 10,
+    "owner" : "Page",
+    "service" : "OAuthHandlerService"
+  }
+}
+</script>
+<script id="Main.html" type="text/ng-template">
+<wm-page data-ng-controller="FacebookOAuthController" name="facebookpage">
+    <wm-content name="prefabview">
+        <wm-button ng-class="buttonclass" caption="bind:buttoncaption" type="button"
+                   name="signInButton" on-click="Variables.OAuthHandlerServiceGetLoginURL.invoke()"
+                   iconclass="fa fa-facebook" show="true" class="facebook-login-btn">
+        </wm-button>
+    </wm-content>
+</wm-page>
+</script>

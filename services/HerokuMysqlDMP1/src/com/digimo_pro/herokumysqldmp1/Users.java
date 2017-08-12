@@ -26,6 +26,7 @@ public class Users implements Serializable {
     private String username;
     private String password;
     private String role;
+    private String email;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,6 +64,15 @@ public class Users implements Serializable {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Column(name = "`email`", nullable = true, length = 255)
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 

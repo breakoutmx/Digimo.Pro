@@ -175,5 +175,25 @@
     "type" : "string",
     "isList" : false,
     "saveInPhonegap" : false
+  },
+  "tdmOnboardingWizard1Variable" : {
+    "_id" : "wm-tdmOnboardingWizard1Variable-wm.Variable-1502509074870",
+    "name" : "tdmOnboardingWizard1Variable",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "welcomeMessage",
+      "dataValue" : "Read This Important Message Below!"
+    }, {
+      "name" : "validatePurchaseEmail",
+      "dataValue" : "Enter Your Purchase Email"
+    }, {
+      "name" : "buildStarterProfile",
+      "dataValue" : "Build Your Starter Profile"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "saveInPhonegap" : false
   }
 }
