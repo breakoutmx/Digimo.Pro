@@ -1,0 +1,269 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.StripeRetrieveCustomers.basepath}",
+  "paths" : {
+    "/customers" : {
+      "x-WM-BASE_PATH" : "/customers",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "items" : {
+            "type" : "string"
+          },
+          "description" : "Authorization",
+          "name" : "Authorization",
+          "x-WM-EDITABLE" : true,
+          "type" : "string",
+          "required" : false,
+          "in" : "header"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "StripeRetrieveCustomers_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.StripeRetrieveCustomers.scheme}://${rest.StripeRetrieveCustomers.host}${rest.StripeRetrieveCustomers.basepath}/customers"
+    }
+  },
+  "host" : "${rest.StripeRetrieveCustomers.host}",
+  "schemes" : [ "${rest.StripeRetrieveCustomers.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "data" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/dataEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "has_more" : {
+          "type" : "boolean"
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "data", "has_more", "object", "url" ]
+    },
+    "java.lang.Object" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.java.lang.Object",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "subscriptions" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.subscriptions",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "data" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "has_more" : {
+          "type" : "boolean"
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "total_count" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "data", "has_more", "object", "total_count", "url" ]
+    },
+    "dataEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.dataEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "address_zip_check" : {
+          "type" : "string"
+        },
+        "exp_year" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "address_country" : {
+          "type" : "string"
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "tokenization_method" : {
+          "type" : "string"
+        },
+        "customer" : {
+          "type" : "string"
+        },
+        "address_city" : {
+          "type" : "string"
+        },
+        "sources" : {
+          "$ref" : "#/definitions/sources"
+        },
+        "currency" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "fingerprint" : {
+          "type" : "string"
+        },
+        "shipping" : {
+          "type" : "string"
+        },
+        "delinquent" : {
+          "type" : "boolean"
+        },
+        "created" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "address_line1_check" : {
+          "type" : "string"
+        },
+        "livemode" : {
+          "type" : "boolean"
+        },
+        "dynamic_last4" : {
+          "type" : "string"
+        },
+        "last4" : {
+          "type" : "string"
+        },
+        "account_balance" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "metadata" : {
+          "$ref" : "#/definitions/metadata"
+        },
+        "exp_month" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "funding" : {
+          "type" : "string"
+        },
+        "subscriptions" : {
+          "$ref" : "#/definitions/subscriptions"
+        },
+        "default_source" : {
+          "type" : "string"
+        },
+        "cvc_check" : {
+          "type" : "string"
+        },
+        "address_zip" : {
+          "type" : "string"
+        },
+        "address_state" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "discount" : {
+          "type" : "string"
+        },
+        "address_line1" : {
+          "type" : "string"
+        },
+        "address_line2" : {
+          "type" : "string"
+        },
+        "email" : {
+          "type" : "string"
+        },
+        "brand" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "account_balance", "address_city", "address_country", "address_line1", "address_line1_check", "address_line2", "address_state", "address_zip", "address_zip_check", "brand", "country", "created", "currency", "customer", "cvc_check", "default_source", "delinquent", "description", "discount", "dynamic_last4", "email", "exp_month", "exp_year", "fingerprint", "funding", "id", "last4", "livemode", "metadata", "name", "object", "shipping", "sources", "subscriptions", "tokenization_method" ]
+    },
+    "sources" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.sources",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "data" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/dataEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        },
+        "has_more" : {
+          "type" : "boolean"
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "total_count" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "data", "has_more", "object", "total_count", "url" ]
+    },
+    "metadata" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.metadata",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "page_uuid" : {
+          "type" : "string"
+        },
+        "detail_uuid" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "detail_uuid", "page_uuid" ]
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "d0f724a3-f15d-498e-a4d3-a08a93ccc7aa",
+    "x-WM-USE_PROXY_FOR_WEB" : false,
+    "x-WM-SERVICE_ID" : "stripe",
+    "x-WM-USE_PROXY_FOR_MOBILE" : false,
+    "version" : "2.0"
+  }
+}

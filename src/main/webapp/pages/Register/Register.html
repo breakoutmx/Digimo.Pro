@@ -3,22 +3,56 @@
         <wm-page-content columnwidth="12" name="page_content1" padding="0px" backgroundcolor="#000000">
             <wm-container name="container4" height="100%" backgroundimage="resources/images/imagelists/bg_astrobizman.jpg" backgroundrepeat="no-repeat" backgroundsize="100% 100%" opacity="1" backgroundcolor="#010101" backgroundattachment="scroll">
                 <wm-layoutgrid name="layoutgrid2" width="100%" height="100%">
-                    <wm-gridrow name="gridrow6" height="15%" class="hidden-xs">
-                        <wm-gridcolumn columnwidth="12" name="gridcolumn8_1" class="hidden-xs"></wm-gridcolumn>
+                    <wm-gridrow name="gridrow6" height="10%" class="hidden-xs">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn8_1" class="hidden-xs" padding="0px">
+                            <wm-picture name="picture1" picturesource="resources/images/imagelists/TDM_Start_Screen_Logo.png" width="100px" margin="20px unset unset 20px"></wm-picture>
+                        </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow6_1">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn10">
-                            <wm-wizard stepstyle="auto" name="newUserOnboardWizard" donebtnlabel="Finish" cancelable="false" defaultstep="newUserWizard" class="new-user-onboard-wizard" backgroundcolor="rgba(0,0,0,.75)">
+                            <wm-wizard stepstyle="justified" name="newUserOnboardWizard" donebtnlabel="Finish Setup!" cancelable="false" defaultstep="newUserWizard" class="new-user-onboard-wizard" backgroundcolor="rgba(0,0,0,.75)" height="100%" previousbtnlabel="Back">
                                 <wm-wizardstep name="newUserWizardContent" enableskip="false" iconclass="wi wi-donut-large fa-2x" title="Welcome to TDM">
-                                    <wm-iframe name="onboardingWelcomeSwayEmbed" iframesrc="https://sway.com/s/13YxbIDCtq2FnG1D/embed" width="100%" height="500px" show="false"></wm-iframe>
-                                    <wm-html name="html1">
-                                        <component key="kndbb"></component>
+                                    <wm-iframe name="onboardingWelcomeSwayEmbed" iframesrc="https://sway.com/s/13YxbIDCtq2FnG1D/embed" width="100%" height="500px" show="false" encodeurl="true"></wm-iframe>
+                                    <wm-html name="html1" width="100%" height="100%" show="true">
+                                        <iframe width="100%" height="500px" src="https://sway.com/s/13YxbIDCtq2FnG1D/embed" frameborder="0" marginheight="0" marginwidth="0" max-width="100%" sandbox="allow-forms allow-modals allow-orientation-lock allow-popups allow-same-origin allow-scripts"
+                                        scrolling="no" style="border: none; max-width: 100%; max-height: 100vh" allowfullscreen="" mozallowfullscreen="" msallowfullscreen="" webkitallowfullscreen=""></iframe>
                                     </wm-html>
                                 </wm-wizardstep>
-                                <wm-wizardstep name="wizardstep4" title="Validate Account" iconclass="wi wi-account-circle fa-2x"></wm-wizardstep>
+                                <wm-wizardstep name="wizardstep4" title="Validate Account" iconclass="wi wi-account-circle fa-2x">
+                                    <wm-liveform errormessage="" title="For Premium members, enter your purchase email.  For Jetpack Members enter any email you would like to use for your account." iconclass="wi wi-email fa-lg" defaultmode="Edit" dataset="bind:Variables.onboardingStepValidateAccountEmail.dataSet"
+                                    captionalign="left" captionposition="top" name="onboardingForm1" backgroundcolor="transparent">
+                                        <wm-layoutgrid columns="1" name="layoutgrid3">
+                                            <wm-gridrow name="gridrow7">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn11_1">
+                                                    <wm-form-field name="username" show="true" primary-key="false" generator="assigned" key="username" type="string" readonly="false" required="true" widget="text" maxchars="255" placeholder="Temporary username"
+                                                    defaultvalue="bind:Variables.UserServiceCreateTempUsername.dataSet.value" autocomplete="false" disabled="true" inputtype="text"></wm-form-field>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow8">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                                                    <wm-form-field name="password" show="true" primary-key="false" generator="assigned" key="password" type="string" readonly="false" required="true" widget="password" maxchars="255" inputtype="password" placeholder="Temporary Password"
+                                                    defaultvalue="temp_password" disabled="true" autocomplete="false"></wm-form-field>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow9">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                                                    <wm-form-field name="role" show="true" primary-key="false" generator="assigned" key="role" type="string" readonly="false" required="true" widget="text" maxchars="255" placeholder="Dynamically Updated Role Field"
+                                                    defaultvalue="jetpackuser" disabled="true" autocomplete="false" inputtype="text"></wm-form-field>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow10">
+                                                <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                                                    <wm-form-field name="email" show="true" primary-key="false" generator="assigned" key="email" type="string" readonly="false" required="true" widget="text" maxchars="255" inputtype="text" placeholder="Enter Your Email"
+                                                    autocomplete="false" updateon="default"></wm-form-field>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                        <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
+                                    </wm-liveform>
+                                </wm-wizardstep>
                                 <wm-wizardstep name="wizardstep3" title="Create Profile" iconclass="wi wi-assignment-ind fa-2x"></wm-wizardstep>
-                                <wm-wizardstep name="wizardstep4_1" title="DM Web Setup" iconclass="wi wi-apps fa-2x"></wm-wizardstep>
-                                <wm-wizardstep name="wizardstep5" title="DM Cloud Setup" iconclass="wi wi-cloud-circle fa-2x"></wm-wizardstep>
+                                <wm-wizardstep name="wizardstep4_1" title="DM Web" iconclass="wi wi-apps fa-2x"></wm-wizardstep>
+                                <wm-wizardstep name="wizardstep5" title="DM Cloud" iconclass="wi wi-cloud-circle fa-2x"></wm-wizardstep>
                             </wm-wizard>
                         </wm-gridcolumn>
                     </wm-gridrow>
@@ -81,3 +115,6 @@
         </wm-page-content>
     </wm-content>
 </wm-page>
+<script project="863EE5" src="https://cdn.component.io/v1">
+    < /div></div > < /div></div > < /div>
+</script>

@@ -59,3 +59,10 @@ Application.$controller("RegisterPageController", ["$scope", function($scope) {
         }
     };
 }]);
+
+Application.$controller("onboardingForm1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);

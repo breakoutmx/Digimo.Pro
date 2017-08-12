@@ -74,6 +74,8 @@
         <security:intercept-url pattern="/services/AccessKeyGenerateService/invoke/gen-access-key" access="permitAll" method="GET"/>
         <security:intercept-url pattern="/services/AccessKeyGenerateService/invoke/gen-access-key/**" access="permitAll"/>
         <security:intercept-url pattern="/services/HerokuMysqlDMP1/**" access="permitAll"/>
+        <security:intercept-url pattern="/services/StripeRetrieveCustomers/invoke/customers/**" access="permitAll"/>
+        <security:intercept-url pattern="/services/createTempUsername/**" access="permitAll"/>
         <security:intercept-url pattern="/services/file/**" access="permitAll"/>
         <security:intercept-url pattern="/services/prefabs/**/servicedefs" access="permitAll"/>
         <security:intercept-url pattern="/services/security/**" access="permitAll"/>
@@ -155,7 +157,7 @@
         <constructor-arg value="WM_APP_KEY"/>
     </bean>
     <bean class="com.wavemaker.commons.model.security.LoginConfig" id="loginConfig">
-        <property name="pageName" value="Access"/>
+        <property name="pageName" value="Register"/>
         <property name="sessionTimeout">
             <bean class="com.wavemaker.commons.model.security.SessionTimeoutConfig">
                 <property name="pageName" value=""/>

@@ -38,4 +38,14 @@
   "permission" : "PermitAll",
   "roles" : [ ],
   "httpMethod" : null
+}, {
+  "urlPattern" : "/services/createTempUsername/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/StripeRetrieveCustomers/invoke/customers/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
 } ]

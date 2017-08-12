@@ -2,7 +2,7 @@
   "enforceSecurity" : true,
   "loginConfig" : {
     "type" : "PAGE",
-    "pageName" : "Access",
+    "pageName" : "Register",
     "sessionTimeout" : {
       "type" : "DIALOG",
       "pageName" : null,
