@@ -28,4 +28,16 @@
   "roleConfig" : {
     "landingPage" : "Main"
   }
+}, {
+  "name" : "jetpackuser",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "foundinguser",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
 } ]

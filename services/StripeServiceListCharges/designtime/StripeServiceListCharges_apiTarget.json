@@ -1,0 +1,359 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "88256a50-1bef-4eee-ae4f-fd92a6ff936b",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "stripe",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "api.stripe.com",
+  "basePath" : "/v1",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/charges" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "StripeServiceListCharges_RestServiceVirtualController-invoke",
+        "consumes" : [ "text/xml" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "Authorization",
+          "required" : false,
+          "type" : "string",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "limit",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "customer",
+          "in" : "query",
+          "description" : "customer",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "starting_after",
+          "in" : "query",
+          "description" : "starting_after",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-BASE_PATH" : "/charges",
+      "x-WM-COMPLETE_PATH" : "${rest.StripeServiceListCharges.scheme}://${rest.StripeServiceListCharges.host}${rest.StripeServiceListCharges.basepath}/charges",
+      "x-WM-RELATIVE_PATH" : ""
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "required" : [ "data", "has_more", "object", "url" ],
+      "properties" : {
+        "data" : {
+          "type" : "array",
+          "uniqueItems" : false,
+          "items" : {
+            "$ref" : "#/definitions/dataEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "has_more" : {
+          "type" : "boolean"
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCharges.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "java.lang.Object" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCharges.java.lang.Object",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "source" : {
+      "required" : [ "address_city", "address_country", "address_line1", "address_line1_check", "address_line2", "address_state", "address_zip", "address_zip_check", "brand", "country", "customer", "cvc_check", "dynamic_last4", "exp_month", "exp_year", "fingerprint", "funding", "id", "last4", "metadata", "name", "object", "tokenization_method" ],
+      "properties" : {
+        "address_zip_check" : {
+          "type" : "string"
+        },
+        "exp_year" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "exp_month" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "funding" : {
+          "type" : "string"
+        },
+        "cvc_check" : {
+          "type" : "string"
+        },
+        "address_country" : {
+          "type" : "string"
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "tokenization_method" : {
+          "type" : "string"
+        },
+        "customer" : {
+          "type" : "string"
+        },
+        "address_city" : {
+          "type" : "string"
+        },
+        "address_zip" : {
+          "type" : "string"
+        },
+        "address_state" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "fingerprint" : {
+          "type" : "string"
+        },
+        "address_line1" : {
+          "type" : "string"
+        },
+        "address_line2" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "brand" : {
+          "type" : "string"
+        },
+        "address_line1_check" : {
+          "type" : "string"
+        },
+        "dynamic_last4" : {
+          "type" : "string"
+        },
+        "last4" : {
+          "type" : "string"
+        },
+        "metadata" : {
+          "$ref" : "#/definitions/metadata"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCharges.source",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "fraud_details" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCharges.fraud_details",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "refunds" : {
+      "required" : [ "data", "has_more", "object", "total_count", "url" ],
+      "properties" : {
+        "data" : {
+          "type" : "array",
+          "uniqueItems" : false,
+          "items" : {
+            "$ref" : "#/definitions/java.lang.Object"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "has_more" : {
+          "type" : "boolean"
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "total_count" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "url" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCharges.refunds",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "outcome" : {
+      "required" : [ "network_status", "reason", "risk_level", "seller_message", "type" ],
+      "properties" : {
+        "risk_level" : {
+          "type" : "string"
+        },
+        "network_status" : {
+          "type" : "string"
+        },
+        "reason" : {
+          "type" : "string"
+        },
+        "seller_message" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCharges.outcome",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "dataEntryItem" : {
+      "required" : [ "amount", "amount_refunded", "application", "application_fee", "balance_transaction", "captured", "created", "currency", "customer", "description", "destination", "dispute", "failure_code", "failure_message", "fraud_details", "id", "invoice", "livemode", "metadata", "object", "on_behalf_of", "order", "outcome", "paid", "receipt_email", "receipt_number", "refunded", "refunds", "review", "shipping", "source", "source_transfer", "statement_descriptor", "status", "transfer_group" ],
+      "properties" : {
+        "failure_message" : {
+          "type" : "string"
+        },
+        "statement_descriptor" : {
+          "type" : "string"
+        },
+        "invoice" : {
+          "type" : "string"
+        },
+        "balance_transaction" : {
+          "type" : "string"
+        },
+        "captured" : {
+          "type" : "boolean"
+        },
+        "object" : {
+          "type" : "string"
+        },
+        "customer" : {
+          "type" : "string"
+        },
+        "currency" : {
+          "type" : "string"
+        },
+        "failure_code" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "string"
+        },
+        "amount" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "transfer_group" : {
+          "type" : "string"
+        },
+        "shipping" : {
+          "type" : "string"
+        },
+        "paid" : {
+          "type" : "boolean"
+        },
+        "refunded" : {
+          "type" : "boolean"
+        },
+        "order" : {
+          "type" : "string"
+        },
+        "created" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "amount_refunded" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "livemode" : {
+          "type" : "boolean"
+        },
+        "application_fee" : {
+          "type" : "string"
+        },
+        "metadata" : {
+          "$ref" : "#/definitions/metadata"
+        },
+        "application" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "dispute" : {
+          "type" : "string"
+        },
+        "receipt_email" : {
+          "type" : "string"
+        },
+        "receipt_number" : {
+          "type" : "string"
+        },
+        "outcome" : {
+          "$ref" : "#/definitions/outcome"
+        },
+        "destination" : {
+          "type" : "string"
+        },
+        "source_transfer" : {
+          "type" : "string"
+        },
+        "source" : {
+          "$ref" : "#/definitions/source"
+        },
+        "fraud_details" : {
+          "$ref" : "#/definitions/fraud_details"
+        },
+        "on_behalf_of" : {
+          "type" : "string"
+        },
+        "refunds" : {
+          "$ref" : "#/definitions/refunds"
+        },
+        "review" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCharges.dataEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "metadata" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCharges.metadata",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

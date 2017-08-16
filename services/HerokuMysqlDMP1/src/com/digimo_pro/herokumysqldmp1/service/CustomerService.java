@@ -18,65 +18,63 @@ import com.wavemaker.runtime.file.model.Downloadable;
 
 import com.digimo_pro.herokumysqldmp1.Card;
 import com.digimo_pro.herokumysqldmp1.Customer;
-import com.digimo_pro.herokumysqldmp1.Profile;
-import com.digimo_pro.herokumysqldmp1.Users;
 
 /**
- * Service object for domain model class {@link Users}.
+ * Service object for domain model class {@link Customer}.
  */
-public interface UsersService {
+public interface CustomerService {
 
     /**
-     * Creates a new Users. It does cascade insert for all the children in a single transaction.
+     * Creates a new Customer. It does cascade insert for all the children in a single transaction.
      *
-     * This method overrides the input field values using Server side or database managed properties defined on Users if any.
+     * This method overrides the input field values using Server side or database managed properties defined on Customer if any.
      *
-     * @param users Details of the Users to be created; value cannot be null.
-     * @return The newly created Users.
+     * @param customer Details of the Customer to be created; value cannot be null.
+     * @return The newly created Customer.
      */
-	Users create(Users users);
+	Customer create(Customer customer);
 
 
 	/**
-	 * Returns Users by given id if exists.
+	 * Returns Customer by given id if exists.
 	 *
-	 * @param usersId The id of the Users to get; value cannot be null.
-	 * @return Users associated with the given usersId.
-     * @throws EntityNotFoundException If no Users is found.
+	 * @param customerId The id of the Customer to get; value cannot be null.
+	 * @return Customer associated with the given customerId.
+     * @throws EntityNotFoundException If no Customer is found.
 	 */
-	Users getById(Integer usersId) throws EntityNotFoundException;
+	Customer getById(Integer customerId) throws EntityNotFoundException;
 
     /**
-	 * Find and return the Users by given id if exists, returns null otherwise.
+	 * Find and return the Customer by given id if exists, returns null otherwise.
 	 *
-	 * @param usersId The id of the Users to get; value cannot be null.
-	 * @return Users associated with the given usersId.
+	 * @param customerId The id of the Customer to get; value cannot be null.
+	 * @return Customer associated with the given customerId.
 	 */
-	Users findById(Integer usersId);
+	Customer findById(Integer customerId);
 
 
 	/**
-	 * Updates the details of an existing Users. It replaces all fields of the existing Users with the given users.
+	 * Updates the details of an existing Customer. It replaces all fields of the existing Customer with the given customer.
 	 *
-     * This method overrides the input field values using Server side or database managed properties defined on Users if any.
+     * This method overrides the input field values using Server side or database managed properties defined on Customer if any.
      *
-	 * @param users The details of the Users to be updated; value cannot be null.
-	 * @return The updated Users.
-	 * @throws EntityNotFoundException if no Users is found with given input.
+	 * @param customer The details of the Customer to be updated; value cannot be null.
+	 * @return The updated Customer.
+	 * @throws EntityNotFoundException if no Customer is found with given input.
 	 */
-	Users update(Users users) throws EntityNotFoundException;
+	Customer update(Customer customer) throws EntityNotFoundException;
 
     /**
-	 * Deletes an existing Users with the given id.
+	 * Deletes an existing Customer with the given id.
 	 *
-	 * @param usersId The id of the Users to be deleted; value cannot be null.
-	 * @return The deleted Users.
-	 * @throws EntityNotFoundException if no Users found with the given id.
+	 * @param customerId The id of the Customer to be deleted; value cannot be null.
+	 * @return The deleted Customer.
+	 * @throws EntityNotFoundException if no Customer found with the given id.
 	 */
-	Users delete(Integer usersId) throws EntityNotFoundException;
+	Customer delete(Integer customerId) throws EntityNotFoundException;
 
 	/**
-	 * Find all Users matching the given QueryFilter(s).
+	 * Find all Customers matching the given QueryFilter(s).
      * All the QueryFilter(s) are ANDed to filter the results.
      * This method returns Paginated results.
 	 *
@@ -84,30 +82,30 @@ public interface UsersService {
 	 *
      * @param queryFilters Array of queryFilters to filter the results; No filters applied if the input is null/empty.
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of matching Users.
+     * @return Paginated list of matching Customers.
      *
      * @see QueryFilter
      * @see Pageable
      * @see Page
 	 */
     @Deprecated
-	Page<Users> findAll(QueryFilter[] queryFilters, Pageable pageable);
+	Page<Customer> findAll(QueryFilter[] queryFilters, Pageable pageable);
 
     /**
-	 * Find all Users matching the given input query. This method returns Paginated results.
+	 * Find all Customers matching the given input query. This method returns Paginated results.
      * Note: Go through the documentation for <u>query</u> syntax.
 	 *
      * @param query The query to filter the results; No filters applied if the input is null/empty.
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of matching Users.
+     * @return Paginated list of matching Customers.
      *
      * @see Pageable
      * @see Page
 	 */
-    Page<Users> findAll(String query, Pageable pageable);
+    Page<Customer> findAll(String query, Pageable pageable);
 
     /**
-	 * Exports all Users matching the given input query to the given exportType format.
+	 * Exports all Customers matching the given input query to the given exportType format.
      * Note: Go through the documentation for <u>query</u> syntax.
 	 *
      * @param exportType The format in which to export the data; value cannot be null.
@@ -122,11 +120,11 @@ public interface UsersService {
     Downloadable export(ExportType exportType, String query, Pageable pageable);
 
 	/**
-	 * Retrieve the count of the Users in the repository with matching query.
+	 * Retrieve the count of the Customers in the repository with matching query.
      * Note: Go through the documentation for <u>query</u> syntax.
      *
      * @param query query to filter results. No filters applied if the input is null/empty.
-	 * @return The count of the Users.
+	 * @return The count of the Customer.
 	 */
 	long count(String query);
 
@@ -144,7 +142,7 @@ public interface UsersService {
 	Page<Map<String, Object>> getAggregatedValues(AggregationInfo aggregationInfo, Pageable pageable);
 
     /*
-     * Returns the associated cards for given Users id.
+     * Returns the associated cards for given Customer id.
      *
      * @param id value of id; value cannot be null
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
@@ -154,30 +152,6 @@ public interface UsersService {
      * @see Page
      */
     Page<Card> findAssociatedCards(Integer id, Pageable pageable);
-
-    /*
-     * Returns the associated customers for given Users id.
-     *
-     * @param id value of id; value cannot be null
-     * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of associated Customer instances.
-     *
-     * @see Pageable
-     * @see Page
-     */
-    Page<Customer> findAssociatedCustomers(Integer id, Pageable pageable);
-
-    /*
-     * Returns the associated profiles for given Users id.
-     *
-     * @param id value of id; value cannot be null
-     * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of associated Profile instances.
-     *
-     * @see Pageable
-     * @see Page
-     */
-    Page<Profile> findAssociatedProfiles(Integer id, Pageable pageable);
 
 }
 

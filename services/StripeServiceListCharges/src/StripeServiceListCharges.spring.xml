@@ -3,7 +3,7 @@
 http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd"
 xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <bean class="com.wavemaker.runtime.rest.processor.RestRuntimeConfig" id="StripeRetrieveCustomersRestRuntimeConfig">
+    <bean class="com.wavemaker.runtime.rest.processor.RestRuntimeConfig" id="StripeServiceListChargesRestRuntimeConfig">
         <property name="httpRequestProcessorList">
             <list>
                 <bean class="com.wavemaker.runtime.rest.processor.request.PassDefaultHeadersRequestProcessor">
@@ -44,9 +44,9 @@ xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.s
             </list>
         </property>
     </bean>
-    <bean class="com.wavemaker.runtime.rest.model.RestServiceInfoBean" id="StripeRetrieveCustomersServiceInfo">
-            <property name="serviceName" value="StripeRetrieveCustomers"/>
-            <property name="url" value="/StripeRetrieveCustomers/invoke/customers"/>
+    <bean class="com.wavemaker.runtime.rest.model.RestServiceInfoBean" id="StripeServiceListChargesServiceInfo">
+            <property name="serviceName" value="StripeServiceListCharges"/>
+            <property name="url" value="/StripeServiceListCharges/invoke/charges"/>
             <property name="httpMethod" value="GET"/>
     </bean>
 </beans>

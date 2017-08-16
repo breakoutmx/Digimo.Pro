@@ -35,6 +35,13 @@
   "type" : "LEFTNAV",
   "params" : [ ]
 }, {
+  "name" : "onboardingdialogresult",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "dialogimage",
+    "type" : "string"
+  } ]
+}, {
   "name" : "rightnav",
   "type" : "RIGHTNAV",
   "params" : [ ]

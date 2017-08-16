@@ -1,0 +1,38 @@
+{
+  "endpointAddress" : "https://api.stripe.com/v1/charges",
+  "method" : "GET",
+  "headers" : {
+    "Authorization" : [ "Bearer sk_live_qu4XEKgvOM6DhSofbdayuVgj" ]
+  },
+  "redirectEnabled" : true,
+  "requestBody" : "",
+  "queryParams" : {
+    "limit" : "100",
+    "customer" : "cus_B8Ibtx9sFrUvgJ",
+    "starting_after" : "ch_1ApTqrD46nuue1s2L0Ti9cjC"
+  },
+  "authType" : "NONE",
+  "contentType" : "text/xml",
+  "multiParamInfoList" : null,
+  "sampleHttpResponseDetails" : {
+    "statusCode" : 200,
+    "headers" : {
+      "Server" : [ "nginx" ],
+      "Date" : [ "Tue, 15 Aug 2017 21:25:37 GMT" ],
+      "Content-Type" : [ "application/json" ],
+      "Content-Length" : [ "2269" ],
+      "Connection" : [ "keep-alive" ],
+      "Access-Control-Allow-Credentials" : [ "true" ],
+      "Access-Control-Allow-Methods" : [ "GET, POST, HEAD, OPTIONS, DELETE" ],
+      "Access-Control-Allow-Origin" : [ "*" ],
+      "Access-Control-Max-Age" : [ "300" ],
+      "Cache-Control" : [ "no-cache, no-store" ],
+      "Request-Id" : [ "req_rqBbtYcnXG5Bg5" ],
+      "Stripe-Version" : [ "2017-01-27" ],
+      "Strict-Transport-Security" : [ "max-age=31556926; includeSubDomains" ]
+    },
+    "responseBody" : "{\"object\":\"list\",\"data\":[{\"id\":\"ch_1Am202D46nuue1s25hHp2bJH\",\"object\":\"charge\",\"amount\":19700,\"amount_refunded\":0,\"application\":\"ca_4270A2q7wg2q4DaivQE3cJlS9AZjU0bj\",\"application_fee\":null,\"balance_transaction\":\"txn_1Am203D46nuue1s2vIsZAdOM\",\"captured\":true,\"created\":1501600174,\"currency\":\"usd\",\"customer\":\"cus_B8Ibtx9sFrUvgJ\",\"description\":\"Payment for order or_1Am201D46nuue1s2FrbIfVUQ\",\"destination\":null,\"dispute\":null,\"failure_code\":null,\"failure_message\":null,\"fraud_details\":{},\"invoice\":null,\"livemode\":true,\"metadata\":{},\"on_behalf_of\":null,\"order\":\"or_1Am201D46nuue1s2FrbIfVUQ\",\"outcome\":{\"network_status\":\"approved_by_network\",\"reason\":null,\"risk_level\":\"normal\",\"seller_message\":\"Payment complete.\",\"type\":\"authorized\"},\"paid\":true,\"receipt_email\":null,\"receipt_number\":null,\"refunded\":false,\"refunds\":{\"object\":\"list\",\"data\":[],\"has_more\":false,\"total_count\":0,\"url\":\"/v1/charges/ch_1Am202D46nuue1s25hHp2bJH/refunds\"},\"review\":null,\"shipping\":null,\"source\":{\"id\":\"card_1Am200D46nuue1s2LLcQLyYE\",\"object\":\"card\",\"address_city\":null,\"address_country\":null,\"address_line1\":null,\"address_line1_check\":null,\"address_line2\":null,\"address_state\":null,\"address_zip\":\"45-286\",\"address_zip_check\":\"unavailable\",\"brand\":\"MasterCard\",\"country\":\"PL\",\"customer\":\"cus_B8Ibtx9sFrUvgJ\",\"cvc_check\":\"pass\",\"dynamic_last4\":null,\"exp_month\":9,\"exp_year\":2019,\"fingerprint\":\"PNpBINtwKJx5T1So\",\"funding\":\"credit\",\"last4\":\"8184\",\"metadata\":{},\"name\":null,\"tokenization_method\":null},\"source_transfer\":null,\"statement_descriptor\":null,\"status\":\"succeeded\",\"transfer_group\":null}],\"has_more\":false,\"url\":\"/v1/charges\"}",
+    "convertedResponse" : null
+  },
+  "proxy" : null
+}

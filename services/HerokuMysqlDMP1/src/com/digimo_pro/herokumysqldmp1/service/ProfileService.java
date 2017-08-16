@@ -17,66 +17,64 @@ import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
 import com.digimo_pro.herokumysqldmp1.Card;
-import com.digimo_pro.herokumysqldmp1.Customer;
 import com.digimo_pro.herokumysqldmp1.Profile;
-import com.digimo_pro.herokumysqldmp1.Users;
 
 /**
- * Service object for domain model class {@link Users}.
+ * Service object for domain model class {@link Profile}.
  */
-public interface UsersService {
+public interface ProfileService {
 
     /**
-     * Creates a new Users. It does cascade insert for all the children in a single transaction.
+     * Creates a new Profile. It does cascade insert for all the children in a single transaction.
      *
-     * This method overrides the input field values using Server side or database managed properties defined on Users if any.
+     * This method overrides the input field values using Server side or database managed properties defined on Profile if any.
      *
-     * @param users Details of the Users to be created; value cannot be null.
-     * @return The newly created Users.
+     * @param profile Details of the Profile to be created; value cannot be null.
+     * @return The newly created Profile.
      */
-	Users create(Users users);
+	Profile create(Profile profile);
 
 
 	/**
-	 * Returns Users by given id if exists.
+	 * Returns Profile by given id if exists.
 	 *
-	 * @param usersId The id of the Users to get; value cannot be null.
-	 * @return Users associated with the given usersId.
-     * @throws EntityNotFoundException If no Users is found.
+	 * @param profileId The id of the Profile to get; value cannot be null.
+	 * @return Profile associated with the given profileId.
+     * @throws EntityNotFoundException If no Profile is found.
 	 */
-	Users getById(Integer usersId) throws EntityNotFoundException;
+	Profile getById(Integer profileId) throws EntityNotFoundException;
 
     /**
-	 * Find and return the Users by given id if exists, returns null otherwise.
+	 * Find and return the Profile by given id if exists, returns null otherwise.
 	 *
-	 * @param usersId The id of the Users to get; value cannot be null.
-	 * @return Users associated with the given usersId.
+	 * @param profileId The id of the Profile to get; value cannot be null.
+	 * @return Profile associated with the given profileId.
 	 */
-	Users findById(Integer usersId);
+	Profile findById(Integer profileId);
 
 
 	/**
-	 * Updates the details of an existing Users. It replaces all fields of the existing Users with the given users.
+	 * Updates the details of an existing Profile. It replaces all fields of the existing Profile with the given profile.
 	 *
-     * This method overrides the input field values using Server side or database managed properties defined on Users if any.
+     * This method overrides the input field values using Server side or database managed properties defined on Profile if any.
      *
-	 * @param users The details of the Users to be updated; value cannot be null.
-	 * @return The updated Users.
-	 * @throws EntityNotFoundException if no Users is found with given input.
+	 * @param profile The details of the Profile to be updated; value cannot be null.
+	 * @return The updated Profile.
+	 * @throws EntityNotFoundException if no Profile is found with given input.
 	 */
-	Users update(Users users) throws EntityNotFoundException;
+	Profile update(Profile profile) throws EntityNotFoundException;
 
     /**
-	 * Deletes an existing Users with the given id.
+	 * Deletes an existing Profile with the given id.
 	 *
-	 * @param usersId The id of the Users to be deleted; value cannot be null.
-	 * @return The deleted Users.
-	 * @throws EntityNotFoundException if no Users found with the given id.
+	 * @param profileId The id of the Profile to be deleted; value cannot be null.
+	 * @return The deleted Profile.
+	 * @throws EntityNotFoundException if no Profile found with the given id.
 	 */
-	Users delete(Integer usersId) throws EntityNotFoundException;
+	Profile delete(Integer profileId) throws EntityNotFoundException;
 
 	/**
-	 * Find all Users matching the given QueryFilter(s).
+	 * Find all Profiles matching the given QueryFilter(s).
      * All the QueryFilter(s) are ANDed to filter the results.
      * This method returns Paginated results.
 	 *
@@ -84,30 +82,30 @@ public interface UsersService {
 	 *
      * @param queryFilters Array of queryFilters to filter the results; No filters applied if the input is null/empty.
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of matching Users.
+     * @return Paginated list of matching Profiles.
      *
      * @see QueryFilter
      * @see Pageable
      * @see Page
 	 */
     @Deprecated
-	Page<Users> findAll(QueryFilter[] queryFilters, Pageable pageable);
+	Page<Profile> findAll(QueryFilter[] queryFilters, Pageable pageable);
 
     /**
-	 * Find all Users matching the given input query. This method returns Paginated results.
+	 * Find all Profiles matching the given input query. This method returns Paginated results.
      * Note: Go through the documentation for <u>query</u> syntax.
 	 *
      * @param query The query to filter the results; No filters applied if the input is null/empty.
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of matching Users.
+     * @return Paginated list of matching Profiles.
      *
      * @see Pageable
      * @see Page
 	 */
-    Page<Users> findAll(String query, Pageable pageable);
+    Page<Profile> findAll(String query, Pageable pageable);
 
     /**
-	 * Exports all Users matching the given input query to the given exportType format.
+	 * Exports all Profiles matching the given input query to the given exportType format.
      * Note: Go through the documentation for <u>query</u> syntax.
 	 *
      * @param exportType The format in which to export the data; value cannot be null.
@@ -122,11 +120,11 @@ public interface UsersService {
     Downloadable export(ExportType exportType, String query, Pageable pageable);
 
 	/**
-	 * Retrieve the count of the Users in the repository with matching query.
+	 * Retrieve the count of the Profiles in the repository with matching query.
      * Note: Go through the documentation for <u>query</u> syntax.
      *
      * @param query query to filter results. No filters applied if the input is null/empty.
-	 * @return The count of the Users.
+	 * @return The count of the Profile.
 	 */
 	long count(String query);
 
@@ -144,7 +142,7 @@ public interface UsersService {
 	Page<Map<String, Object>> getAggregatedValues(AggregationInfo aggregationInfo, Pageable pageable);
 
     /*
-     * Returns the associated cards for given Users id.
+     * Returns the associated cards for given Profile id.
      *
      * @param id value of id; value cannot be null
      * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
@@ -154,30 +152,6 @@ public interface UsersService {
      * @see Page
      */
     Page<Card> findAssociatedCards(Integer id, Pageable pageable);
-
-    /*
-     * Returns the associated customers for given Users id.
-     *
-     * @param id value of id; value cannot be null
-     * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of associated Customer instances.
-     *
-     * @see Pageable
-     * @see Page
-     */
-    Page<Customer> findAssociatedCustomers(Integer id, Pageable pageable);
-
-    /*
-     * Returns the associated profiles for given Users id.
-     *
-     * @param id value of id; value cannot be null
-     * @param pageable Details of the pagination information along with the sorting options. If null returns all matching records.
-     * @return Paginated list of associated Profile instances.
-     *
-     * @see Pageable
-     * @see Page
-     */
-    Page<Profile> findAssociatedProfiles(Integer id, Pageable pageable);
 
 }
 

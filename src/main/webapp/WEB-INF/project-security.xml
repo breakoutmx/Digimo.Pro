@@ -70,11 +70,13 @@
         <security:intercept-url pattern="/j_spring_security_logout" access="permitAll"/>
         <security:intercept-url pattern="/pages/Access/**" access="permitAll"/>
         <security:intercept-url pattern="/pages/Register/**" access="permitAll"/>
+        <security:intercept-url pattern="/pages/onboardingdialogresult/**" access="permitAll"/>
         <security:intercept-url pattern="/prefabs/DMP_Login_Screen/**" access="permitAll"/>
         <security:intercept-url pattern="/services/AccessKeyGenerateService/invoke/gen-access-key" access="permitAll" method="GET"/>
         <security:intercept-url pattern="/services/AccessKeyGenerateService/invoke/gen-access-key/**" access="permitAll"/>
         <security:intercept-url pattern="/services/HerokuMysqlDMP1/**" access="permitAll"/>
-        <security:intercept-url pattern="/services/StripeRetrieveCustomers/invoke/customers/**" access="permitAll"/>
+        <security:intercept-url pattern="/services/StripeServiceListCharges/invoke/charges/**" access="permitAll"/>
+        <security:intercept-url pattern="/services/StripeServiceListCustomers/invoke/customers/**" access="permitAll"/>
         <security:intercept-url pattern="/services/createTempUsername/**" access="permitAll"/>
         <security:intercept-url pattern="/services/file/**" access="permitAll"/>
         <security:intercept-url pattern="/services/prefabs/**/servicedefs" access="permitAll"/>
@@ -204,6 +206,16 @@
                     </bean>
                 </entry>
                 <entry key="premiumuser">
+                    <bean class="com.wavemaker.commons.model.security.RoleConfig">
+                        <property name="landingPage" value="Main"/>
+                    </bean>
+                </entry>
+                <entry key="jetpackuser">
+                    <bean class="com.wavemaker.commons.model.security.RoleConfig">
+                        <property name="landingPage" value="Main"/>
+                    </bean>
+                </entry>
+                <entry key="foundinguser">
                     <bean class="com.wavemaker.commons.model.security.RoleConfig">
                         <property name="landingPage" value="Main"/>
                     </bean>

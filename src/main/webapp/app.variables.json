@@ -140,6 +140,20 @@
     "redirectTo" : "Access",
     "useDefaultSuccessHandler" : true
   },
+  "onboardingUser" : {
+    "_id" : "wm-onboardingUserDataCollection-wm.Variable-1502844456131",
+    "name" : "onboardingUser",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "name" : "data",
+      "dataValue" : { }
+    },
+    "type" : "entry",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
   "securityCreateUserService" : {
     "_id" : "wm-securityCreateUserService-wm.ServiceVariable-1502233851001",
     "name" : "securityCreateUserService",
@@ -163,6 +177,131 @@
     "controller" : "Users",
     "spinnerContext" : "signupForm",
     "spinnerMessage" : "Creating your account!"
+  },
+  "ServiceParamCustomer" : {
+    "_id" : "wm-ServiceParamCustomer-wm.Variable-1502832492665",
+    "name" : "ServiceParamCustomer",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "ServiceParamLimit" : {
+    "_id" : "wm-ServiceParamLimit-wm.Variable-1502601100082",
+    "name" : "ServiceParamLimit",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "100"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "ServiceParamStartingAfter" : {
+    "_id" : "wm-ServiceParamStartingWith-wm.Variable-1502601215332",
+    "name" : "ServiceParamStartingAfter",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "staticVariable1" : {
+    "_id" : "wm-staticVariable1-wm.Variable-1502759518294",
+    "name" : "staticVariable1",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "StripeListChargesVariable" : {
+    "_id" : "wm-StripeListChargesVariable-wm.ServiceVariable-1502832602782",
+    "name" : "StripeListChargesVariable",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "limit",
+      "value" : "bind:Variables.ServiceParamLimit.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "customer",
+      "value" : "bind:Variables.ServiceParamCustomer.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "starting_after",
+      "value" : "bind:Variables.ServiceParamStartingAfter.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "Authorization",
+      "value" : [ "Bearer sk_live_qu4XEKgvOM6DhSofbdayuVgj" ],
+      "type" : "string"
+    } ],
+    "type" : "StripeServiceListCharges.RootResponse",
+    "service" : "StripeServiceListCharges",
+    "operation" : "invoke",
+    "operationId" : "StripeServiceListCharges_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "StripeListCustomersVariable" : {
+    "_id" : "wm-StripeListCustomers-wm.ServiceVariable-1502584158176",
+    "name" : "StripeListCustomersVariable",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "limit",
+      "value" : "bind:Variables.ServiceParamLimit.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "starting_after",
+      "value" : "bind:Variables.ServiceParamStartingAfter.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "Authorization",
+      "value" : [ "Bearer sk_live_qu4XEKgvOM6DhSofbdayuVgj" ],
+      "type" : "string"
+    } ],
+    "type" : "StripeServiceListCustomers.RootResponse",
+    "service" : "StripeServiceListCustomers",
+    "operation" : "invoke",
+    "operationId" : "StripeServiceListCustomers_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual",
+    "spinnerContext" : "page"
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",

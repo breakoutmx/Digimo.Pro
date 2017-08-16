@@ -1,0 +1,15 @@
+{
+  "onboardingDialogResultImage" : {
+    "_id" : "wm-onboardingDialogResultImage-wm.Variable-1502758240255",
+    "name" : "onboardingDialogResultImage",
+    "owner" : "Application",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

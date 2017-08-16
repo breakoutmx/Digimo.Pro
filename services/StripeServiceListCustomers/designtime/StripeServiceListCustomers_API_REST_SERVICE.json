@@ -3,23 +3,23 @@
   "info" : {
     "version" : "2.0",
     "x-WM-SERVICE_TYPE" : "RestService",
-    "x-WM-API_ID" : "d0f724a3-f15d-498e-a4d3-a08a93ccc7aa",
-    "x-WM-USE_PROXY_FOR_WEB" : false,
+    "x-WM-API_ID" : "800db5c2-5dec-4b7d-bc26-e961b3df946b",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
     "x-WM-SERVICE_ID" : "stripe",
-    "x-WM-USE_PROXY_FOR_MOBILE" : false
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
   },
   "host" : "api.stripe.com",
-  "basePath" : "/v1",
+  "basePath" : "",
   "tags" : [ {
     "name" : "RestServiceVirtualController",
     "description" : "Rest service swagger documentation"
   } ],
   "schemes" : [ "https" ],
   "paths" : {
-    "/customers" : {
+    "/StripeServiceListCustomers/invoke/customers" : {
       "get" : {
         "tags" : [ "RestServiceVirtualController" ],
-        "operationId" : "StripeRetrieveCustomers_RestServiceVirtualController-invoke",
+        "operationId" : "StripeServiceListCustomers_RestServiceVirtualController-invoke",
         "consumes" : [ "text/xml" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -33,6 +33,22 @@
           },
           "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
           "x-WM-EDITABLE" : true
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "limit",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "starting_after",
+          "in" : "query",
+          "description" : "starting_after",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
         } ],
         "responses" : {
           "200" : {
@@ -45,10 +61,10 @@
         "x-WM-METHOD_NAME" : "invoke",
         "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
       },
+      "x-WM-BASE_PATH" : "/StripeServiceListCustomers/invoke/customers",
       "x-WM-TAG" : "RestServiceVirtualController",
-      "x-WM-BASE_PATH" : "/customers",
-      "x-WM-COMPLETE_PATH" : "${rest.StripeRetrieveCustomers.scheme}://${rest.StripeRetrieveCustomers.host}${rest.StripeRetrieveCustomers.basepath}/customers",
-      "x-WM-RELATIVE_PATH" : ""
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.StripeServiceListCustomers.scheme}://${rest.StripeServiceListCustomers.host}${rest.StripeServiceListCustomers.basepath}/customers"
     }
   },
   "definitions" : {
@@ -57,7 +73,6 @@
       "properties" : {
         "data" : {
           "type" : "array",
-          "uniqueItems" : false,
           "items" : {
             "$ref" : "#/definitions/dataEntryItem"
           },
@@ -73,11 +88,11 @@
           "type" : "string"
         }
       },
-      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.RootResponse",
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCustomers.RootResponse",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ]
     },
     "java.lang.Object" : {
-      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.java.lang.Object",
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCustomers.java.lang.Object",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ]
     },
     "subscriptions" : {
@@ -85,7 +100,6 @@
       "properties" : {
         "data" : {
           "type" : "array",
-          "uniqueItems" : false,
           "items" : {
             "$ref" : "#/definitions/java.lang.Object"
           },
@@ -105,7 +119,7 @@
           "type" : "string"
         }
       },
-      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.subscriptions",
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCustomers.subscriptions",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ]
     },
     "sources" : {
@@ -113,7 +127,6 @@
       "properties" : {
         "data" : {
           "type" : "array",
-          "uniqueItems" : false,
           "items" : {
             "$ref" : "#/definitions/dataEntryItem"
           },
@@ -133,7 +146,7 @@
           "type" : "string"
         }
       },
-      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.sources",
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCustomers.sources",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ]
     },
     "dataEntryItem" : {
@@ -249,7 +262,7 @@
           "type" : "string"
         }
       },
-      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.dataEntryItem",
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCustomers.dataEntryItem",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ]
     },
     "metadata" : {
@@ -262,7 +275,7 @@
           "type" : "string"
         }
       },
-      "x-WM-FULLY_QUALIFIED_NAME" : "StripeRetrieveCustomers.metadata",
+      "x-WM-FULLY_QUALIFIED_NAME" : "StripeServiceListCustomers.metadata",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ]
     }
   }

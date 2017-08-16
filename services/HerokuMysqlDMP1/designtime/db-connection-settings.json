@@ -12,6 +12,18 @@
   "port" : "3306",
   "schemaName" : null,
   "tableFilter" : [ {
+    "table" : "card",
+    "schema" : null
+  }, {
+    "table" : "charge",
+    "schema" : null
+  }, {
+    "table" : "customer",
+    "schema" : null
+  }, {
+    "table" : "profile",
+    "schema" : null
+  }, {
     "table" : "users",
     "schema" : null
   } ],

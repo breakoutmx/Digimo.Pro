@@ -32,6 +32,9 @@ import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
 
+import com.digimo_pro.herokumysqldmp1.Card;
+import com.digimo_pro.herokumysqldmp1.Customer;
+import com.digimo_pro.herokumysqldmp1.Profile;
 import com.digimo_pro.herokumysqldmp1.Users;
 import com.digimo_pro.herokumysqldmp1.service.UsersService;
 
@@ -151,6 +154,32 @@ public class UsersController {
         return usersService.getAggregatedValues(aggregationInfo, pageable);
     }
 
+    @RequestMapping(value="/{id:.+}/cards", method=RequestMethod.GET)
+    @ApiOperation(value = "Gets the cards instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Card> findAssociatedCards(@PathVariable("id") Integer id, Pageable pageable) {
+
+        LOGGER.debug("Fetching all associated cards");
+        return usersService.findAssociatedCards(id, pageable);
+    }
+
+    @RequestMapping(value="/{id:.+}/customers", method=RequestMethod.GET)
+    @ApiOperation(value = "Gets the customers instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Customer> findAssociatedCustomers(@PathVariable("id") Integer id, Pageable pageable) {
+
+        LOGGER.debug("Fetching all associated customers");
+        return usersService.findAssociatedCustomers(id, pageable);
+    }
+
+    @RequestMapping(value="/{id:.+}/profiles", method=RequestMethod.GET)
+    @ApiOperation(value = "Gets the profiles instance associated with the given id.")
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Profile> findAssociatedProfiles(@PathVariable("id") Integer id, Pageable pageable) {
+
+        LOGGER.debug("Fetching all associated profiles");
+        return usersService.findAssociatedProfiles(id, pageable);
+    }
 
     /**
 	 * This setter method should only be used by unit tests

@@ -23,6 +23,9 @@ import com.wavemaker.runtime.data.expression.QueryFilter;
 import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
+import com.digimo_pro.herokumysqldmp1.Card;
+import com.digimo_pro.herokumysqldmp1.Customer;
+import com.digimo_pro.herokumysqldmp1.Profile;
 import com.digimo_pro.herokumysqldmp1.Users;
 
 
@@ -36,6 +39,17 @@ public class UsersServiceImpl implements UsersService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UsersServiceImpl.class);
 
+    @Autowired
+	@Qualifier("HerokuMysqlDMP1.CardService")
+	private CardService cardService;
+
+    @Autowired
+	@Qualifier("HerokuMysqlDMP1.ProfileService")
+	private ProfileService profileService;
+
+    @Autowired
+	@Qualifier("HerokuMysqlDMP1.CustomerService")
+	private CustomerService customerService;
 
     @Autowired
     @Qualifier("HerokuMysqlDMP1.UsersDao")
@@ -50,6 +64,29 @@ public class UsersServiceImpl implements UsersService {
 	public Users create(Users users) {
         LOGGER.debug("Creating a new Users with information: {}", users);
         Users usersCreated = this.wmGenericDao.create(users);
+        if(usersCreated.getCards() != null) {
+            for(Card card : usersCreated.getCards()) {
+                card.setUsers(usersCreated);
+                LOGGER.debug("Creating a new child Card with information: {}", card);
+                cardService.create(card);
+            }
+        }
+
+        if(usersCreated.getCustomers() != null) {
+            for(Customer customer : usersCreated.getCustomers()) {
+                customer.setUsers(usersCreated);
+                LOGGER.debug("Creating a new child Customer with information: {}", customer);
+                customerService.create(customer);
+            }
+        }
+
+        if(usersCreated.getProfiles() != null) {
+            for(Profile profile : usersCreated.getProfiles()) {
+                profile.setUsers(usersCreated);
+                LOGGER.debug("Creating a new child Profile with information: {}", profile);
+                profileService.create(profile);
+            }
+        }
         return usersCreated;
     }
 
@@ -130,7 +167,65 @@ public class UsersServiceImpl implements UsersService {
         return this.wmGenericDao.getAggregatedValues(aggregationInfo, pageable);
     }
 
+    @Transactional(readOnly = true, value = "HerokuMysqlDMP1TransactionManager")
+    @Override
+    public Page<Card> findAssociatedCards(Integer id, Pageable pageable) {
+        LOGGER.debug("Fetching all associated cards");
 
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("users.id = '" + id + "'");
+
+        return cardService.findAll(queryBuilder.toString(), pageable);
+    }
+
+    @Transactional(readOnly = true, value = "HerokuMysqlDMP1TransactionManager")
+    @Override
+    public Page<Customer> findAssociatedCustomers(Integer id, Pageable pageable) {
+        LOGGER.debug("Fetching all associated customers");
+
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("users.id = '" + id + "'");
+
+        return customerService.findAll(queryBuilder.toString(), pageable);
+    }
+
+    @Transactional(readOnly = true, value = "HerokuMysqlDMP1TransactionManager")
+    @Override
+    public Page<Profile> findAssociatedProfiles(Integer id, Pageable pageable) {
+        LOGGER.debug("Fetching all associated profiles");
+
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("users.id = '" + id + "'");
+
+        return profileService.findAll(queryBuilder.toString(), pageable);
+    }
+
+    /**
+	 * This setter method should only be used by unit tests
+	 *
+	 * @param service CardService instance
+	 */
+	protected void setCardService(CardService service) {
+        this.cardService = service;
+    }
+
+    /**
+	 * This setter method should only be used by unit tests
+	 *
+	 * @param service ProfileService instance
+	 */
+	protected void setProfileService(ProfileService service) {
+        this.profileService = service;
+    }
+
+    /**
+	 * This setter method should only be used by unit tests
+	 *
+	 * @param service CustomerService instance
+	 */
+	protected void setCustomerService(CustomerService service) {
+        this.customerService = service;
+    }
 
 }
 
