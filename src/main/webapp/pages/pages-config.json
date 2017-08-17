@@ -19,6 +19,13 @@
   "type" : "PAGE",
   "params" : [ ]
 }, {
+  "name" : "SAPassphrase",
+  "type" : "POPOVER",
+  "params" : [ {
+    "name" : "passphrase",
+    "type" : "string"
+  } ]
+}, {
   "name" : "Start",
   "type" : "PAGE",
   "params" : [ ]

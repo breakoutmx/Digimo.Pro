@@ -14,6 +14,11 @@
   "roles" : [ ],
   "httpMethod" : null
 }, {
+  "urlPattern" : "/pages/SAPassphrase/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
   "urlPattern" : "/prefabs/DMP_Login_Screen/**",
   "permission" : "PermitAll",
   "roles" : [ ],

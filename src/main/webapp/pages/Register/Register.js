@@ -39,53 +39,6 @@ Application.$controller("RegisterPageController", ["$scope", function($scope) {
         $scope.onboardingUserData = $scope.Variables.onboardingUser.dataSet.dataValue;
     };
 
-    $scope.regPage1SubmitButtonClick = function($event, $isolateScope) {
-
-        var emailValidationMatch = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
-
-        if (!$scope.Widgets.signupForm.formWidgets.wmSignupEmail.datavalue)
-        // Check the email for validation errors...
-        {
-            $scope.Widgets.signupFormMessage.type = "error";
-            $scope.Widgets.signupFormMessage.caption = "Error: Please enter your TDM email address (the one you used to purchase).";
-            $scope.Widgets.signupFormMessage.show = true;
-        } else if (!$scope.Widgets.signupForm.formWidgets.wmSignupEmail.datavalue.match(emailValidationMatch))
-        // Check email validation via regex match
-        {
-            $scope.Widgets.signupFormMessage.type = "error";
-            $scope.Widgets.signupFormMessage.caption = "Error: Please enter a valid email address, in a valid format (eg: address@domain.com).";
-            $scope.Widgets.signupFormMessage.show = true;
-        } else if (
-            $scope.Widgets.signupForm.formWidgets.wmSignupPwd.datavalue === '' ||
-            $scope.Widgets.signupForm.formWidgets.wmSignupEmail.datavalue === null ||
-            !$scope.Widgets.signupForm.formWidgets.wmSignupPwd.datavalue)
-        // Check the email for validation errors...
-        {
-            $scope.Widgets.signupFormMessage.type = "error";
-            $scope.Widgets.signupFormMessage.caption = "Error: Please enter a password for your account.";
-            $scope.Widgets.signupFormMessage.show = true;
-        } else if (!$scope.Widgets.signupForm.formWidgets.wmSignupUsername.datavalue)
-        // Check the username for validation errors...
-        {
-            $scope.Widgets.signupFormMessage.type = "error";
-            $scope.Widgets.signupFormMessage.caption = "Error: Please enter a username for your account.";
-            $scope.Widgets.signupFormMessage.show = true;
-        } else if ($scope.Widgets.signupForm.formWidgets.wmSignupPwd.datavalue === $scope.Widgets.signupForm.formWidgets.wmSignupConPwd.datavalue) {
-            $scope.Variables.regPage1Variable.insertRecord();
-            $scope.Widgets.signupFormMessage.type = "success";
-            $scope.Widgets.signupFormMessage.caption = "Registration Successful. Redirecting to login...";
-            $scope.Widgets.signupFormMessage.show = true;
-            var tscope = $scope;
-            setTimeout(function() {
-                tscope.Variables.goToPage_Access.invoke();
-            }, 2500)
-        } else {
-            $scope.Widgets.signupFormMessage.type = "error";
-            $scope.Widgets.signupFormMessage.caption = "Error: The password and confirmation passwords do not match.  Please check and try again.";
-            $scope.Widgets.signupFormMessage.show = true;
-        }
-    };
-
     //StripeServiceRetrieveCustomers
     $scope.onboardWizardStepAccountValidateNext = function($isolateScope, currentStep, stepIndex) {
 
@@ -94,7 +47,10 @@ Application.$controller("RegisterPageController", ["$scope", function($scope) {
 
     // On wizard step load, disable the next button
     $scope.onboardWizardStepAccountValidateLoad = function($isolateScope, stepIndex) {
-        $scope.Widgets.onboardWizardStepAccountValidate.disablenext = true;
+        if (typeof $scope.onboardingUserData === 'undefined' || !$scope.onboardingUserData.userid)
+            $scope.Widgets.onboardWizardStepAccountValidate.disablenext = true;
+        else
+            $scope.Widgets.onboardWizardStepAccountValidate.disablenext = false;
     };
 
 
@@ -124,7 +80,6 @@ Application.$controller("RegisterPageController", ["$scope", function($scope) {
         // $scope.Widgets.users.displayvalue = $data;
         $scope.Widgets.onboardingFormProfile.formWidgets.users.datavalue = $data;
         $scope.Widgets.onboardingFormProfile.formWidgets.users.displayvalue = $data;
-        $scope.Widgets.onboardingFormProfile.formWidgets.fname.datavalue = 'Jean Ray';
         //Submit form to create profile record
         $scope.Widgets.onboardingFormProfile.save();
     };
@@ -141,19 +96,9 @@ Application.$controller("RegisterPageController", ["$scope", function($scope) {
         $scope.onboardingUserData.profileid = $data.id;
         $scope.onboardingUserData.profiledata = $data;
         console.log("$scope.onboardingUserData Data", $scope.onboardingUserData);
-        //Set onboardingForm2 to $data
-        console.log("before set owcpro", JSON.stringify($scope.Variables.onboardingStepCreateProfile.dataSet));
-        $scope.Variables.onboardingStepCreateProfile.dataSet = {
-            dataValue: $data
-        };
-        console.log("after set owcpro", $scope.Variables.onboardingStepCreateProfile);
-        // $scope.Variables.onboardingStepCreateProfile.setData({
-        //     dataValue: $data
-        // });
-        // StripeListCustomers.setInput({
-        //     "limit": $scope.Variables.ServiceParamLimit.getValue('dataValue')
-        // });
-        // $scope.Widgets.onboardingForm2.dataSet = $data;
+        // Update onboarding form 2 in wizard user link with data object
+        $scope.Widgets.onboardingForm2.formWidgets.users.datavalue = $scope.onboardingUserData.userdata;
+        $scope.Widgets.onboardingForm2.formWidgets.users.displayvalue = $scope.onboardingUserData.userid;
     };
 
 }]);

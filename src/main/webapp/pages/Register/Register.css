@@ -2,6 +2,29 @@ body {
     background: #000;
 }
 
+.security-avatar {
+    float:left;
+    width: 25%;
+}
+
+.security-avatar-label {
+    float:right;
+    width: 75%;
+    margin-right: 10px;
+    text-align: justify;
+}
+
+.sa-showhide-passhphrase {
+    margin: 20px auto;
+    display: block;
+    width: 25px;
+}
+
+.sa-showhide-pass-popover {
+    display:block;
+    margin-top: -10px;
+}
+
 /*dialogs*/
 .onboarding-result-dialog-content {
     max-width: 100%;
@@ -58,8 +81,6 @@ body {
 
 /*OnboardingForm1*/
 .new-user-onboard-wizard .app-wizard-body .panel-footer {
-    background-color: #000;
+    background-color: transparent;
     border: none;
 }
-
-

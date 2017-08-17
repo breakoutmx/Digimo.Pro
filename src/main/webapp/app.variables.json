@@ -178,6 +178,104 @@
     "spinnerContext" : "signupForm",
     "spinnerMessage" : "Creating your account!"
   },
+  "selectFieldEstatus" : {
+    "_id" : "wm-selectFieldEstatus-wm.Variable-1502941030848",
+    "name" : "selectFieldEstatus",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Full Time",
+      "dataValue" : "fulltime"
+    }, {
+      "name" : "Near-Future Full Time",
+      "dataValue" : "nearfuturefull"
+    }, {
+      "name" : "Equal Time E/E",
+      "dataValue" : "equaltime"
+    }, {
+      "name" : "Committed But Not Equal",
+      "dataValue" : "committedunequal"
+    }, {
+      "name" : "Limited Time Entrepreneur",
+      "dataValue" : "limitedtime"
+    }, {
+      "name" : "Struggling Full Time",
+      "dataValue" : "strugglingfulltime"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "selectFieldGender" : {
+    "_id" : "wm-selectFieldGender-wm.Variable-1502940394977",
+    "name" : "selectFieldGender",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "Female",
+      "dataValue" : "F"
+    }, {
+      "name" : "Male",
+      "dataValue" : "M"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "selectFieldOnlineIncomeLevel" : {
+    "_id" : "wm-selectFieldOnlineIncomeLevel-wm.Variable-1502941468127",
+    "name" : "selectFieldOnlineIncomeLevel",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "10K+ per month",
+      "dataValue" : "10kplusmonth"
+    }, {
+      "name" : "5K+ per month",
+      "dataValue" : "5kplusmonth"
+    }, {
+      "name" : "2.5K+ per month",
+      "dataValue" : "2_5kplusmonth"
+    }, {
+      "name" : "500+ per month",
+      "dataValue" : "500plusmonth"
+    }, {
+      "name" : "500 or less per month",
+      "dataValue" : "500lessmonth"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "selectFieldProIncomeLevel" : {
+    "_id" : "wm-selectFieldProIncomeLevel-wm.Variable-1502941501583",
+    "name" : "selectFieldProIncomeLevel",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "name" : "10K+ per month",
+      "dataValue" : "10kplusmonth"
+    }, {
+      "name" : "5K+ per month",
+      "dataValue" : "5kplusmonth"
+    }, {
+      "name" : "2.5K+ per month",
+      "dataValue" : "2_5kplusmonth"
+    }, {
+      "name" : "500+ per month",
+      "dataValue" : "500plusmonth"
+    }, {
+      "name" : "500 or less per month",
+      "dataValue" : "500lessmonth"
+    } ],
+    "type" : "entry",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
   "ServiceParamCustomer" : {
     "_id" : "wm-ServiceParamCustomer-wm.Variable-1502832492665",
     "name" : "ServiceParamCustomer",

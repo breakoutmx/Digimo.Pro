@@ -13,8 +13,8 @@
     "maxResults" : 20,
     "designMaxResults" : 10,
     "inFlightBehavior" : "executeLast",
-    "startUpdate" : true,
-    "autoUpdate" : true,
+    "startUpdate" : false,
+    "autoUpdate" : false,
     "transformationRequired" : false,
     "liveSource" : "HerokuMysqlDMP1",
     "ignoreCase" : true,
@@ -153,6 +153,7 @@
     "tableType" : "TABLE",
     "properties" : [ ],
     "relatedTables" : [ ],
+    "filterFields" : { },
     "package" : "com.digimo_pro.herokumysqldmp1.Charge"
   },
   "HerokuMysqlDMP1CustomerData" : {
@@ -169,8 +170,8 @@
     "maxResults" : 20,
     "designMaxResults" : 10,
     "inFlightBehavior" : "executeLast",
-    "startUpdate" : true,
-    "autoUpdate" : true,
+    "startUpdate" : false,
+    "autoUpdate" : false,
     "transformationRequired" : false,
     "liveSource" : "HerokuMysqlDMP1",
     "ignoreCase" : true,
@@ -326,6 +327,7 @@
       "watchOn" : "HerokuMysqlDMP1UsersData",
       "package" : "com.digimo_pro.herokumysqldmp1.Customer"
     } ],
+    "filterFields" : { },
     "package" : "com.digimo_pro.herokumysqldmp1.Customer"
   },
   "HerokuMysqlDMP1ProfileData" : {
@@ -342,8 +344,8 @@
     "maxResults" : 20,
     "designMaxResults" : 10,
     "inFlightBehavior" : "executeLast",
-    "startUpdate" : true,
-    "autoUpdate" : true,
+    "startUpdate" : false,
+    "autoUpdate" : false,
     "transformationRequired" : false,
     "liveSource" : "HerokuMysqlDMP1",
     "ignoreCase" : true,
@@ -594,6 +596,7 @@
       "watchOn" : "HerokuMysqlDMP1UsersData",
       "package" : "com.digimo_pro.herokumysqldmp1.Profile"
     } ],
+    "filterFields" : { },
     "package" : "com.digimo_pro.herokumysqldmp1.Profile"
   },
   "onboardingDynamicRole" : {
@@ -633,7 +636,7 @@
       "type" : "number"
     }, {
       "target" : "user",
-      "value" : "bind:Variables.onboardingUser.dataSet.dataValue.user",
+      "value" : "bind:Variables.onboardingUser.dataSet.dataValue.userid ? Variables.onboardingUser.dataSet.dataValue.userid : null",
       "type" : "number"
     }, {
       "target" : "fname",
@@ -685,7 +688,7 @@
     "designMaxResults" : 10,
     "inFlightBehavior" : "executeLast",
     "startUpdate" : false,
-    "autoUpdate" : true,
+    "autoUpdate" : false,
     "transformationRequired" : false,
     "liveSource" : "HerokuMysqlDMP1",
     "ignoreCase" : true,
@@ -925,6 +928,8 @@
     },
     "isDefault" : true,
     "bindCount" : 1,
+    "spinnerContext" : "onboardingForm2",
+    "spinnerMessage" : "Updating Profile Information",
     "tableName" : "profile",
     "tableType" : "TABLE",
     "properties" : [ "users" ],
@@ -1154,6 +1159,19 @@
     "filterFields" : { },
     "inputFields" : { },
     "package" : "com.digimo_pro.herokumysqldmp1.Users"
+  },
+  "UIShowPassphrase" : {
+    "_id" : "wm-UIShowPassphrase-wm.Variable-1502975439994",
+    "name" : "UIShowPassphrase",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : false
+    },
+    "type" : "boolean",
+    "isList" : false,
+    "saveInPhonegap" : false
   },
   "UserServiceCreateTempUsername" : {
     "_id" : "wm-javaCreateTempUsername-wm.ServiceVariable-1502558470899",

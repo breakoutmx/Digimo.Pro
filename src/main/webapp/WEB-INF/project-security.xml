@@ -70,6 +70,7 @@
         <security:intercept-url pattern="/j_spring_security_logout" access="permitAll"/>
         <security:intercept-url pattern="/pages/Access/**" access="permitAll"/>
         <security:intercept-url pattern="/pages/Register/**" access="permitAll"/>
+        <security:intercept-url pattern="/pages/SAPassphrase/**" access="permitAll"/>
         <security:intercept-url pattern="/pages/onboardingdialogresult/**" access="permitAll"/>
         <security:intercept-url pattern="/prefabs/DMP_Login_Screen/**" access="permitAll"/>
         <security:intercept-url pattern="/services/AccessKeyGenerateService/invoke/gen-access-key" access="permitAll" method="GET"/>
