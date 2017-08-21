@@ -1045,6 +1045,125 @@
     "inputFields" : { },
     "package" : "com.digimo_pro.herokumysqldmp1.Users"
   },
+  "onboardingStepWebAccess" : {
+    "_id" : "wm-onboardingStepWebAccess-wm.LiveVariable-1503017896339",
+    "name" : "onboardingStepWebAccess",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "bind:Variables.onboardingUser.dataSet.dataValue.userid ? Variables.onboardingUser.dataSet.dataValue.userid : null",
+      "type" : "number"
+    }, {
+      "target" : "username",
+      "value" : "bind:Variables.onboardingUser.dataSet.dataValue.userdata.username ? Variables.onboardingUser.dataSet.dataValue.userdata.username : null",
+      "type" : "string"
+    }, {
+      "target" : "password",
+      "value" : "bind:Variables.onboardingUser.dataSet.dataValue.userdata.password ? Variables.onboardingUser.dataSet.dataValue.userdata.password : null",
+      "type" : "string"
+    }, {
+      "target" : "role",
+      "value" : "bind:Variables.onboardingUser.dataSet.dataValue.userdata.role ? Variables.onboardingUser.dataSet.dataValue.userdata.role : null",
+      "type" : "string"
+    }, {
+      "target" : "email",
+      "value" : "bind:Variables.onboardingUser.dataSet.dataValue.userdata.email ? Variables.onboardingUser.dataSet.dataValue.userdata.email : null",
+      "type" : "string"
+    } ],
+    "operation" : "update",
+    "dataSet" : [ ],
+    "type" : "Users",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 1,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "HerokuMysqlDMP1",
+    "ignoreCase" : true,
+    "matchMode" : "start",
+    "orderBy" : "id asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "username",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "username",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "password",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "password",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "role",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "role",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "email",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "email",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "Users",
+      "fullyQualifiedName" : "com.digimo_pro.herokumysqldmp1.Users",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "id" ]
+    },
+    "tableName" : "users",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "inputFields" : { },
+    "package" : "com.digimo_pro.herokumysqldmp1.Users"
+  },
   "regPage1Variable" : {
     "_id" : "wm-regVariable-wm.LiveVariable-1502404519332",
     "name" : "regPage1Variable",

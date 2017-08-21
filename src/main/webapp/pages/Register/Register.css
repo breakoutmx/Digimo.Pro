@@ -4,7 +4,7 @@ body {
 
 .security-avatar {
     float:left;
-    width: 25%;
+    width: 24%;
 }
 
 .security-avatar-label {
@@ -84,3 +84,34 @@ body {
     background-color: transparent;
     border: none;
 }
+
+.new-user-onboard-wizard .wm-app .app-form .form-action .btn, .wm-app .app-liveform .form-action .btn {
+    margin-right: 35px;
+}
+
+.obf-head-icon {
+    width: 64px;
+    display: block;
+    margin: 0 auto 5px auto;
+}
+
+
+.obf-center-field {
+    width: 90%;
+    margin: 5px auto;
+    display: block;
+}
+
+.obf-field-message {
+    display: block;
+    margin: 5px auto;
+}
+
+
+
+
+
+
+
+
+/*end*/

@@ -3,3 +3,9 @@
     background-color: rgba(0,0,0,.85) !important;
     padding:0px;
 }
+
+.header-middle-logo {
+    display: block;
+    max-width: 125px;
+    margin: 10px auto;
+}

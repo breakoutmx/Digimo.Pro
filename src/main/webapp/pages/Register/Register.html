@@ -1,16 +1,18 @@
 <wm-page data-ng-controller="RegisterPageController" name="page1" pagetitle="Get Started">
     <wm-content name="content1" padding="0px" backgroundcolor="#010101" class="app-page-content">
         <wm-page-content columnwidth="12" name="page_content1" padding="0px" backgroundcolor="#000000">
-            <wm-container name="container4" height="100%" backgroundimage="resources/images/imagelists/bg_astrobizman.jpg" backgroundrepeat="no-repeat" opacity="1" backgroundcolor="#010101" backgroundattachment="fixed" show="true" backgroundposition="left">
+            <wm-container name="container4" height="100%" backgroundimage="resources/images/imagelists/tdmnew-bg.png" backgroundrepeat="no-repeat" opacity="1" backgroundcolor="#1e2538" backgroundattachment="fixed" show="true" backgroundposition="center">
                 <wm-layoutgrid name="layoutgrid2" width="100%" height="15%">
                     <wm-gridrow name="gridrow6" class="hidden-xs">
-                        <wm-gridcolumn columnwidth="12" name="gridcolumn8_1" class="hidden-xs" padding="0px" height="10%">
-                            <wm-picture name="picture1" picturesource="resources/images/imagelists/TDM_Start_Screen_Logo.png" width="100px" margin="20px unset unset 20px"></wm-picture>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn8_1" class="hidden-xs" padding="0px" height="10%"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn49_1">
+                            <wm-picture name="picture1" picturesource="resources/images/imagelists/THEDM-LogoNew-Dark-6sided.png" width="100px" class="header-middle-logo" pictureplaceholder="resources/images/imagelists/THEDM-LogoNew-Dark-6sided.png"></wm-picture>
                         </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn50_1"></wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow6_1">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn10">
-                            <wm-wizard stepstyle="justified" name="newUserOnboardWizard" donebtnlabel="Finish Setup!" cancelable="false" defaultstep="onboardWizardStepAccountValidate" class="new-user-onboard-wizard" backgroundcolor="rgba(0,0,0,.75)" height="100%"
+                            <wm-wizard stepstyle="justified" name="newUserOnboardWizard" donebtnlabel="Finish Setup!" cancelable="false" defaultstep="onboardWizardStepAccountValidate" class="new-user-onboard-wizard" backgroundcolor="rgba(0,0,0,.45)" height="100%"
                             previousbtnlabel="Back">
                                 <wm-wizardstep name="newUserWizardContent" enableskip="false" iconclass="wi wi-donut-large fa-2x" title="Welcome to TDM">
                                     <wm-iframe name="onboardingWelcomeSwayEmbed" iframesrc="https://sway.com/s/13YxbIDCtq2FnG1D/embed" width="100%" height="500px" show="false" encodeurl="true"></wm-iframe>
@@ -21,44 +23,78 @@
                                 </wm-wizardstep>
                                 <wm-wizardstep name="onboardWizardStepAccountValidate" title="Validate Account" iconclass="wi wi-account-circle fa-2x" on-next="onboardWizardStepAccountValidateNext($scope, currentStep, stepIndex)" on-load="onboardWizardStepAccountValidateLoad($scope, stepIndex)"
                                 enableskip="false">
-                                    <wm-liveform errormessage="There was an error creating your account, please refresh and attempt the setup process again." title="For Premium members, enter your purchase email.  For Jetpack Members enter any email you would like to use for your account."
-                                    iconclass="wi wi-email fa-lg" defaultmode="Edit" dataset="bind:Variables.onboardingStepValidateAccountEmail.dataSet" captionalign="left" captionposition="top" name="onboardingForm1" backgroundcolor="transparent" messagelayout="Toaster"
-                                    insertmessage="Your account was created successfully.  Please continue to follow the setup steps." updatemessage="Your account was updated successfully.  Please continue to follow the setup steps." validationtype="default"
-                                    on-success="onboardingForm1Success($event, $operation, $data)">
-                                        <wm-layoutgrid columns="1" name="layoutgrid3">
-                                            <wm-gridrow name="gridrow7">
-                                                <wm-gridcolumn columnwidth="12" name="gridcolumn11_1">
-                                                    <wm-form-field name="email" show="true" primary-key="false" generator="assigned" key="email" type="string" readonly="false" required="false" mobile-display="false" widget="text" maxchars="255" defaultvalue="kangst3r@gmail.com"
-                                                    placeholder="Enter Your Email Address" inputtype="text" width="98%"></wm-form-field>
-                                                </wm-gridcolumn>
-                                            </wm-gridrow>
-                                            <wm-gridrow name="gridrow8">
-                                                <wm-gridcolumn columnwidth="12" name="gridcolumn12">
-                                                    <wm-form-field name="password" show="false" primary-key="false" generator="assigned" key="password" type="string" readonly="false" required="true" mobile-display="false" widget="text" maxchars="255" placeholder="Auto-populate temp password"
-                                                    defaultvalue="bind:'temp_password'" inputtype="text" width="98%" disabled="true"></wm-form-field>
-                                                </wm-gridcolumn>
-                                            </wm-gridrow>
-                                            <wm-gridrow name="gridrow9">
-                                                <wm-gridcolumn columnwidth="12" name="gridcolumn13">
-                                                    <wm-form-field name="role" show="false" primary-key="false" generator="assigned" key="role" type="string" readonly="false" required="true" mobile-display="false" widget="text" maxchars="255" defaultvalue="bind:Variables.onboardingDynamicRole.dataSet.dataValue || 'jetpackuser'"
-                                                    placeholder="Dynamically update role based on account validation" inputtype="text" width="98%" disabled="true"></wm-form-field>
-                                                </wm-gridcolumn>
-                                            </wm-gridrow>
-                                            <wm-gridrow name="gridrow10">
-                                                <wm-gridcolumn columnwidth="12" name="gridcolumn14">
-                                                    <wm-form-field name="username" show="false" primary-key="false" generator="assigned" key="username" type="string" readonly="false" required="true" mobile-display="false" widget="text" maxchars="255" placeholder="Auto-populate temp user name on load action"
-                                                    inputtype="text" defaultvalue="bind:Variables.UserServiceCreateTempUsername.dataSet.value" width="98%" disabled="true"></wm-form-field>
-                                                </wm-gridcolumn>
-                                            </wm-gridrow>
-                                        </wm-layoutgrid>
-                                        <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder=""></wm-form-field>
-                                        <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.userid ? 'Account Validated!' : 'Validate Account'" show="true" class="form-save btn-success" iconclass="wi wi-check-circle fa-lg"
-                                        title="bind:Variables.onboardingUser.dataSet.dataValue.userid ? 'Account Validated' : 'Validate Account'" action="saveAction($event)" shortcutkey="" disabled="bind:Variables.onboardingUser.dataSet.dataValue.userid ? true : false"
-                                        type="button" update-mode="true"></wm-form-action>
-                                    </wm-liveform>
+                                    <wm-layoutgrid name="layoutgrid10_1" columns="3">
+                                        <wm-gridrow name="gridrow43">
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn55"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" name="gridcolumn56" padding="20px unset unset unset">
+                                                <wm-layoutgrid name="layoutgrid13">
+                                                    <wm-gridrow name="gridrow49">
+                                                        <wm-gridcolumn columnwidth="2" name="gridcolumn67">
+                                                            <wm-picture name="picture3" picturesource="resources/images/imagelists/000080-envelope-closed-02.png" class="obf-head-icon"></wm-picture>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn columnwidth="10" name="gridcolumn68" padding="5px unset unset unset">
+                                                            <wm-label padding="unset 0.5em" name="obf1headling1" caption="Enter Your Purchase or Desired Account Email" fontsize="1.4" fontunit="em" fontfamily="&quot;helvetica neue&quot;, arial, sans-serif"
+                                                            fontweight="bold"></wm-label>
+                                                            <wm-label padding="unset 0.5em" caption="For Premium members, enter your purchase email.  For Jetpack Members enter any email you would like to use for your account." fontsize="1"
+                                                            fontunit="em" fontfamily="&quot;helvetica neue&quot;, arial, sans-serif" name="obf1heading2"></wm-label>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow name="gridrow50" padding="20px unset unset unset">
+                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn69" padding="unset 30px unset unset">
+                                                            <wm-liveform errormessage="There was an error creating your account, please refresh and attempt the setup process again." title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.onboardingStepValidateAccountEmail.dataSet"
+                                                            captionalign="left" captionposition="top" name="onboardingForm1" backgroundcolor="transparent" messagelayout="Toaster" insertmessage="Your account was created successfully.  Please continue to follow the setup steps."
+                                                            updatemessage="Your account was updated successfully.  Please continue to follow the setup steps." validationtype="default" on-success="onboardingForm1Success($event, $operation, $data)" class="onboarding-form-1">
+                                                                <wm-layoutgrid columns="1" name="layoutgrid3">
+                                                                    <wm-gridrow name="gridrow7">
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn11_1">
+                                                                            <wm-form-field name="email" show="true" primary-key="false" generator="assigned" key="email" type="string" readonly="false" required="false" mobile-display="false" widget="text" maxchars="255"
+                                                                            defaultvalue="kangst3r@gmail.com" placeholder="Enter Your Email Address" inputtype="text" width="100%" class="obf-center-field"></wm-form-field>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                    <wm-gridrow name="gridrow8">
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn12">
+                                                                            <wm-form-field name="password" show="false" primary-key="false" generator="assigned" key="password" type="string" readonly="false" required="true" mobile-display="false" widget="text"
+                                                                            maxchars="255" placeholder="Auto-populate temp password" defaultvalue="bind:'temp_password'" inputtype="text" width="98%" disabled="true"></wm-form-field>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                    <wm-gridrow name="gridrow9">
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn13">
+                                                                            <wm-form-field name="role" show="false" primary-key="false" generator="assigned" key="role" type="string" readonly="false" required="true" mobile-display="false" widget="text" maxchars="255"
+                                                                            defaultvalue="bind:Variables.onboardingDynamicRole.dataSet.dataValue || 'jetpackuser'" placeholder="Dynamically update role based on account validation" inputtype="text" width="98%"
+                                                                            disabled="true"></wm-form-field>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                    <wm-gridrow name="gridrow10">
+                                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn14">
+                                                                            <wm-form-field name="username" show="false" primary-key="false" generator="assigned" key="username" type="string" readonly="false" required="true" mobile-display="false" widget="text"
+                                                                            maxchars="255" placeholder="Auto-populate temp user name on load action" inputtype="text" defaultvalue="bind:Variables.UserServiceCreateTempUsername.dataSet.value" width="98%"
+                                                                            disabled="true"></wm-form-field>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                </wm-layoutgrid>
+                                                                <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number"
+                                                                placeholder=""></wm-form-field>
+                                                                <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.userid ? 'Account Validated!' : 'Validate Account'" show="true" class="form-save btn-success"
+                                                                iconclass="wi wi-check-circle fa-lg" title="bind:Variables.onboardingUser.dataSet.dataValue.userid ? 'Account Validated' : 'Validate Account'" action="saveAction($event)" shortcutkey="" disabled="bind:Variables.onboardingUser.dataSet.dataValue.userid ? true : false"
+                                                                type="button" update-mode="true"></wm-form-action>
+                                                            </wm-liveform>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn57"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow44">
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn58"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn59"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn60"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
                                 </wm-wizardstep>
-                                <wm-wizardstep name="onboardWizardStepCreateProfile" title="Create Profile" iconclass="wi wi-assignment-ind fa-2x" on-load="Variables.onboardingStepCreateProfile.updateRecord()">
-                                    <wm-liveform errormessage="" title="Profile Info" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.onboardingStepCreateProfile.dataSet" captionalign="left" captionposition="top" name="onboardingForm2" backgroundcolor="transparent">
+                                <wm-wizardstep name="onboardWizardStepCreateProfile" title="Create Profile" iconclass="wi wi-assignment-ind fa-2x" on-load="onboardWizardStepCreateProfileLoad($scope, stepIndex)">
+                                    <wm-liveform errormessage="There was an error updating your personal profile.  Please try again if the problem persists, contact support." title="Profile Info" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.onboardingStepCreateProfile.dataSet"
+                                    captionalign="left" captionposition="top" name="onboardingForm2" backgroundcolor="transparent" subheading="In TDM, your success is taken seriously.  That's starts by getting to know each and every member beyond a simple name and an email.  Only a few of the questions are required, but the more information you provide, the more we can personally guide you through a plan to get results that works for YOU.  Please fill out as much of your profile as you can now while it's fresh on your mind!"
+                                    on-success="onboardingForm2Success($event, $operation, $data)" insertmessage="Your personal profile was successfully created." updatemessage="Your personal profile was successfully updated." deletemessage="Your personal profile was successfully deleted.  If this seems wrong, please contact support.">
                                         <wm-layoutgrid columns="3" name="layoutgrid7">
                                             <wm-gridrow name="gridrow34">
                                                 <wm-gridcolumn columnwidth="4" name="gridcolumn36">
@@ -126,7 +162,7 @@
                                                             <wm-gridcolumn columnwidth="12" name="gridcolumn65" padding="unset unset 30px unset">
                                                                 <wm-form-field name="sa_genfield_passphrase_pw" displayname="Secret Passphrase - Important: you must remember this.  This is not stored anywhere for security reasons.  You can use any character or spacing you like."
                                                                 widget="text" show="true" type="custom" placeholder="Enter a secret passphrase" margin="10px" class="sa-passphrase-wrap" inputtype="password" autocomplete="true" disabled="false" width="90%"
-                                                                updateon="default" key="sa_genfield_passphrase_pw" updatedelay="2" maxchars="50" required="true" hint="(eg. I Love Hamburgers on Wednesday)"></wm-form-field>
+                                                                updateon="default" key="sa_genfield_passphrase_pw" updatedelay="2" maxchars="50" required="false" hint="(eg. I Love Hamburgers on Wednesday)"></wm-form-field>
                                                                 <wm-popover popoverwidth="auto" popoverheight="60" name="sa_showhide_passphrase_popover" caption="Show/Hide Passphrase" encodeurl="true" animation="bounce" iconclass="wi wi-eye fa-2x"
                                                                 color="#ffffff" iconposition="right" textalign="right" whitespace="normal" popoverplacement="top" class="sa-showhide-pass-popover" width="90%" contentsource="partial" content="SAPassphrase"
                                                                 textdecoration="underline" interaction="default">
@@ -139,22 +175,78 @@
                                                     </wm-layoutgrid>
                                                 </wm-gridcolumn>
                                             </wm-gridrow>
-                                            <wm-gridrow name="gridrow36">
-                                                <wm-gridcolumn columnwidth="4" name="gridcolumn47"></wm-gridcolumn>
-                                            </wm-gridrow>
                                         </wm-layoutgrid>
+                                        <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
                                         <wm-form-field name="users" displayname="Users" show="false" primary-key="false" generator="assigned" key="users" type="list" is-related="true" readonly="false" required="false" widget="select" displayexpression="id"
                                         orderby="id:asc" placeholder="Select value"></wm-form-field>
-                                        <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number"
-                                        placeholder="Enter value"></wm-form-field>
-                                        <wm-form-action key="save" display-name="Update Profile" show="true" class="form-save btn-success" iconclass="wi wi-assignment-turned-in fa-lg" title="Update Profile" disabled="false" type="submit"
-                                        update-mode="true"></wm-form-action>
+                                        <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.completed.createProfile === true ? 'Profile Updated!' : 'Update Profile'" show="true" class="form-save btn-success"
+                                        iconclass="wi wi-assignment-turned-in fa-lg" title="bind:Variables.onboardingUser.dataSet.dataValue.completed.createProfile === true ? 'Profile Updated!' : 'Update Profile'" action="saveAction($event)" disabled="false"
+                                        type="button" update-mode="true"></wm-form-action>
                                     </wm-liveform>
                                 </wm-wizardstep>
-                                <wm-wizardstep name="wizardstep4_1" title="DM Web" iconclass="wi wi-apps fa-2x"></wm-wizardstep>
+                                <wm-wizardstep name="onboardWizardStepDMWeb" title="DM Web" iconclass="wi wi-apps fa-2x">
+                                    <wm-layoutgrid columns="3" name="layoutgrid11">
+                                        <wm-gridrow name="gridrow43_1">
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn57_1"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="6" padding="20px 30px unset unset" name="gridcolumn58_1">
+                                                <wm-liveform errormessage="There was an error creating your login details.  Please try again and if the issue persists, please contact support." title="Select a Username and Password" iconclass="wi wi-edit"
+                                                defaultmode="Edit" dataset="bind:Variables.onboardingStepWebAccess.dataSet" captionalign="left" captionposition="top" name="onboardingForm3" backgroundcolor="transparent" subheading="Choose your DM Web login details below"
+                                                insertmessage="Your user account was created." updatemessage="Your login details were successfully created!" deletemessage="Your user account has been deleted.  If this seems wrong, please contact support immediately.">
+                                                    <wm-layoutgrid columns="1" name="obf3_layout_grid">
+                                                        <wm-gridrow name="obf3_username_gridrow">
+                                                            <wm-gridcolumn columnwidth="12" name="obf3_username_gridcol">
+                                                                <wm-form-field name="username" displayname="Login Username" show="true" primary-key="false" generator="assigned" key="username" type="string" readonly="false" required="true" widget="text" maxchars="30"
+                                                                inputtype="text" placeholder="Enter a unique username" width="98%" class="obf-center-field" regexp="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$" validationmessage="The selected username is invalid.  Usernames can consist only of alphanumeric characters, spaces, underscores and hyphens.  They must also start and end with an alphanumeric character and not have two or more hyphens, spaces or underscores in a row."
+                                                                updateon="default" updatedelay="1000" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.email.split('@')[0]" autocomplete="false" on-keyup="usernameKeyup($event, $scope)"
+                                                                margin="unset unset 10px unset"></wm-form-field>
+                                                                <wm-layoutgrid name="layoutgrid14">
+                                                                    <wm-gridrow name="gridrow50_1">
+                                                                        <wm-gridcolumn columnwidth="1" name="gridcolumn68_1"></wm-gridcolumn>
+                                                                        <wm-gridcolumn columnwidth="10" name="gridcolumn70">
+                                                                            <wm-message name="obf3UsernameMessage" caption="Important!" hideclose="true" animation="fadeIn" show="true" class="obf-field-message"></wm-message>
+                                                                        </wm-gridcolumn>
+                                                                        <wm-gridcolumn columnwidth="1" name="gridcolumn69_1"></wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                </wm-layoutgrid>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                        <wm-gridrow name="obf3_password_gridrow">
+                                                            <wm-gridcolumn columnwidth="12" name="obf3_password_gridcol" padding="unset unset 25px unset">
+                                                                <wm-form-field name="password" displayname="Password" show="true" primary-key="false" generator="assigned" key="password" type="string" readonly="false" required="true" widget="text" maxchars="255"
+                                                                inputtype="password" placeholder="Enter a password: 8 characters and at least one number" width="98%" class="obf-center-field" validationmessage="Your password must contain at least one number and be at least 8 characters long."
+                                                                regexp="^(?=.*[A-Za-z\s])(?=.*\d)[A-Za-z\d\s]{8,}$" updateon="default" updatedelay="1000" margin="unset unset 10px unset"></wm-form-field>
+                                                                <wm-popover popoverwidth="auto" popoverheight="60" caption="View Password" encodeurl="true" animation="bounce" iconclass="wi wi-eye fa-2x" color="#ffffff" iconposition="right"
+                                                                textalign="right" whitespace="normal" popoverplacement="left" class="sa-showhide-pass-popover" width="98%" contentsource="partial" content="SAPassphrase" textdecoration="underline" interaction="default"
+                                                                name="obf3_viewpassword_popover" padding="10px 35px unset unset" title="" hint="Hover here to view your currently entered password in plain text" shortcutkey="Alt+P">
+                                                                    <wm-param name="passphrase" value="bind:Widgets.onboardingForm3.formWidgets.password.datavalue" type="string"></wm-param>
+                                                                </wm-popover>
+                                                            </wm-gridcolumn>
+                                                        </wm-gridrow>
+                                                    </wm-layoutgrid>
+                                                    <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Populate from current onboarding user data"
+                                                    disabled="true" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userid"></wm-form-field>
+                                                    <wm-form-field name="email" displayname="Email" show="false" primary-key="false" generator="assigned" key="email" type="string" readonly="false" required="false" widget="text" maxchars="255"
+                                                    inputtype="text" placeholder="Populate email from current onboarding user data" disabled="true" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.email"></wm-form-field>
+                                                    <wm-form-field name="role" displayname="Role" show="false" primary-key="false" generator="assigned" key="role" type="string" readonly="false" required="false" widget="text" maxchars="255"
+                                                    inputtype="text" placeholder="Populate role from current onboarding user data" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.role" disabled="true"></wm-form-field>
+                                                    <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.user.username.indexOf('temp') > -1 ? 'Login Created!' : 'Create Login Details'" show="true" class="form-save btn-success"
+                                                    iconclass="wi wi-apps" title="bind:Variables.onboardingUser.dataSet.dataValue.user.username.indexOf('temp') > -1 ? 'Login Created!' : 'Create Login Details'" action="saveAction($event)" shortcutkey="S"
+                                                    disabled="false" type="button" update-mode="true"></wm-form-action>
+                                                </wm-liveform>
+                                            </wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="3" name="gridcolumn63"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                        <wm-gridrow name="gridrow48">
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn64"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn65_1"></wm-gridcolumn>
+                                            <wm-gridcolumn columnwidth="4" name="gridcolumn66"></wm-gridcolumn>
+                                        </wm-gridrow>
+                                    </wm-layoutgrid>
+                                </wm-wizardstep>
                                 <wm-wizardstep name="wizardstep5" title="DM Cloud" iconclass="wi wi-cloud-circle fa-2x"></wm-wizardstep>
+                                <wm-wizardstep name="wizardstep6" title="Finish Setup"></wm-wizardstep>
                             </wm-wizard>
-                            <wm-container name="hidden_elements_container">
+                            <wm-container name="hidden_elements_container" display="none">
                                 <wm-form title="Create Your TDM Account" style="max-width: 420px; margin: 0 auto;" class="panel-signup-form" name="signupForm" captionposition="top" on-success="signupFormSuccess($event, $scope, $data)" backgroundcolor="rgba(0,0,0,.75)"
                                 subheading="Your Key to Breaking Out of the Cycle..." show="false">
                                     <wm-layoutgrid name="layoutgrid3_1">

@@ -33,10 +33,13 @@ Application.$controller("RegisterPageController", ["$scope", function($scope) {
          * '$scope.Widgets.username.datavalue'
          */
         $scope.Widgets.signupFormMessage.show = false;
+
         /*
          * Setup scoped shorthand variables
          */
         $scope.onboardingUserData = $scope.Variables.onboardingUser.dataSet.dataValue;
+        $scope.onboardingUserData.completed = {};
+        $scope.onboardingUserData.inputFieldData = {};
     };
 
     //StripeServiceRetrieveCustomers
@@ -99,6 +102,24 @@ Application.$controller("RegisterPageController", ["$scope", function($scope) {
         // Update onboarding form 2 in wizard user link with data object
         $scope.Widgets.onboardingForm2.formWidgets.users.datavalue = $scope.onboardingUserData.userdata;
         $scope.Widgets.onboardingForm2.formWidgets.users.displayvalue = $scope.onboardingUserData.userid;
+    };
+
+
+    $scope.onboardWizardStepCreateProfileLoad = function($isolateScope, stepIndex) {
+        if (typeof $scope.onboardingUserData === 'undefined' || !$scope.onboardingUserData.completed.createProfile)
+            $scope.Widgets.onboardWizardStepCreateProfile.disablenext = true;
+        else
+            $scope.Widgets.onboardWizardStepCreateProfile.disablenext = false;
+    };
+
+
+    $scope.onboardingForm2Success = function($event, $operation, $data) {
+        console.log("onboardingForm2Success data", $data);
+        $scope.onboardingUserData.userid = $data.id;
+        $scope.onboardingUserData.userdata = $data;
+        console.log("$scope.onboardingUserData Data", $scope.onboardingUserData);
+        $scope.onboardingUserData.completed.createProfile = true;
+        $scope.Widgets.onboardWizardStepCreateProfile.disablenext = false;
     };
 
 }]);
@@ -289,5 +310,110 @@ Application.$controller("onboardingForm2Controller", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
+
+        $scope.saveAction = function($event) {
+            $scope.Widgets.onboardingForm2.save();
+        };
+
+    }
+]);
+
+
+
+Application.$controller("usersDialogController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("liveform7Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("onboardingForm3Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+
+        $scope.saveAction = function($event) {
+            $scope.Widgets.onboardingForm3.save();
+        };
+
+
+        $scope.usernameKeyup = function($event, $isolateScope) {
+
+            var formWidgets = $scope.Widgets.onboardingForm3.formWidgets;
+            console.log('Set formWidgets access variable to current form widgets', formWidgets);
+
+            formWidgets.obf3UsernameMessage.show = false;
+
+            var username = $scope.Variables.UserServiceCreateTempUsername.dataSet.value;
+            console.log("Current username: " + $scope.Variables.UserServiceCreateTempUsername.dataSet.value);
+            var DBReadTableUsers = $scope.Variables.DBReadTableUsers;
+            console.log('Setup DBReadTableUsers live variable method access variable', typeof DBReadTableUsers.invoke);
+            var DBFilters = $scope.Variables.DBFilters.dataSet.dataValue; //type 'entry' index 0
+            console.log('Setup DBFilters dataValue[0] access variable', DBFilters);
+            var onboardingUser = $scope.Variables.onboardingUser.dataSet.dataValue;
+            console.log('Setup onboardingUser dataValue access variable', onboardingUser);
+
+            //Setup users property value (maybe move this to page load)
+            DBFilters.users = typeof DBFilters.users === 'undefined' ? {} : DBFilters.users;
+
+            username = formWidgets.username.datavalue;
+            console.log('Set local var `username` to current inputfield value');
+
+            onboardingUser.inputFieldData.username = username;
+            console.log('Set onboardingUser inputFieldData.username value to username local var', username);
+
+            //Set db filter to username
+            DBFilters.users.username = username;
+            console.log('Set DB Filter users.username to local var username', {
+                username: username,
+                dbfiltersUsers: DBFilters.users
+            });
+
+            //Invoke live variable DBReadTableUsers
+            console.log('Invoke live var DBReadTableUsers with the following filters', DBFilters.users);
+            // var liveUsers = DBReadTableUsers.invoke();
+            // Run live variable DB access asynch method
+            if (typeof username !== 'undefined' && username !== '') {
+                DBReadTableUsers.listRecords(null, function(data) {
+                    // Success Callback
+                    console.log('DBReadTableUsers success', data)
+                    if (data.length > 0) {
+                        formWidgets.obf3UsernameMessage.type = "error";
+                        formWidgets.obf3UsernameMessage.caption = "Error: This username has already been taken. Please choose a different one.";
+                        formWidgets.obf3UsernameMessage.show = true;
+                        console.log('live users from DBReadTableUsers with filter username ' + username);
+                        console.log('Users list', liveUsers);
+
+                    } else {
+                        formWidgets.obf3UsernameMessage.show = false;
+                        console.log('live users from DBReadTableUsers with filter username ' + username);
+                        console.log('Users list', liveUsers);
+                    }
+                }, function(error) {
+                    // Error Callback
+                    console.error('DBReadTableUsers error', error)
+                    formWidgets.obf3UsernameMessage.type = "error";
+                    formWidgets.obf3UsernameMessage.caption = "Error: There was an error while accessing user records to verify your username's uniqueness. Please try entering your username again and if the problem persists, please contact support with this message attached. \n\nError: " + (typeof error === 'object' ? JSON.stringify(error) : error);
+                    $scope.Widgets.obf3UsernameMessage.show = true;
+                });
+            } else {
+                console.log("Skipping existing users check for username as username is undefined");
+            }
+
+
+        };
+
+
+        $scope.saveAction = function($event) {
+
+        };
+
     }
 ]);

@@ -15,6 +15,139 @@
     } ],
     "operation" : "toast"
   },
+  "DBFilters" : {
+    "_id" : "wm-DBFilters-wm.Variable-1503281192111",
+    "name" : "DBFilters",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "name" : "data",
+      "dataValue" : { }
+    },
+    "type" : "entry",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "DBReadTableUsers" : {
+    "_id" : "wm-DBReadTableUsers-wm.LiveVariable-1503281027663",
+    "name" : "DBReadTableUsers",
+    "owner" : "App",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ {
+      "target" : "id",
+      "value" : "bind:Variables.DBFilters.dataSet.dataValue.users ? Variables.DBFilters.dataSet.dataValue.users.id : null",
+      "type" : "number"
+    }, {
+      "target" : "username",
+      "value" : "bind:Variables.DBFilters.dataSet.dataValue.users ? Variables.DBFilters.dataSet.dataValue.users.username : null",
+      "type" : "string"
+    }, {
+      "target" : "password",
+      "value" : "bind:Variables.DBFilters.dataSet.dataValue.users ? Variables.DBFilters.dataSet.dataValue.users.password : null",
+      "type" : "string"
+    }, {
+      "target" : "role",
+      "value" : "bind:Variables.DBFilters.dataSet.dataValue.users ? Variables.DBFilters.dataSet.dataValue.users.role : null",
+      "type" : "string"
+    }, {
+      "target" : "email",
+      "value" : "bind:Variables.DBFilters.dataSet.dataValue.users ? Variables.DBFilters.dataSet.dataValue.users.email : null",
+      "type" : "string"
+    } ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "Users",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 1000,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "HerokuMysqlDMP1",
+    "ignoreCase" : true,
+    "matchMode" : "start",
+    "orderBy" : "id asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 0,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "username",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "username",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "password",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "password",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "scale" : 0
+      }, {
+        "fieldName" : "role",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "role",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "email",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "email",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "Users",
+      "fullyQualifiedName" : "com.digimo_pro.herokumysqldmp1.Users",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "id" ]
+    },
+    "tableName" : "users",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "inputFields" : { },
+    "package" : "com.digimo_pro.herokumysqldmp1.Users"
+  },
   "FileServiceUploadFile" : {
     "_id" : "wm-FileServiceUploadFile-wm.ServiceVariable-1502066670482",
     "name" : "FileServiceUploadFile",
