@@ -203,7 +203,7 @@
                                                                 <wm-layoutgrid name="layoutgrid14">
                                                                     <wm-gridrow name="gridrow50_1">
                                                                         <wm-gridcolumn columnwidth="10" name="gridcolumn70">
-                                                                            <wm-message name="obf3UsernameMessage" caption="Important!" hideclose="true" animation="fadeIn" show="true" class="obf-field-message"></wm-message>
+                                                                            <wm-message name="obf3UsernameMessage" caption="Important!" hideclose="true" animation="fadeIn" show="false" class="obf-field-message"></wm-message>
                                                                         </wm-gridcolumn>
                                                                     </wm-gridrow>
                                                                 </wm-layoutgrid>
@@ -228,8 +228,8 @@
                                                     inputtype="text" placeholder="Populate email from current onboarding user data" disabled="true" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.email"></wm-form-field>
                                                     <wm-form-field name="role" displayname="Role" show="false" primary-key="false" generator="assigned" key="role" type="string" readonly="false" required="false" widget="text" maxchars="255"
                                                     inputtype="text" placeholder="Populate role from current onboarding user data" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.role" disabled="true"></wm-form-field>
-                                                    <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.user.username.indexOf('temp') > -1 ? 'Login Created!' : 'Create Login Details'" show="true" class="form-save btn-success"
-                                                    iconclass="wi wi-apps" title="bind:Variables.onboardingUser.dataSet.dataValue.user.username.indexOf('temp') > -1 ? 'Login Created!' : 'Create Login Details'" action="saveAction($event);saveAction1($event)"
+                                                    <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.completed.dmWeb === true ? 'Login Details Updated!' : 'Update Login Details'" show="true" class="form-save btn-success"
+                                                    iconclass="wi wi-apps" title="bind:Variables.onboardingUser.dataSet.dataValue.completed.dmWeb === true ? 'Login Details Updated!' : 'Update Login Details'" action="saveAction($event);saveAction1($event)"
                                                     shortcutkey="" disabled="false" type="button" update-mode="true"></wm-form-action>
                                                 </wm-liveform>
                                             </wm-gridcolumn>
