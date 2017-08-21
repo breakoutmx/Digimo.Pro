@@ -184,28 +184,27 @@
                                         type="button" update-mode="true"></wm-form-action>
                                     </wm-liveform>
                                 </wm-wizardstep>
-                                <wm-wizardstep name="onboardWizardStepDMWeb" title="DM Web" iconclass="wi wi-apps fa-2x">
+                                <wm-wizardstep name="onboardWizardStepDMWeb" title="DM Web" iconclass="wi wi-apps fa-2x" on-load="onboardWizardStepDMWebLoad($scope, stepIndex)">
                                     <wm-layoutgrid columns="3" name="layoutgrid11">
                                         <wm-gridrow name="gridrow43_1">
                                             <wm-gridcolumn columnwidth="3" name="gridcolumn57_1"></wm-gridcolumn>
                                             <wm-gridcolumn columnwidth="6" padding="20px 30px unset unset" name="gridcolumn58_1">
                                                 <wm-liveform errormessage="There was an error creating your login details.  Please try again and if the issue persists, please contact support." title="Select a Username and Password" iconclass="wi wi-edit"
                                                 defaultmode="Edit" dataset="bind:Variables.onboardingStepWebAccess.dataSet" captionalign="left" captionposition="top" name="onboardingForm3" backgroundcolor="transparent" subheading="Choose your DM Web login details below"
-                                                insertmessage="Your user account was created." updatemessage="Your login details were successfully created!" deletemessage="Your user account has been deleted.  If this seems wrong, please contact support immediately.">
+                                                insertmessage="Your user account was created." updatemessage="Your login details were successfully created!" deletemessage="Your user account has been deleted.  If this seems wrong, please contact support immediately."
+                                                on-success="onboardingForm3Success($event, $operation, $data)">
                                                     <wm-layoutgrid columns="1" name="obf3_layout_grid">
                                                         <wm-gridrow name="obf3_username_gridrow">
                                                             <wm-gridcolumn columnwidth="12" name="obf3_username_gridcol">
                                                                 <wm-form-field name="username" displayname="Login Username" show="true" primary-key="false" generator="assigned" key="username" type="string" readonly="false" required="true" widget="text" maxchars="30"
                                                                 inputtype="text" placeholder="Enter a unique username" width="98%" class="obf-center-field" regexp="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$" validationmessage="The selected username is invalid.  Usernames can consist only of alphanumeric characters, spaces, underscores and hyphens.  They must also start and end with an alphanumeric character and not have two or more hyphens, spaces or underscores in a row."
-                                                                updateon="default" updatedelay="1000" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.email.split('@')[0]" autocomplete="false" on-keyup="usernameKeyup($event, $scope)"
+                                                                updateon="default" updatedelay="100" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.email.split('@')[0]" autocomplete="false" on-keyup="usernameKeyup($event, $scope)"
                                                                 margin="unset unset 10px unset"></wm-form-field>
                                                                 <wm-layoutgrid name="layoutgrid14">
                                                                     <wm-gridrow name="gridrow50_1">
-                                                                        <wm-gridcolumn columnwidth="1" name="gridcolumn68_1"></wm-gridcolumn>
                                                                         <wm-gridcolumn columnwidth="10" name="gridcolumn70">
                                                                             <wm-message name="obf3UsernameMessage" caption="Important!" hideclose="true" animation="fadeIn" show="true" class="obf-field-message"></wm-message>
                                                                         </wm-gridcolumn>
-                                                                        <wm-gridcolumn columnwidth="1" name="gridcolumn69_1"></wm-gridcolumn>
                                                                     </wm-gridrow>
                                                                 </wm-layoutgrid>
                                                             </wm-gridcolumn>
@@ -214,7 +213,7 @@
                                                             <wm-gridcolumn columnwidth="12" name="obf3_password_gridcol" padding="unset unset 25px unset">
                                                                 <wm-form-field name="password" displayname="Password" show="true" primary-key="false" generator="assigned" key="password" type="string" readonly="false" required="true" widget="text" maxchars="255"
                                                                 inputtype="password" placeholder="Enter a password: 8 characters and at least one number" width="98%" class="obf-center-field" validationmessage="Your password must contain at least one number and be at least 8 characters long."
-                                                                regexp="^(?=.*[A-Za-z\s])(?=.*\d)[A-Za-z\d\s]{8,}$" updateon="default" updatedelay="1000" margin="unset unset 10px unset"></wm-form-field>
+                                                                regexp="^(?=.*[A-Za-z\s])(?=.*\d)[A-Za-z\d\s]{8,}$" updateon="default" updatedelay="100" margin="unset unset 10px unset"></wm-form-field>
                                                                 <wm-popover popoverwidth="auto" popoverheight="60" caption="View Password" encodeurl="true" animation="bounce" iconclass="wi wi-eye fa-2x" color="#ffffff" iconposition="right"
                                                                 textalign="right" whitespace="normal" popoverplacement="left" class="sa-showhide-pass-popover" width="98%" contentsource="partial" content="SAPassphrase" textdecoration="underline" interaction="default"
                                                                 name="obf3_viewpassword_popover" padding="10px 35px unset unset" title="" hint="Hover here to view your currently entered password in plain text" shortcutkey="Alt+P">
@@ -230,8 +229,8 @@
                                                     <wm-form-field name="role" displayname="Role" show="false" primary-key="false" generator="assigned" key="role" type="string" readonly="false" required="false" widget="text" maxchars="255"
                                                     inputtype="text" placeholder="Populate role from current onboarding user data" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.role" disabled="true"></wm-form-field>
                                                     <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.user.username.indexOf('temp') > -1 ? 'Login Created!' : 'Create Login Details'" show="true" class="form-save btn-success"
-                                                    iconclass="wi wi-apps" title="bind:Variables.onboardingUser.dataSet.dataValue.user.username.indexOf('temp') > -1 ? 'Login Created!' : 'Create Login Details'" action="saveAction($event)" shortcutkey="S"
-                                                    disabled="false" type="button" update-mode="true"></wm-form-action>
+                                                    iconclass="wi wi-apps" title="bind:Variables.onboardingUser.dataSet.dataValue.user.username.indexOf('temp') > -1 ? 'Login Created!' : 'Create Login Details'" action="saveAction($event);saveAction1($event)"
+                                                    shortcutkey="" disabled="false" type="button" update-mode="true"></wm-form-action>
                                                 </wm-liveform>
                                             </wm-gridcolumn>
                                             <wm-gridcolumn columnwidth="3" name="gridcolumn63"></wm-gridcolumn>
