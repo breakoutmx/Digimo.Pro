@@ -12,8 +12,7 @@
                     </wm-gridrow>
                     <wm-gridrow name="gridrow6_1">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn10">
-                            <wm-wizard stepstyle="justified" name="newUserOnboardWizard" donebtnlabel="Finish Setup!" cancelable="false" defaultstep="onboardWizardStepAccountValidate" class="new-user-onboard-wizard" backgroundcolor="rgba(0,0,0,.45)" height="100%"
-                            previousbtnlabel="Back">
+                            <wm-wizard stepstyle="justified" name="newUserOnboardWizard" donebtnlabel="Finish Setup!" cancelable="false" defaultstep="onboardWizardStepAccountValidate" class="new-user-onboard-wizard" backgroundcolor="rgba(0,0,0,.45)" height="100%" previousbtnlabel="Back">
                                 <wm-wizardstep name="newUserWizardContent" enableskip="false" iconclass="wi wi-donut-large fa-2x" title="Welcome to TDM">
                                     <wm-iframe name="onboardingWelcomeSwayEmbed" iframesrc="https://sway.com/s/13YxbIDCtq2FnG1D/embed" width="100%" height="500px" show="false" encodeurl="true"></wm-iframe>
                                     <wm-html name="html1" width="100%" height="100%" show="false">
@@ -33,50 +32,45 @@
                                                             <wm-picture name="picture3" picturesource="resources/images/imagelists/000080-envelope-closed-02.png" class="obf-head-icon"></wm-picture>
                                                         </wm-gridcolumn>
                                                         <wm-gridcolumn columnwidth="10" name="gridcolumn68" padding="5px unset unset unset">
-                                                            <wm-label padding="unset 0.5em" name="obf1headling1" caption="Enter Your Purchase or Desired Account Email" fontsize="1.4" fontunit="em" fontfamily="&quot;helvetica neue&quot;, arial, sans-serif"
-                                                            fontweight="bold"></wm-label>
-                                                            <wm-label padding="unset 0.5em" caption="For Premium members, enter your purchase email.  For Jetpack Members enter any email you would like to use for your account." fontsize="1"
-                                                            fontunit="em" fontfamily="&quot;helvetica neue&quot;, arial, sans-serif" name="obf1heading2"></wm-label>
+                                                            <wm-label padding="unset 0.5em" name="obf1headling1" caption="Enter Your Purchase or Desired Account Email" fontsize="1.4" fontunit="em" fontfamily="&quot;helvetica neue&quot;, arial, sans-serif" fontweight="bold"></wm-label>
+                                                            <wm-label padding="unset 0.5em" caption="For Premium members, enter your purchase email.  For Jetpack Members enter any email you would like to use for your account." fontsize="1" fontunit="em" fontfamily="&quot;helvetica neue&quot;, arial, sans-serif"
+                                                            name="obf1heading2"></wm-label>
                                                         </wm-gridcolumn>
                                                     </wm-gridrow>
                                                     <wm-gridrow name="gridrow50" padding="20px unset unset unset">
                                                         <wm-gridcolumn columnwidth="12" name="gridcolumn69" padding="unset 30px unset unset">
-                                                            <wm-liveform errormessage="There was an error creating your account, please refresh and attempt the setup process again." title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.onboardingStepValidateAccountEmail.dataSet"
-                                                            captionalign="left" captionposition="top" name="onboardingForm1" backgroundcolor="transparent" messagelayout="Toaster" insertmessage="Your account was created successfully.  Please continue to follow the setup steps."
+                                                            <wm-liveform errormessage="There was an error creating your account, please refresh and attempt the setup process again." title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.onboardingStepValidateAccountEmail.dataSet" captionalign="left"
+                                                            captionposition="top" name="onboardingForm1" backgroundcolor="transparent" messagelayout="Toaster" insertmessage="Your account was created successfully.  Please continue to follow the setup steps."
                                                             updatemessage="Your account was updated successfully.  Please continue to follow the setup steps." validationtype="default" on-success="onboardingForm1Success($event, $operation, $data)" class="onboarding-form-1">
                                                                 <wm-layoutgrid columns="1" name="layoutgrid3">
                                                                     <wm-gridrow name="gridrow7">
                                                                         <wm-gridcolumn columnwidth="12" name="gridcolumn11_1">
-                                                                            <wm-form-field name="email" show="true" primary-key="false" generator="assigned" key="email" type="string" readonly="false" required="false" mobile-display="false" widget="text" maxchars="255"
-                                                                            defaultvalue="kangst3r@gmail.com" placeholder="Enter Your Email Address" inputtype="text" width="100%" class="obf-center-field"></wm-form-field>
+                                                                            <wm-form-field name="email" show="true" primary-key="false" generator="assigned" key="email" type="string" readonly="false" required="false" mobile-display="false" widget="text" maxchars="255" defaultvalue="kangst3r@gmail.com" placeholder="Enter Your Email Address"
+                                                                            inputtype="text" width="100%" class="obf-center-field"></wm-form-field>
                                                                         </wm-gridcolumn>
                                                                     </wm-gridrow>
                                                                     <wm-gridrow name="gridrow8">
                                                                         <wm-gridcolumn columnwidth="12" name="gridcolumn12">
-                                                                            <wm-form-field name="password" show="false" primary-key="false" generator="assigned" key="password" type="string" readonly="false" required="true" mobile-display="false" widget="text"
-                                                                            maxchars="255" placeholder="Auto-populate temp password" defaultvalue="bind:'temp_password'" inputtype="text" width="98%" disabled="true"></wm-form-field>
+                                                                            <wm-form-field name="password" show="false" primary-key="false" generator="assigned" key="password" type="string" readonly="false" required="true" mobile-display="false" widget="text" maxchars="255" placeholder="Auto-populate temp password" defaultvalue="bind:'temp_password'"
+                                                                            inputtype="text" width="98%" disabled="true"></wm-form-field>
                                                                         </wm-gridcolumn>
                                                                     </wm-gridrow>
                                                                     <wm-gridrow name="gridrow9">
                                                                         <wm-gridcolumn columnwidth="12" name="gridcolumn13">
-                                                                            <wm-form-field name="role" show="false" primary-key="false" generator="assigned" key="role" type="string" readonly="false" required="true" mobile-display="false" widget="text" maxchars="255"
-                                                                            defaultvalue="bind:Variables.onboardingDynamicRole.dataSet.dataValue || 'jetpackuser'" placeholder="Dynamically update role based on account validation" inputtype="text" width="98%"
-                                                                            disabled="true"></wm-form-field>
+                                                                            <wm-form-field name="role" show="false" primary-key="false" generator="assigned" key="role" type="string" readonly="false" required="true" mobile-display="false" widget="text" maxchars="255" defaultvalue="bind:Variables.onboardingDynamicRole.dataSet.dataValue || 'jetpackuser'"
+                                                                            placeholder="Dynamically update role based on account validation" inputtype="text" width="98%" disabled="true"></wm-form-field>
                                                                         </wm-gridcolumn>
                                                                     </wm-gridrow>
                                                                     <wm-gridrow name="gridrow10">
                                                                         <wm-gridcolumn columnwidth="12" name="gridcolumn14">
-                                                                            <wm-form-field name="username" show="false" primary-key="false" generator="assigned" key="username" type="string" readonly="false" required="true" mobile-display="false" widget="text"
-                                                                            maxchars="255" placeholder="Auto-populate temp user name on load action" inputtype="text" defaultvalue="bind:Variables.UserServiceCreateTempUsername.dataSet.value" width="98%"
-                                                                            disabled="true"></wm-form-field>
+                                                                            <wm-form-field name="username" show="false" primary-key="false" generator="assigned" key="username" type="string" readonly="false" required="true" mobile-display="false" widget="text" maxchars="255" placeholder="Auto-populate temp user name on load action"
+                                                                            inputtype="text" defaultvalue="bind:Variables.UserServiceCreateTempUsername.dataSet.value" width="98%" disabled="true"></wm-form-field>
                                                                         </wm-gridcolumn>
                                                                     </wm-gridrow>
                                                                 </wm-layoutgrid>
-                                                                <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number"
-                                                                placeholder=""></wm-form-field>
-                                                                <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.userid ? 'Account Validated!' : 'Validate Account'" show="true" class="form-save btn-success"
-                                                                iconclass="wi wi-check-circle fa-lg" title="bind:Variables.onboardingUser.dataSet.dataValue.userid ? 'Account Validated' : 'Validate Account'" action="saveAction($event)" shortcutkey="" disabled="bind:Variables.onboardingUser.dataSet.dataValue.userid ? true : false"
-                                                                type="button" update-mode="true"></wm-form-action>
+                                                                <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder=""></wm-form-field>
+                                                                <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.userid ? 'Account Validated!' : 'Validate Account'" show="true" class="form-save btn-success" iconclass="wi wi-check-circle fa-lg" title="bind:Variables.onboardingUser.dataSet.dataValue.userid ? 'Account Validated' : 'Validate Account'"
+                                                                action="saveAction($event)" shortcutkey="" disabled="bind:Variables.onboardingUser.dataSet.dataValue.userid ? true : false" type="button" update-mode="true"></wm-form-action>
                                                             </wm-liveform>
                                                         </wm-gridcolumn>
                                                     </wm-gridrow>
@@ -98,39 +92,34 @@
                                         <wm-layoutgrid columns="3" name="layoutgrid7">
                                             <wm-gridrow name="gridrow34">
                                                 <wm-gridcolumn columnwidth="4" name="gridcolumn36">
-                                                    <wm-form-field name="fname" displayname="First Name" show="true" primary-key="false" generator="assigned" key="fname" type="string" readonly="false" required="true" widget="text" maxchars="255" inputtype="text"
-                                                    placeholder="e.g. John / Jill" width="90%"></wm-form-field>
+                                                    <wm-form-field name="fname" displayname="First Name" show="true" primary-key="false" generator="assigned" key="fname" type="string" readonly="false" required="true" widget="text" maxchars="255" inputtype="text" placeholder="e.g. John / Jill" width="90%"></wm-form-field>
                                                 </wm-gridcolumn>
                                                 <wm-gridcolumn columnwidth="4" name="gridcolumn37">
-                                                    <wm-form-field name="mobile" displayname="Mobile" show="true" primary-key="false" generator="assigned" key="mobile" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="tel"
-                                                    placeholder="+15552221234" width="90%"></wm-form-field>
+                                                    <wm-form-field name="mobile" displayname="Mobile" show="true" primary-key="false" generator="assigned" key="mobile" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="tel" placeholder="+15552221234" width="90%"></wm-form-field>
                                                 </wm-gridcolumn>
                                                 <wm-gridcolumn columnwidth="4" name="gridcolumn45_1">
                                                     <wm-picture name="securityAvatar" picturesource="bind:'https://robohash.org/'+(Widgets.sa_genfield_fname.datavalue ? Widgets.onboardingForm2.formWidgets.fname.datavalue.toLowerCase() : '')+'%20'+(Widgets.sa_genfield_lname.datavalue ? Widgets.onboardingForm2.formWidgets.lname.datavalue.toLowerCase() : '')+(Widgets.sa_genfield_dob.datavalue ? Widgets.onboardingForm2.formWidgets.dob.datavalue : '')+(Widgets.sa_genfield_mobile.datavalue ? Widgets.onboardingForm2.formWidgets.mobile.datavalue : '')+Widgets.sa_genfield_passphrase_pw.datavalue"
                                                     width="75" shape="circle" backgroundcolor="#171717" borderwidth="3px" bordercolor="#61b05f" borderstyle="solid" animation="pulse" encodeurl="true" class="security-avatar"></wm-picture>
-                                                    <wm-label padding="unset 0.5em" name="securityAvatarLabel" caption="This is your uniquely generated Security Avatar generated from information from your profile that is unique to you.  We'll go over security measures in an upcoming training."
-                                                    class="security-avatar-label"></wm-label>
+                                                    <wm-label padding="unset 0.5em" name="securityAvatarLabel" caption="This is your uniquely generated Security Avatar generated from information from your profile that is unique to you.  We'll go over security measures in an upcoming training." class="security-avatar-label"></wm-label>
                                                 </wm-gridcolumn>
                                             </wm-gridrow>
                                             <wm-gridrow name="gridrow35">
                                                 <wm-gridcolumn columnwidth="4" name="gridcolumn39">
-                                                    <wm-form-field name="lname" displayname="Last Name" show="true" primary-key="false" generator="assigned" key="lname" type="string" readonly="false" required="true" widget="text" maxchars="255" inputtype="text"
-                                                    placeholder="e.g. Smith" width="90%"></wm-form-field>
-                                                    <wm-form-field name="dob" displayname="Date of Birth" show="true" primary-key="false" generator="assigned" key="dob" type="string" readonly="false" required="false" widget="date" maxchars="255"
-                                                    placeholder="Select Your DOB" defaultvalue="CURRENT_DATE" showweeks="true" maxdate="CURRENT_DATE" outputformat="MM/dd/yyyy" datepattern="MM/dd/yyyy"></wm-form-field>
-                                                    <wm-form-field name="about" displayname="About Yourself &amp; Your Experience" show="true" primary-key="false" generator="assigned" key="about" type="string" readonly="false" required="true"
-                                                    widget="textarea" maxchars="255" placeholder="Tell us a little about yourself, your experience so far in marketing online or other business activities, professional background, and what you expect to get out of TDM."
+                                                    <wm-form-field name="lname" displayname="Last Name" show="true" primary-key="false" generator="assigned" key="lname" type="string" readonly="false" required="true" widget="text" maxchars="255" inputtype="text" placeholder="e.g. Smith" width="90%"></wm-form-field>
+                                                    <wm-form-field name="dob" displayname="Date of Birth" show="true" primary-key="false" generator="assigned" key="dob" type="string" readonly="false" required="false" widget="date" maxchars="255" placeholder="Select Your DOB" defaultvalue="CURRENT_DATE"
+                                                    showweeks="true" maxdate="CURRENT_DATE" outputformat="MM/dd/yyyy" datepattern="MM/dd/yyyy"></wm-form-field>
+                                                    <wm-form-field name="about" displayname="About Yourself &amp; Your Experience" show="true" primary-key="false" generator="assigned" key="about" type="string" readonly="false" required="true" widget="textarea" maxchars="255" placeholder="Tell us a little about yourself, your experience so far in marketing online or other business activities, professional background, and what you expect to get out of TDM."
                                                     height="120" width="90%"></wm-form-field>
                                                 </wm-gridcolumn>
                                                 <wm-gridcolumn columnwidth="4" name="gridcolumn40">
-                                                    <wm-form-field name="gender" displayname="Gender" show="true" primary-key="false" generator="assigned" key="gender" type="string" readonly="false" required="false" widget="select" maxchars="255" placeholder="Guy or Gal?"
-                                                    width="90%" datafield="dataValue" dataset="bind:Variables.selectFieldGender.dataSet" displayfield="name"></wm-form-field>
-                                                    <wm-form-field name="estatus" displayname="Entrepreneurial Status" show="true" primary-key="false" generator="assigned" key="estatus" type="string" readonly="false" required="false" widget="select"
-                                                    maxchars="255" placeholder="Select a Status" width="90%" dataset="bind:Variables.selectFieldEstatus.dataSet" datafield="dataValue" displayfield="name"></wm-form-field>
-                                                    <wm-form-field name="onlineincomelevel" displayname="Online Income Level" show="true" primary-key="false" generator="assigned" key="onlineincomelevel" type="string" readonly="false" required="false"
-                                                    widget="select" maxchars="255" placeholder="Choose Most Accurate" width="90%" dataset="bind:Variables.selectFieldOnlineIncomeLevel.dataSet" datafield="dataValue" displayfield="name"></wm-form-field>
-                                                    <wm-form-field name="proincomelevel" displayname="Professional Income Level" show="true" primary-key="false" generator="assigned" key="proincomelevel" type="string" readonly="false" required="false"
-                                                    widget="select" maxchars="255" placeholder="Choose Most Accurate" width="90%" dataset="bind:Variables.selectFieldProIncomeLevel.dataSet" datafield="dataValue" displayfield="name"></wm-form-field>
+                                                    <wm-form-field name="gender" displayname="Gender" show="true" primary-key="false" generator="assigned" key="gender" type="string" readonly="false" required="false" widget="select" maxchars="255" placeholder="Guy or Gal?" width="90%" datafield="dataValue"
+                                                    dataset="bind:Variables.selectFieldGender.dataSet" displayfield="name"></wm-form-field>
+                                                    <wm-form-field name="estatus" displayname="Entrepreneurial Status" show="true" primary-key="false" generator="assigned" key="estatus" type="string" readonly="false" required="false" widget="select" maxchars="255" placeholder="Select a Status" width="90%"
+                                                    dataset="bind:Variables.selectFieldEstatus.dataSet" datafield="dataValue" displayfield="name"></wm-form-field>
+                                                    <wm-form-field name="onlineincomelevel" displayname="Online Income Level" show="true" primary-key="false" generator="assigned" key="onlineincomelevel" type="string" readonly="false" required="false" widget="select" maxchars="255" placeholder="Choose Most Accurate"
+                                                    width="90%" dataset="bind:Variables.selectFieldOnlineIncomeLevel.dataSet" datafield="dataValue" displayfield="name"></wm-form-field>
+                                                    <wm-form-field name="proincomelevel" displayname="Professional Income Level" show="true" primary-key="false" generator="assigned" key="proincomelevel" type="string" readonly="false" required="false" widget="select" maxchars="255" placeholder="Choose Most Accurate"
+                                                    width="90%" dataset="bind:Variables.selectFieldProIncomeLevel.dataSet" datafield="dataValue" displayfield="name"></wm-form-field>
                                                 </wm-gridcolumn>
                                                 <wm-gridcolumn columnwidth="4" name="gridcolumn46_1">
                                                     <wm-layoutgrid name="layoutgrid8">
@@ -160,16 +149,15 @@
                                                     <wm-layoutgrid name="layoutgrid10" columns="2">
                                                         <wm-gridrow name="gridrow47">
                                                             <wm-gridcolumn columnwidth="12" name="gridcolumn65" padding="unset unset 30px unset">
-                                                                <wm-form-field name="sa_genfield_passphrase_pw" displayname="Secret Passphrase - Important: you must remember this.  This is not stored anywhere for security reasons.  You can use any character or spacing you like."
-                                                                widget="text" show="true" type="custom" placeholder="Enter a secret passphrase" margin="10px" class="sa-passphrase-wrap" inputtype="password" autocomplete="true" disabled="false" width="90%"
-                                                                updateon="default" key="sa_genfield_passphrase_pw" updatedelay="2" maxchars="50" required="false" hint="(eg. I Love Hamburgers on Wednesday)"></wm-form-field>
-                                                                <wm-popover popoverwidth="auto" popoverheight="60" name="sa_showhide_passphrase_popover" caption="Show/Hide Passphrase" encodeurl="true" animation="bounce" iconclass="wi wi-eye fa-2x"
-                                                                color="#ffffff" iconposition="right" textalign="right" whitespace="normal" popoverplacement="top" class="sa-showhide-pass-popover" width="90%" contentsource="partial" content="SAPassphrase"
-                                                                textdecoration="underline" interaction="default">
+                                                                <wm-form-field name="sa_genfield_passphrase_pw" displayname="Secret Passphrase - Important: you must remember this.  This is not stored anywhere for security reasons.  You can use any character or spacing you like." widget="text" show="true" type="custom"
+                                                                placeholder="Enter a secret passphrase" margin="10px" class="sa-passphrase-wrap" inputtype="password" autocomplete="true" disabled="false" width="90%" updateon="default" key="sa_genfield_passphrase_pw"
+                                                                updatedelay="2" maxchars="50" required="false" hint="(eg. I Love Hamburgers on Wednesday)"></wm-form-field>
+                                                                <wm-popover popoverwidth="auto" popoverheight="60" name="sa_showhide_passphrase_popover" caption="Show/Hide Passphrase" encodeurl="true" animation="bounce" iconclass="wi wi-eye fa-2x" color="#ffffff" iconposition="right" textalign="right" whitespace="normal"
+                                                                popoverplacement="top" class="sa-showhide-pass-popover" width="90%" contentsource="partial" content="SAPassphrase" textdecoration="underline" interaction="default">
                                                                     <wm-param autocomplete="false" name="passphrase" value="bind:Widgets.sa_genfield_passphrase_pw.datavalue" type="string"></wm-param>
                                                                 </wm-popover>
-                                                                <wm-form-field name="sa_genfield_passphrase_pt" widget="text" show="bind:Variables.UIShowPassphrase.dataSet.dataValue" type="custom" placeholder="Enter a secret passphrase" margin="10px"
-                                                                class="sa-passphrase-wrap" inputtype="text" defaultvalue="bind:Widgets.sa_genfield_passphrase_pw.datavalue" autocomplete="false" disabled="true" readonly="true" width="90%" key="sa_genfield_passphrase_pt"></wm-form-field>
+                                                                <wm-form-field name="sa_genfield_passphrase_pt" widget="text" show="bind:Variables.UIShowPassphrase.dataSet.dataValue" type="custom" placeholder="Enter a secret passphrase" margin="10px" class="sa-passphrase-wrap" inputtype="text" defaultvalue="bind:Widgets.sa_genfield_passphrase_pw.datavalue"
+                                                                autocomplete="false" disabled="true" readonly="true" width="90%" key="sa_genfield_passphrase_pt"></wm-form-field>
                                                             </wm-gridcolumn>
                                                         </wm-gridrow>
                                                     </wm-layoutgrid>
@@ -177,11 +165,9 @@
                                             </wm-gridrow>
                                         </wm-layoutgrid>
                                         <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
-                                        <wm-form-field name="users" displayname="Users" show="false" primary-key="false" generator="assigned" key="users" type="list" is-related="true" readonly="false" required="false" widget="select" displayexpression="id"
-                                        orderby="id:asc" placeholder="Select value"></wm-form-field>
-                                        <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.completed.createProfile === true ? 'Profile Updated!' : 'Update Profile'" show="true" class="form-save btn-success"
-                                        iconclass="wi wi-assignment-turned-in fa-lg" title="bind:Variables.onboardingUser.dataSet.dataValue.completed.createProfile === true ? 'Profile Updated!' : 'Update Profile'" action="saveAction($event)" disabled="false"
-                                        type="button" update-mode="true"></wm-form-action>
+                                        <wm-form-field name="users" displayname="Users" show="false" primary-key="false" generator="assigned" key="users" type="list" is-related="true" readonly="false" required="false" widget="select" displayexpression="id" orderby="id:asc" placeholder="Select value"></wm-form-field>
+                                        <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.completed.createProfile === true ? 'Profile Updated!' : 'Update Profile'" show="true" class="form-save btn-success" iconclass="wi wi-assignment-turned-in fa-lg" title="bind:Variables.onboardingUser.dataSet.dataValue.completed.createProfile === true ? 'Profile Updated!' : 'Update Profile'"
+                                        action="saveAction($event)" disabled="false" type="button" update-mode="true"></wm-form-action>
                                     </wm-liveform>
                                 </wm-wizardstep>
                                 <wm-wizardstep name="onboardWizardStepDMWeb" title="DM Web" iconclass="wi wi-apps fa-2x" on-load="onboardWizardStepDMWebLoad($scope, stepIndex)">
@@ -189,15 +175,14 @@
                                         <wm-gridrow name="gridrow43_1">
                                             <wm-gridcolumn columnwidth="3" name="gridcolumn57_1"></wm-gridcolumn>
                                             <wm-gridcolumn columnwidth="6" padding="20px 30px unset unset" name="gridcolumn58_1">
-                                                <wm-liveform errormessage="There was an error creating your login details.  Please try again and if the issue persists, please contact support." title="Select a Username and Password" iconclass="wi wi-edit"
-                                                defaultmode="Edit" dataset="bind:Variables.onboardingStepWebAccess.dataSet" captionalign="left" captionposition="top" name="onboardingForm3" backgroundcolor="transparent" subheading="Choose your DM Web login details below"
-                                                insertmessage="Your user account was created." updatemessage="Your login details were successfully created!" deletemessage="Your user account has been deleted.  If this seems wrong, please contact support immediately."
-                                                on-success="onboardingForm3Success($event, $operation, $data)">
+                                                <wm-liveform errormessage="There was an error creating your login details.  Please try again and if the issue persists, please contact support." title="Select a Username and Password" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.onboardingStepWebAccess.dataSet"
+                                                captionalign="left" captionposition="top" name="onboardingForm3" backgroundcolor="transparent" subheading="Choose your DM Web login details below" insertmessage="Your user account was created." updatemessage="Your login details were successfully created!"
+                                                deletemessage="Your user account has been deleted.  If this seems wrong, please contact support immediately." on-success="onboardingForm3Success($event, $operation, $data)">
                                                     <wm-layoutgrid columns="1" name="obf3_layout_grid">
                                                         <wm-gridrow name="obf3_username_gridrow">
                                                             <wm-gridcolumn columnwidth="12" name="obf3_username_gridcol">
-                                                                <wm-form-field name="username" displayname="Login Username" show="true" primary-key="false" generator="assigned" key="username" type="string" readonly="false" required="true" widget="text" maxchars="30"
-                                                                inputtype="text" placeholder="Enter a unique username" width="98%" class="obf-center-field" regexp="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$" validationmessage="The selected username is invalid.  Usernames can consist only of alphanumeric characters, spaces, underscores and hyphens.  They must also start and end with an alphanumeric character and not have two or more hyphens, spaces or underscores in a row."
+                                                                <wm-form-field name="username" displayname="Login Username" show="true" primary-key="false" generator="assigned" key="username" type="string" readonly="false" required="true" widget="text" maxchars="30" inputtype="text" placeholder="Enter a unique username"
+                                                                width="98%" class="obf-center-field" regexp="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$" validationmessage="The selected username is invalid.  Usernames can consist only of alphanumeric characters, spaces, underscores and hyphens.  They must also start and end with an alphanumeric character and not have two or more hyphens, spaces or underscores in a row."
                                                                 updateon="default" updatedelay="100" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.email.split('@')[0]" autocomplete="false" on-keyup="usernameKeyup($event, $scope)"
                                                                 margin="unset unset 10px unset"></wm-form-field>
                                                                 <wm-layoutgrid name="layoutgrid14">
@@ -211,12 +196,12 @@
                                                         </wm-gridrow>
                                                         <wm-gridrow name="obf3_password_gridrow">
                                                             <wm-gridcolumn columnwidth="12" name="obf3_password_gridcol" padding="unset unset 25px unset">
-                                                                <wm-form-field name="password" displayname="Password" show="true" primary-key="false" generator="assigned" key="password" type="string" readonly="false" required="true" widget="text" maxchars="255"
-                                                                inputtype="password" placeholder="Enter a password: 8 characters and at least one number" width="98%" class="obf-center-field" validationmessage="Your password must contain at least one number and be at least 8 characters long."
-                                                                regexp="^(?=.*[A-Za-z\s])(?=.*\d)[A-Za-z\d\s]{8,}$" updateon="default" updatedelay="100" margin="unset unset 10px unset"></wm-form-field>
-                                                                <wm-popover popoverwidth="auto" popoverheight="60" caption="View Password" encodeurl="true" animation="bounce" iconclass="wi wi-eye fa-2x" color="#ffffff" iconposition="right"
-                                                                textalign="right" whitespace="normal" popoverplacement="left" class="sa-showhide-pass-popover" width="98%" contentsource="partial" content="SAPassphrase" textdecoration="underline" interaction="default"
-                                                                name="obf3_viewpassword_popover" padding="10px 35px unset unset" title="" hint="Hover here to view your currently entered password in plain text" shortcutkey="Alt+P">
+                                                                <wm-form-field name="password" displayname="Password" show="true" primary-key="false" generator="assigned" key="password" type="string" readonly="false" required="true" widget="text" maxchars="255" inputtype="password" placeholder="Enter a password: 8 characters and at least one number"
+                                                                width="98%" class="obf-center-field" validationmessage="Your password must contain at least one number and be at least 8 characters long." regexp="^(?=.*[A-Za-z\s])(?=.*\d)[A-Za-z\d\s]{8,}$"
+                                                                updateon="default" updatedelay="100" margin="unset unset 10px unset"></wm-form-field>
+                                                                <wm-popover popoverwidth="auto" popoverheight="60" caption="View Password" encodeurl="true" animation="bounce" iconclass="wi wi-eye fa-2x" color="#ffffff" iconposition="right" textalign="right" whitespace="normal" popoverplacement="left" class="sa-showhide-pass-popover"
+                                                                width="98%" contentsource="partial" content="SAPassphrase" textdecoration="underline" interaction="default" name="obf3_viewpassword_popover" padding="10px 35px unset unset" title="" hint="Hover here to view your currently entered password in plain text"
+                                                                shortcutkey="Alt+P">
                                                                     <wm-param name="passphrase" value="bind:Widgets.onboardingForm3.formWidgets.password.datavalue" type="string"></wm-param>
                                                                 </wm-popover>
                                                             </wm-gridcolumn>
@@ -224,13 +209,12 @@
                                                     </wm-layoutgrid>
                                                     <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Populate from current onboarding user data"
                                                     disabled="true" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userid"></wm-form-field>
-                                                    <wm-form-field name="email" displayname="Email" show="false" primary-key="false" generator="assigned" key="email" type="string" readonly="false" required="false" widget="text" maxchars="255"
-                                                    inputtype="text" placeholder="Populate email from current onboarding user data" disabled="true" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.email"></wm-form-field>
-                                                    <wm-form-field name="role" displayname="Role" show="false" primary-key="false" generator="assigned" key="role" type="string" readonly="false" required="false" widget="text" maxchars="255"
-                                                    inputtype="text" placeholder="Populate role from current onboarding user data" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.role" disabled="true"></wm-form-field>
-                                                    <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.completed.dmWeb === true ? 'Login Details Updated!' : 'Update Login Details'" show="true" class="form-save btn-success"
-                                                    iconclass="wi wi-apps" title="bind:Variables.onboardingUser.dataSet.dataValue.completed.dmWeb === true ? 'Login Details Updated!' : 'Update Login Details'" action="saveAction($event);saveAction1($event)"
-                                                    shortcutkey="" disabled="false" type="button" update-mode="true"></wm-form-action>
+                                                    <wm-form-field name="email" displayname="Email" show="false" primary-key="false" generator="assigned" key="email" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Populate email from current onboarding user data"
+                                                    disabled="true" defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.email"></wm-form-field>
+                                                    <wm-form-field name="role" displayname="Role" show="false" primary-key="false" generator="assigned" key="role" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Populate role from current onboarding user data"
+                                                    defaultvalue="bind:Variables.onboardingUser.dataSet.dataValue.userdata.role" disabled="true"></wm-form-field>
+                                                    <wm-form-action key="save" display-name="bind:Variables.onboardingUser.dataSet.dataValue.completed.dmWeb === true ? 'Login Details Updated!' : 'Update Login Details'" show="true" class="form-save btn-success" iconclass="wi wi-apps" title="bind:Variables.onboardingUser.dataSet.dataValue.completed.dmWeb === true ? 'Login Details Updated!' : 'Update Login Details'"
+                                                    action="saveAction($event);saveAction1($event)" shortcutkey="" disabled="false" type="button" update-mode="true"></wm-form-action>
                                                 </wm-liveform>
                                             </wm-gridcolumn>
                                             <wm-gridcolumn columnwidth="3" name="gridcolumn63"></wm-gridcolumn>
@@ -246,8 +230,8 @@
                                 <wm-wizardstep name="wizardstep6" title="Finish Setup"></wm-wizardstep>
                             </wm-wizard>
                             <wm-container name="hidden_elements_container" display="none">
-                                <wm-form title="Create Your TDM Account" style="max-width: 420px; margin: 0 auto;" class="panel-signup-form" name="signupForm" captionposition="top" on-success="signupFormSuccess($event, $scope, $data)" backgroundcolor="rgba(0,0,0,.75)"
-                                subheading="Your Key to Breaking Out of the Cycle..." show="false">
+                                <wm-form title="Create Your TDM Account" style="max-width: 420px; margin: 0 auto;" class="panel-signup-form" name="signupForm" captionposition="top" on-success="signupFormSuccess($event, $scope, $data)" backgroundcolor="rgba(0,0,0,.75)" subheading="Your Key to Breaking Out of the Cycle..."
+                                show="false">
                                     <wm-layoutgrid name="layoutgrid3_1">
                                         <wm-gridrow name="gridrow5">
                                             <wm-gridcolumn name="gridcolumn6" padding="0em .5em 1em .5em" columnwidth="6" class="col-md-push-6">
@@ -288,14 +272,13 @@
                                         <wm-gridrow name="gridrow4_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn8" padding="unset .5em">
                                                 <wm-message name="signupFormMessage" show="true"></wm-message>
-                                                <wm-button caption="Create Account" type="submit" class="btn-primary" name="regPage1SubmitButton" width="100%" margin=".5em unset" iconclass="wi wi-account-circle fa-2x" on-click="regPage1SubmitButtonClick($event, $scope)"
-                                                tabindex="5"></wm-button>
+                                                <wm-button caption="Create Account" type="submit" class="btn-primary" name="regPage1SubmitButton" width="100%" margin=".5em unset" iconclass="wi wi-account-circle fa-2x" on-click="regPage1SubmitButtonClick($event, $scope)" tabindex="5"></wm-button>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                     </wm-layoutgrid>
                                 </wm-form>
-                                <wm-liveform errormessage="Error creating your customer profile." title="Customer Info" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.HerokuMysqlDMP1CustomerData.dataSet" captionalign="left" captionposition="top"
-                                name="onboardingFormCustomer" insertmessage="Successfully created your customer profile." updatemessage="Successfully updated your customer profile." show="true" on-success="onboardingFormCustomerSuccess($event, $operation, $data)">
+                                <wm-liveform errormessage="Error creating your customer profile." title="Customer Info" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.HerokuMysqlDMP1CustomerData.dataSet" captionalign="left" captionposition="top" name="onboardingFormCustomer"
+                                insertmessage="Successfully created your customer profile." updatemessage="Successfully updated your customer profile." show="true" on-success="onboardingFormCustomerSuccess($event, $operation, $data)">
                                     <wm-layoutgrid columns="1" name="layoutgrid4">
                                         <wm-gridrow name="gridrow10_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn12_1">
@@ -305,51 +288,45 @@
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow11">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn13_1">
-                                                <wm-form-field name="created" displayname="Created" show="true" primary-key="false" generator="assigned" key="created" type="timestamp" readonly="false" required="false" widget="timestamp" placeholder="Auto-populate Created Timestamp"
-                                                disabled="true" outputformat="timestamp"></wm-form-field>
+                                                <wm-form-field name="created" displayname="Created" show="true" primary-key="false" generator="assigned" key="created" type="timestamp" readonly="false" required="false" widget="timestamp" placeholder="Auto-populate Created Timestamp" disabled="true"
+                                                outputformat="timestamp"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow12">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn14_1">
-                                                <wm-form-field name="email" displayname="Email" show="true" primary-key="false" generator="assigned" key="email" type="string" readonly="false" required="false" widget="text" maxchars="255" placeholder="Auto-populate Email"
-                                                inputtype="text"></wm-form-field>
+                                                <wm-form-field name="email" displayname="Email" show="true" primary-key="false" generator="assigned" key="email" type="string" readonly="false" required="false" widget="text" maxchars="255" placeholder="Auto-populate Email" inputtype="text"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow1">
                                             <wm-gridcolumn name="gridcolumn1" columnwidth="12">
-                                                <wm-form-field name="users" displayname="Users" show="true" primary-key="false" generator="assigned" key="users" type="list" is-related="true" readonly="false" required="false" widget="select" displayexpression="id"
-                                                orderby="id:asc"></wm-form-field>
+                                                <wm-form-field name="users" displayname="Users" show="true" primary-key="false" generator="assigned" key="users" type="list" is-related="true" readonly="false" required="false" widget="select" displayexpression="id" orderby="id:asc"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                     </wm-layoutgrid>
                                     <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" readonly="true" required="true" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
                                 </wm-liveform>
-                                <wm-liveform errormessage="There was an error while creating your personal profile record.  Please try again.  If the problem persists, contact support for help." title="Profile Info" iconclass="wi wi-edit" defaultmode="Edit"
-                                dataset="bind:Variables.HerokuMysqlDMP1ProfileData.dataSet" captionalign="left" captionposition="top" name="onboardingFormProfile" on-success="onboardingFormProfileSuccess($event, $operation, $data)" insertmessage="Your personal profile record was created successfully!"
-                                updatemessage="Your personal profile record was updated successfully!" deletemessage="Your personal profile record was deleted successfully!">
+                                <wm-liveform errormessage="There was an error while creating your personal profile record.  Please try again.  If the problem persists, contact support for help." title="Profile Info" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.HerokuMysqlDMP1ProfileData.dataSet"
+                                captionalign="left" captionposition="top" name="onboardingFormProfile" on-success="onboardingFormProfileSuccess($event, $operation, $data)" insertmessage="Your personal profile record was created successfully!" updatemessage="Your personal profile record was updated successfully!"
+                                deletemessage="Your personal profile record was deleted successfully!">
                                     <wm-layoutgrid columns="1" name="layoutgrid6_1">
                                         <wm-gridrow name="gridrow26">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn28">
-                                                <wm-form-field name="fname" displayname="Fname" show="true" primary-key="false" generator="assigned" key="fname" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="fname" displayname="Fname" show="true" primary-key="false" generator="assigned" key="fname" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow27_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn29_1">
-                                                <wm-form-field name="lname" displayname="Lname" show="true" primary-key="false" generator="assigned" key="lname" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="lname" displayname="Lname" show="true" primary-key="false" generator="assigned" key="lname" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow28_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn30_1">
-                                                <wm-form-field name="image" displayname="Image" show="true" primary-key="false" generator="assigned" key="image" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="image" displayname="Image" show="true" primary-key="false" generator="assigned" key="image" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow29_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn31_1">
-                                                <wm-form-field name="gender" displayname="Gender" show="true" primary-key="false" generator="assigned" key="gender" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="gender" displayname="Gender" show="true" primary-key="false" generator="assigned" key="gender" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow30_1">
@@ -359,38 +336,32 @@
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow31_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn33_1">
-                                                <wm-form-field name="mobile" displayname="Mobile" show="true" primary-key="false" generator="assigned" key="mobile" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="mobile" displayname="Mobile" show="true" primary-key="false" generator="assigned" key="mobile" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow32_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn34_1">
-                                                <wm-form-field name="about" displayname="About" show="true" primary-key="false" generator="assigned" key="about" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="about" displayname="About" show="true" primary-key="false" generator="assigned" key="about" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow33_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn35_1">
-                                                <wm-form-field name="onlineincomelevel" displayname="Onlineincomelevel" show="true" primary-key="false" generator="assigned" key="onlineincomelevel" type="string" readonly="false" required="false" widget="text"
-                                                maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="onlineincomelevel" displayname="Onlineincomelevel" show="true" primary-key="false" generator="assigned" key="onlineincomelevel" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow34_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn36_1">
-                                                <wm-form-field name="proincomelevel" displayname="Proincomelevel" show="true" primary-key="false" generator="assigned" key="proincomelevel" type="string" readonly="false" required="false" widget="text" maxchars="255"
-                                                inputtype="text" placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="proincomelevel" displayname="Proincomelevel" show="true" primary-key="false" generator="assigned" key="proincomelevel" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow35_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn37_1">
-                                                <wm-form-field name="estatus" displayname="Estatus" show="true" primary-key="false" generator="assigned" key="estatus" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="estatus" displayname="Estatus" show="true" primary-key="false" generator="assigned" key="estatus" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow36_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn38_1">
-                                                <wm-form-field name="users" displayname="Users" show="true" primary-key="false" generator="assigned" key="users" type="list" is-related="true" readonly="false" required="false" widget="select" placeholder="Select value"
-                                                displayexpression="id" orderby="id:asc"></wm-form-field>
+                                                <wm-form-field name="users" displayname="Users" show="true" primary-key="false" generator="assigned" key="users" type="list" is-related="true" readonly="false" required="false" widget="select" placeholder="Select value" displayexpression="id" orderby="id:asc"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                     </wm-layoutgrid>
@@ -401,20 +372,17 @@
                                     <wm-layoutgrid columns="1" name="layoutgrid6">
                                         <wm-gridrow name="gridrow24">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn26">
-                                                <wm-form-field name="chargeid" displayname="Chargeid" show="true" primary-key="false" generator="assigned" key="chargeid" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="chargeid" displayname="Chargeid" show="true" primary-key="false" generator="assigned" key="chargeid" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow25">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn27">
-                                                <wm-form-field name="amount" displayname="Amount" show="true" primary-key="false" generator="assigned" key="amount" type="integer" readonly="false" required="false" step="0" widget="number" inputtype="number"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="amount" displayname="Amount" show="true" primary-key="false" generator="assigned" key="amount" type="integer" readonly="false" required="false" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow26_1">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn28_1">
-                                                <wm-form-field name="amtrefunded" displayname="Amtrefunded" show="true" primary-key="false" generator="assigned" key="amtrefunded" type="string" readonly="false" required="false" widget="text" maxchars="255"
-                                                inputtype="text" placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="amtrefunded" displayname="Amtrefunded" show="true" primary-key="false" generator="assigned" key="amtrefunded" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow27">
@@ -424,14 +392,12 @@
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow28">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn30">
-                                                <wm-form-field name="created" displayname="Created" show="true" primary-key="false" generator="assigned" key="created" type="timestamp" readonly="false" required="false" widget="timestamp" placeholder="Select date time"
-                                                outputformat="timestamp"></wm-form-field>
+                                                <wm-form-field name="created" displayname="Created" show="true" primary-key="false" generator="assigned" key="created" type="timestamp" readonly="false" required="false" widget="timestamp" placeholder="Select date time" outputformat="timestamp"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow29">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn31">
-                                                <wm-form-field name="dispute" displayname="Dispute" show="true" primary-key="false" generator="assigned" key="dispute" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="dispute" displayname="Dispute" show="true" primary-key="false" generator="assigned" key="dispute" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow30">
@@ -441,14 +407,12 @@
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow31">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn33">
-                                                <wm-form-field name="refunded" displayname="Refunded" show="true" primary-key="false" generator="assigned" key="refunded" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="refunded" displayname="Refunded" show="true" primary-key="false" generator="assigned" key="refunded" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                         <wm-gridrow name="gridrow32">
                                             <wm-gridcolumn columnwidth="12" name="gridcolumn34">
-                                                <wm-form-field name="status" displayname="Status" show="true" primary-key="false" generator="assigned" key="status" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text"
-                                                placeholder="Enter value"></wm-form-field>
+                                                <wm-form-field name="status" displayname="Status" show="true" primary-key="false" generator="assigned" key="status" type="string" readonly="false" required="false" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field>
                                             </wm-gridcolumn>
                                         </wm-gridrow>
                                     </wm-layoutgrid>

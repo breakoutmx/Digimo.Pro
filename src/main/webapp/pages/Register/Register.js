@@ -40,6 +40,8 @@ Application.$controller("RegisterPageController", ["$scope", function($scope) {
         $scope.onboardingUserData = $scope.Variables.onboardingUser.dataSet.dataValue;
         $scope.onboardingUserData.completed = {};
         $scope.onboardingUserData.inputFieldData = {};
+
+        $scope.CognitoUserPool = AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool;
     };
 
     //StripeServiceRetrieveCustomers
@@ -130,7 +132,11 @@ Application.$controller("RegisterPageController", ["$scope", function($scope) {
             $scope.Widgets.onboardWizardStepDMWeb.disablenext = false;
     };
 
-
+    /**
+     * User login credentials form submission success (OBF3)
+     * Set userdata, complete step, enable next button
+     * Create Cognito user
+     */
     $scope.onboardingForm3Success = function($event, $operation, $data) {
         console.log("onboardingForm3Success data", $data);
         $scope.onboardingUserData.userid = $data.id;
@@ -138,6 +144,118 @@ Application.$controller("RegisterPageController", ["$scope", function($scope) {
         console.log("$scope.onboardingUserData Data", $scope.onboardingUserData);
         $scope.onboardingUserData.completed.dmWeb = true;
         $scope.Widgets.onboardWizardStepDMWeb.disablenext = false;
+
+        /**
+         * Cognito User Registration
+         * ========================================================================
+         */
+
+        console.log('Invoked saveAction1 for AWS Cognito registration');
+        var onboardingUserData = $scope.onboardingUserData;
+        /**
+         * Setup Cognito Credentials and Pool
+         */
+        AWSCognito.config.region = 'us-east-1';
+
+        var poolData = {
+            version: 1,
+            UserPoolId: 'us-east-1_M95FCI0hM', // your user pool id here
+            ClientId: '39sihcb6o3gf2k7pl5kr56v53' // your app client id here
+        };
+        console.log("Setup poolData", poolData);
+
+        var userPool =
+            new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
+        console.log("Setup userPool", userPool);
+
+        var userData = {
+            Username: onboardingUserData.userdata.username, // your username here
+            Pool: userPool
+        };
+        console.log("Setup userData");
+
+        /**
+         * Register user to Cognito
+         */
+        var username = onboardingUserData.userdata.username;
+        var password = onboardingUserData.userdata.password;
+        console.log("Cognito registration username/password", {
+            username: username,
+            password: password
+        });
+
+        var attributeList = [];
+
+        var dataEmail = {
+            Name: 'email',
+            Value: 'bryan.breakoutmx@gmail.com'
+        };
+
+        var dataGivenName = {
+            Name: 'given_name',
+            Value: onboardingUserData.profiledata.fname
+        };
+
+        var dataFamilyName = {
+            Name: 'family_name',
+            Value: onboardingUserData.profiledata.lname
+        };
+
+        var dataCustomDMPUserID = {
+            Name: 'custom:dmp_id',
+            Value: onboardingUserData.userid.toString()
+        };
+
+        var dataCustomDMPUsername = {
+            Name: 'custom:dmp_username',
+            Value: onboardingUserData.userdata.username
+        };
+
+        var dataCustomDMPRole = {
+            Name: 'custom:dmp_role',
+            Value: onboardingUserData.userdata.role
+        };
+
+
+
+        var attributeEmail =
+            new AWSCognito.CognitoIdentityServiceProvider.CognitoUserAttribute(dataEmail);
+
+        var attributeGivenName =
+            new AWSCognito.CognitoIdentityServiceProvider.CognitoUserAttribute(dataGivenName);
+
+        var attributeFamilyName =
+            new AWSCognito.CognitoIdentityServiceProvider.CognitoUserAttribute(dataFamilyName);
+
+        var attributeCustomDMPUserID =
+            new AWSCognito.CognitoIdentityServiceProvider.CognitoUserAttribute(dataCustomDMPUserID);
+
+        var attributeCustomDMPUsername =
+            new AWSCognito.CognitoIdentityServiceProvider.CognitoUserAttribute(dataCustomDMPUsername);
+
+        var attributeCustomDMPRole =
+            new AWSCognito.CognitoIdentityServiceProvider.CognitoUserAttribute(dataCustomDMPRole);
+
+
+
+        attributeList.push(attributeEmail);
+        attributeList.push(attributeGivenName);
+        attributeList.push(attributeFamilyName);
+        attributeList.push(attributeCustomDMPUserID);
+        attributeList.push(attributeCustomDMPUsername);
+        attributeList.push(attributeCustomDMPRole);
+
+
+        var cognitoUser;
+        userPool.signUp(username, password, attributeList, null, function(err, result) {
+            if (err) {
+                alert("Cognito Error: " + err);
+                return;
+            }
+            cognitoUser = result.user;
+            console.log("Cognito user registration success");
+            console.log('Cognito Username is ' + cognitoUser.getUsername());
+        });
     };
 
 }]);
@@ -436,7 +554,7 @@ Application.$controller("onboardingForm3Controller", ["$scope",
 
 
         $scope.saveAction1 = function($event) {
-            console.log('Invoked saveAction1');
+
         };
 
     }
